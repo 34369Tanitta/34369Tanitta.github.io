@@ -174,14 +174,31 @@
 
         /* ===== About ===== */
 
-        .about {
-            background: #12121c;
-            border: 1px solid #27223a;
+    .about {
+    background: rgba(18, 18, 28, 0.9);
 
-            padding: 30px;
+    border: 1px solid #27223a;
 
-            border-radius: 16px;
-        }
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(139, 92, 246, 0.08);
+
+    transition: 0.3s;
+}
+
+.about:hover {
+    transform: translateY(-3px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 15px 40px
+        rgba(139, 92, 246, 0.15);
+}
 
         .about p {
             color: #aaa6bb;
