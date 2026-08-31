@@ -1,32 +1,157 @@
-<!-- นี่คือโครงสร้างหน้าเว็บทังหมด -->
+<!-- หน้าแรก -->
+
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-<meta charset="UTF-8">
-<title>หน้าแนะนำตัวของฉัน</title>
-<style>
-body {
-background-color: #f4f7f6; color: #333;
-text-align: center; padding: 50px;
 
-}
-.card {
-background: #CC66FF ; border-radius : 50px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
+    <meta charset="UTF-8">
 
-}
-h1 { color: #9999CC; }
-p { font-size: 18px; line-height: 1.6; }
-</style>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tanitta | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b12;
+            color: #f5f3ff;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 650px;
+
+            background: #12121c;
+
+            border: 1px solid #27223a;
+            border-radius: 24px;
+
+            padding: 50px 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 60px
+                rgba(139, 92, 246, 0.15);
+        }
+
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #a78bfa;
+        }
+
+        .intro {
+            color: #aaa6bb;
+            font-size: 18px;
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+        .interest {
+            color: #c4b5fd;
+            font-size: 17px;
+
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+
+            background: #8b5cf6;
+            color: white;
+
+            padding: 13px 28px;
+
+            text-decoration: none;
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+        }
+
+        .small {
+            margin-top: 25px;
+
+            color: #777388;
+            font-size: 13px;
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีค่ะ! ฉันชื่อ <strong>ธนิษฐา (Tanitta)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-<p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
-<a href="portfolio.html" style="display:inline-block; background:#CC99FF; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของฉัน</a>
-</div>
+
+    <div class="card">
+
+        <div class="emoji">
+            🧪
+        </div>
+
+        <h1>
+            สวัสดีค่ะ ฉันชื่อ
+            <span>ธนิษฐา</span>
+        </h1>
+
+        <p class="intro">
+            นักเรียนชั้นมัธยมศึกษาปีที่ 6
+            สายการเรียนเตรียมวิศวกรรมศาสตร์
+        </p>
+
+        <p class="interest">
+            📐 สนใจคณิตศาสตร์
+            &nbsp;·&nbsp;
+            🧪 สนใจเคมี
+            &nbsp;·&nbsp;
+            🔬 ชอบการทดลอง
+        </p>
+
+        <a
+            href="portfolio.html"
+            class="button"
+        >
+            📁 ดูแฟ้มสะสมงาน
+        </a>
+
+        <p class="small">
+            Portfolio ของ Tanitta
+        </p>
+
+    </div>
+
 </body>
+
 </html>
