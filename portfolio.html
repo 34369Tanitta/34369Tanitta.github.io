@@ -29,10 +29,19 @@ body {
 
     background:
         radial-gradient(
-            circle at top,
-            #dff6ff 0%,
-            #fff4c7 45%,
-            #f8fbff 100%
+            circle at 15% 20%,
+            rgba(174, 228, 244, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(240, 207, 103, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #fffdf2
         );
 
     color: #40536b;
@@ -173,12 +182,22 @@ nav a:hover {
 .section-title h2 {
     font-size: 30px;
     color: #40536b;
+    
+    text-shadow:
+        0 0 12px rgba(142, 216, 237, 0.35);
 }
 
 .section-line {
-    height: 2px;
+    height: 3px;
     flex: 1;
-    background: #b9e7f5;
+
+    background: linear-gradient(
+        90deg,
+        #aee4f4,
+        #f0cf67
+    );
+
+    border-radius: 10px;
 }
 
 /* ===== About ===== */
@@ -217,7 +236,17 @@ nav a:hover {
 .about strong {
     color: #d3a62a;
 }
+.about a {
+    color: #55aeca;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
+.about a:hover {
+    color: #d3a62a;
+    text-decoration: underline;
+}
 /* ===== Projects ===== */
 
 .projects {
