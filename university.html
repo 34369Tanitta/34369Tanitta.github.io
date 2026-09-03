@@ -2,6 +2,7 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +65,7 @@
             color: #5fa8c0;
             text-decoration: none;
             margin-left: 20px;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -80,7 +82,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .section-number {
@@ -135,14 +137,26 @@
             color: #d3a62a;
         }
 
+        .highlight {
+            margin-top: 25px;
+            padding: 20px;
+
+            background: #fffdf3;
+
+            border-left: 5px solid #8ed8ed;
+
+            border-radius: 10px;
+        }
+
         .back-btn {
             display: inline-block;
 
-            margin-top: 20px;
+            margin-top: 30px;
 
             padding: 12px 25px;
 
             background: #8ed8ed;
+
             color: white;
 
             text-decoration: none;
@@ -170,11 +184,29 @@
             font-size: 13px;
         }
 
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+        }
+
     </style>
 
 </head>
 
+
 <body>
+
 
     <nav>
 
@@ -198,6 +230,7 @@
 
 
     <main class="container">
+
 
         <div class="section-title">
 
@@ -235,17 +268,41 @@
 
             <p>
                 ดิฉันอยากเรียนรู้การนำความรู้ด้านเคมีและวิศวกรรม
-                มาประยุกต์ใช้ในการแก้ปัญหา รวมถึงนำความรู้ไปต่อยอดในอนาคต
-                จึงตั้งใจที่จะพัฒนาความรู้ด้านคณิตศาสตร์ เคมี
-                และทักษะต่าง ๆ ของตัวเองให้มากขึ้น
-                เพื่อเตรียมความพร้อมสำหรับการเรียนต่อในสาขาวิศวกรรมเคมี
+                มาประยุกต์ใช้ในการแก้ปัญหา
+                รวมถึงนำความรู้ไปต่อยอดในอนาคต
             </p>
 
-            <a href="portfolio.html" class="back-btn">
+            <p>
+                จึงตั้งใจที่จะพัฒนาความรู้ด้านคณิตศาสตร์ เคมี
+                และทักษะต่าง ๆ ของตัวเองให้มากขึ้น
+                เพื่อเตรียมความพร้อมสำหรับการเรียนต่อ
+                ในสาขาวิศวกรรมเคมี
+            </p>
+
+
+            <div class="highlight">
+
+                🎯 <strong>เป้าหมายของฉัน</strong>
+
+                <p>
+                    ตั้งใจศึกษาต่อในคณะวิศวกรรมศาสตร์
+                    สาขาวิศวกรรมเคมี
+                    และนำความรู้ที่ได้รับไปพัฒนาตนเอง
+                    รวมถึงสร้างประโยชน์ต่อสังคมในอนาคต
+                </p>
+
+            </div>
+
+
+            <a
+                href="portfolio.html"
+                class="back-btn"
+            >
                 ← กลับหน้า Portfolio
             </a>
 
         </div>
+
 
     </main>
 
@@ -262,6 +319,7 @@
         </p>
 
     </footer>
+
 
 </body>
 
