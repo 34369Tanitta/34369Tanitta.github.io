@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tanitta | Projects</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(174, 228, 244, 0.55),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(240, 207, 103, 0.35),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fbff,
+                    #fffdf2
+                );
+
+            color: #40536b;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #b9e7f5;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #55aeca;
+        }
+
+        nav a {
+            color: #5fa8c0;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d3a62a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .section-number {
+            color: #55aeca;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #40536b;
+        }
+
+        .section-line {
+            height: 3px;
+            flex: 1;
+
+            background: linear-gradient(
+                90deg,
+                #aee4f4,
+                #f0cf67
+            );
+
+            border-radius: 10px;
+        }
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(117, 190, 220, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #8ed8ed;
+
+            box-shadow:
+                0 15px 40px
+                rgba(117, 190, 220, 0.2);
+        }
+
+        .project-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h2 {
+            color: #40536b;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #718096;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project-card strong {
+            color: #d3a62a;
+        }
+
+        .project-card img {
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            border: 2px solid #b9e7f5;
+
+            margin: 10px 5px;
+
+            display: inline-block;
+
+            box-shadow:
+                0 8px 25px
+                rgba(117, 190, 220, 0.15);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 5px 10px;
+
+            background: #fff4c7;
+
+            color: #b18a20;
+
+            border-radius: 6px;
+
+            font-size: 12px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 9px 16px;
+
+            background: #8ed8ed;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: #f0cf67;
+            color: #40536b;
+            transform: translateY(-2px);
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 12px 25px;
+
+            background: #8ed8ed;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #f0cf67;
+            color: #40536b;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            border-top: 1px solid #b9e7f5;
+
+            color: #91a0ae;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Tanitta.
+        </div>
+
+        <div>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <div class="section-title">
+
+            <span class="section-number">
+                04.
+            </span>
+
+            <h1>
+                My Projects
+            </h1>
+
+            <div class="section-line"></div>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🔬
+                </div>
+
+                <h2>
+                    🧪 การบำบัดน้ำด้วยจุลินทรีย์สังเคราะห์ด้วยแสง
+                </h2>
+
+                <p>
+                    โครงงานศึกษาการประยุกต์ใช้จุลินทรีย์สังเคราะห์ด้วยแสง
+                    ในการบำบัดน้ำ โดยศึกษาความสามารถของจุลินทรีย์
+                    ในการช่วยปรับปรุงคุณภาพน้ำ
+                </p>
+
+                <p>
+                    ได้เรียนรู้กระบวนการทดลอง
+                    การเก็บข้อมูล และการวิเคราะห์ผลการทดลอง
+                </p>
+
+                <p>
+                    <strong>ทักษะที่ได้:</strong>
+                    Chemistry · Environmental Science · Experiment · Data Analysis
+                </p>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1fOiGWgohM7MxmOBeAk4RG1s9ZPmqVpd_"
+                    target="_blank"
+                    class="project-link"
+                >
+                    🔗 ดูโครงงาน
+                </a>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Chemistry
+                    </span>
+
+                    <span class="tag">
+                        Experiment
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🏆
+                </div>
+
+                <h2>
+                    🏆 การแข่งขันแฟนพันธุ์แท้
+                    “ศึกวัดเซียนปรากฏการณ์ธรรมชาติ”
+                </h2>
+
+                <img
+                    src="IMG_2395.jpeg"
+                    alt="รูปขณะแข่งขัน"
+                >
+
+                <img
+                    src="IMG_4388.jpeg"
+                    alt="เกียรติบัตร"
+                >
+
+                <p>
+                    เข้าร่วมการแข่งขันแฟนพันธุ์แท้
+                    “ศึกวัดเซียนปรากฏการณ์ธรรมชาติ”
+                    ซึ่งเป็นการแข่งขันที่ท้าทายความรู้
+                    เกี่ยวกับปรากฏการณ์ทางธรรมชาติ
+                </p>
+
+                <p>
+                    ได้ฝึกการคิดวิเคราะห์ การแก้ปัญหา
+                    และการประยุกต์ใช้ความรู้ทางวิทยาศาสตร์
+                    และได้รับรางวัล
+                    <strong>รองชนะเลิศอันดับที่ 1</strong>
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Activity
+                    </span>
+
+                    <span class="tag">
+                        Award
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🏆
+                </div>
+
+                <h2>
+                    📜 รางวัล “นักเรียนประพฤติดี”
+                    ประจำปีการศึกษา 2568
+                </h2>
+
+                <img
+                    src="IMG_4394.jpeg"
+                    alt="รางวัลนักเรียนประพฤติดี"
+                >
+
+                <p>
+                    ได้รับรางวัลนักเรียนประพฤติดี
+                    ประจำปีการศึกษา 2568
+                    จากการมีความประพฤติดี
+                    มีความรับผิดชอบ
+                    และปฏิบัติตนอย่างเหมาะสมในสถานศึกษา
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Award
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align: center;">
+
+            <a
+                href="portfolio.html"
+                class="back-btn"
+            >
+                ← กลับหน้า Portfolio
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Designed & Built by
+            <strong>Tanitta</strong>
+        </p>
+
+        <p>
+            © 2026 Tanitta
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
