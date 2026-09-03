@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tanitta | Skills</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(174, 228, 244, 0.55),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(240, 207, 103, 0.35),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fbff,
+                    #fffdf2
+                );
+
+            color: #40536b;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #b9e7f5;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #55aeca;
+        }
+
+        nav a {
+            color: #5fa8c0;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d3a62a;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .section-number {
+            color: #55aeca;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #40536b;
+        }
+
+        .section-line {
+            height: 3px;
+            flex: 1;
+
+            background: linear-gradient(
+                90deg,
+                #aee4f4,
+                #f0cf67
+            );
+
+            border-radius: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            width: calc(50% - 10px);
+
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            padding: 25px;
+
+            border-radius: 16px;
+
+            color: #5fa8c0;
+
+            box-shadow:
+                0 10px 35px
+                rgba(117, 190, 220, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+
+            border-color: #f0cf67;
+
+            background: #fffdf3;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill h2 {
+            color: #40536b;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 12px 25px;
+
+            background: #8ed8ed;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #f0cf67;
+            color: #40536b;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            border-top: 1px solid #b9e7f5;
+
+            color: #91a0ae;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .skill {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Tanitta.
+        </div>
+
+        <div>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <div class="section-title">
+
+            <span class="section-number">
+                05.
+            </span>
+
+            <h1>
+                Skills & Interests
+            </h1>
+
+            <div class="section-line"></div>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🧪
+                </div>
+
+                <h2>
+                    ความสนใจด้านเคมี
+                </h2>
+
+                <p>
+                    สนใจการเรียนรู้เกี่ยวกับเคมี
+                    และการนำความรู้ทางเคมี
+                    ไปประยุกต์ใช้ในชีวิตจริง
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    📐
+                </div>
+
+                <h2>
+                    คณิตศาสตร์
+                </h2>
+
+                <p>
+                    สนใจการคำนวณ การแก้โจทย์
+                    และการใช้เหตุผลทางคณิตศาสตร์
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🔬
+                </div>
+
+                <h2>
+                    การทดลองทางวิทยาศาสตร์
+                </h2>
+
+                <p>
+                    ชอบการเรียนรู้จากการทดลอง
+                    การลงมือทำจริง
+                    และการสังเกตผลการทดลอง
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    📊
+                </div>
+
+                <h2>
+                    การวิเคราะห์ข้อมูล
+                </h2>
+
+                <p>
+                    สามารถรวบรวมข้อมูล
+                    วิเคราะห์ผล
+                    และนำข้อมูลมาใช้ประกอบการสรุปผล
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🧠
+                </div>
+
+                <h2>
+                    การคิดวิเคราะห์และแก้ปัญหา
+                </h2>
+
+                <p>
+                    ฝึกคิดอย่างเป็นระบบ
+                    วิเคราะห์ปัญหา
+                    และหาวิธีแก้ไขอย่างเหมาะสม
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🎯
+                </div>
+
+                <h2>
+                    เป้าหมาย
+                </h2>
+
+                <p>
+                    ต้องการพัฒนาความรู้และทักษะ
+                    เพื่อเตรียมตัวศึกษาต่อ
+                    ในสาขาวิศวกรรมเคมี
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align: center;">
+
+            <a
+                href="portfolio.html"
+                class="back-btn"
+            >
+                ← กลับหน้า Portfolio
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Designed & Built by
+            <strong>Tanitta</strong>
+        </p>
+
+        <p>
+            © 2026 Tanitta
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
