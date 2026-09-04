@@ -16,6 +16,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
 
@@ -42,6 +46,10 @@
         }
 
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -158,10 +166,17 @@
             font-size: 14px;
         }
 
-        .back-btn {
-            display: inline-block;
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             margin-top: 40px;
+            gap: 20px;
+        }
+
+        .page-navigation a {
+            display: inline-block;
 
             padding: 12px 25px;
 
@@ -176,7 +191,7 @@
             transition: 0.3s;
         }
 
-        .back-btn:hover {
+        .page-navigation a:hover {
             background: #f0cf67;
             color: #40536b;
             transform: translateY(-3px);
@@ -210,6 +225,15 @@
 
             .skill {
                 width: 100%;
+            }
+
+            .page-navigation {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .page-navigation a {
+                text-align: center;
             }
 
         }
@@ -378,13 +402,16 @@
         </div>
 
 
-        <div style="text-align: center;">
+        <!-- ปุ่มไปหน้าก่อนหน้า / หน้าถัดไป -->
 
-            <a
-                href="portfolio.html"
-                class="back-btn"
-            >
-                ← กลับหน้า Portfolio
+        <div class="page-navigation">
+
+            <a href="projects.html">
+                ← Projects
+            </a>
+
+            <a href="contact.html">
+                ติดต่อ →
             </a>
 
         </div>
