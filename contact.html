@@ -150,10 +150,20 @@
             border-left: 5px solid #8ed8ed;
         }
 
-        .back-btn {
-            display: inline-block;
+        /* ปุ่มนำทางด้านล่าง */
 
-            margin-top: 30px;
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 35px;
+
+            gap: 20px;
+        }
+
+        .page-navigation a {
+            display: inline-block;
 
             padding: 12px 25px;
 
@@ -164,11 +174,16 @@
             text-decoration: none !important;
 
             border-radius: 8px;
+
+            transition: 0.3s;
         }
 
-        .back-btn:hover {
+        .page-navigation a:hover {
             background: #f0cf67;
+
             color: #40536b !important;
+
+            transform: translateY(-3px);
         }
 
         footer {
@@ -181,6 +196,19 @@
             color: #91a0ae;
 
             font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            .page-navigation {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .page-navigation a {
+                text-align: center;
+            }
+
         }
 
     </style>
@@ -265,12 +293,19 @@
             </div>
 
 
-            <a
-                href="portfolio.html"
-                class="back-btn"
-            >
-                ← กลับหน้า Portfolio
-            </a>
+            <!-- ปุ่มไปหน้าก่อนหน้าและกลับ Home -->
+
+            <div class="page-navigation">
+
+                <a href="skills.html">
+                    ← Skills
+                </a>
+
+                <a href="index.html">
+                    🏠 กลับหน้า Home
+                </a>
+
+            </div>
 
         </div>
 
