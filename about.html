@@ -5,9 +5,12 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>About Me | Tanitta</title>
+    <title>Tanitta | About Me</title>
 
     <style>
 
@@ -22,129 +25,139 @@
         }
 
         body {
-            font-family: "Segoe UI", Tahoma, sans-serif;
-
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
 
             background:
-                radial-gradient(circle at 15% 20%, rgba(180, 230, 255, 0.8), transparent 35%),
-                radial-gradient(circle at 85% 15%, rgba(255, 240, 170, 0.75), transparent 30%),
-                radial-gradient(circle at 50% 90%, rgba(200, 240, 255, 0.7), transparent 40%),
-                #f8fcff;
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(174, 228, 244, 0.55),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(240, 207, 103, 0.35),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fbff,
+                    #fffdf2
+                );
 
-            color: #345;
+            color: #40536b;
+            line-height: 1.7;
 
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* =========================
-           HEADER
-        ========================= */
+        /* ===== Navigation ===== */
 
-        header {
-            text-align: center;
-            padding: 50px 20px 25px;
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #b9e7f5;
         }
 
-        header h1 {
-            font-size: clamp(32px, 5vw, 48px);
-            color: #277c9f;
-            margin-bottom: 8px;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #55aeca;
         }
 
-        header p {
-            color: #71858d;
-            font-size: 15px;
+        nav a {
+            color: #5fa8c0;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
         }
 
-        /* =========================
-           CONTAINER
-        ========================= */
+        nav a:hover {
+            color: #d3a62a;
+        }
+
+        /* ===== Main Content ===== */
 
         .container {
-            width: 92%;
-            max-width: 850px;
-
-            margin: 0 auto;
-            padding-bottom: 30px;
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 20px;
         }
 
-        /* =========================
-           PROFILE
-        ========================= */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
 
-        .profile-section {
-            text-align: center;
+            margin-bottom: 30px;
+        }
 
+        .section-number {
+            color: #55aeca;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #40536b;
+        }
+
+        .section-line {
+            height: 3px;
+            flex: 1;
+
+            background: linear-gradient(
+                90deg,
+                #aee4f4,
+                #f0cf67
+            );
+
+            border-radius: 10px;
+        }
+
+        /* ===== Profile ===== */
+
+        .profile-card {
             background: rgba(255, 255, 255, 0.88);
 
             border: 2px solid #b9e7f5;
 
-            border-radius: 28px;
+            border-radius: 24px;
 
-            padding: 35px 25px;
+            padding: 35px;
 
-            margin-bottom: 22px;
+            text-align: center;
 
             box-shadow:
-                0 15px 35px rgba(100, 180, 210, 0.12);
+                0 10px 35px
+                rgba(117, 190, 220, 0.12);
 
-            animation: fadeUp 0.8s ease;
+            margin-bottom: 25px;
         }
 
         .profile-wrap {
             position: relative;
 
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
 
-            margin: 0 auto 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-wrap::before {
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-            height: 180px;
-
-            border: 2px dashed #8fd9ee;
-
-            border-radius: 50%;
-
-            animation: spin 18s linear infinite;
-        }
-
-        .profile-wrap::after {
-            content: "";
-
-            position: absolute;
-
-            width: 195px;
-            height: 195px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(
-                circle,
-                rgba(154, 225, 245, 0.35),
-                transparent 65%
-            );
-
-            animation: glow 3s ease-in-out infinite;
+            margin: 0 auto 25px;
         }
 
         .profile {
-            position: relative;
-            z-index: 3;
-
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
 
             object-fit: cover;
 
@@ -153,201 +166,192 @@
             border: 5px solid white;
 
             box-shadow:
-                0 12px 30px rgba(100, 180, 210, 0.25);
+                0 10px 25px
+                rgba(117, 190, 220, 0.25);
 
             animation: profileFloat 4s ease-in-out infinite;
+
+            position: relative;
+            z-index: 2;
         }
 
-        /* =========================
-           DECORATIONS
-        ========================= */
+        .profile-wrap::before {
+            content: "";
 
-        .photo-deco {
             position: absolute;
 
-            z-index: 5;
+            width: 170px;
+            height: 170px;
 
-            pointer-events: none;
+            border: 2px dashed #aee4f4;
 
-            user-select: none;
+            border-radius: 50%;
+
+            top: -10px;
+            left: -10px;
+
+            animation: spin 12s linear infinite;
         }
 
-        .heart-one {
-            top: 5px;
-            left: -8px;
+        .profile-wrap::after {
+            content: "";
 
-            color: #8fd8ef;
-            font-size: 25px;
+            position: absolute;
 
-            animation: floatHeart 3.5s ease-in-out infinite;
+            width: 160px;
+            height: 160px;
+
+            border-radius: 50%;
+
+            background: rgba(174, 228, 244, 0.18);
+
+            filter: blur(12px);
+
+            top: -5px;
+            left: -5px;
+
+            animation: glow 3s ease-in-out infinite;
+
+            z-index: 0;
         }
 
-        .heart-two {
-            right: -10px;
-            bottom: 18px;
+        .deco {
+            position: absolute;
 
-            color: #f2b9d2;
-            font-size: 21px;
+            z-index: 3;
 
-            animation: floatHeart2 4s ease-in-out infinite;
-        }
+            color: #e8c95c;
 
-        .star-one {
-            top: 25px;
-            right: -12px;
-
-            color: #f1c85b;
-            font-size: 21px;
+            font-size: 20px;
 
             animation: twinkle 2s ease-in-out infinite;
         }
 
-        .star-two {
+        .heart-one {
+            top: 5px;
             left: -15px;
-            bottom: 35px;
-
-            color: #75cbe5;
-            font-size: 18px;
-
-            animation: twinkle 2.5s ease-in-out infinite;
         }
 
-        .sparkle-one {
-            top: -3px;
-            left: 48px;
+        .heart-two {
+            bottom: 10px;
+            right: -15px;
 
-            color: #f2c85b;
-            font-size: 16px;
+            color: #8ed8ed;
 
-            animation: twinkle 2.2s ease-in-out infinite;
+            animation-delay: 0.7s;
         }
 
-        .sparkle-two {
-            right: 40px;
-            bottom: -5px;
+        .star-one {
+            top: -15px;
+            right: 15px;
 
-            color: #9bdcec;
-            font-size: 16px;
-
-            animation: twinkle 1.8s ease-in-out infinite;
+            animation-delay: 1s;
         }
 
-        .profile-section h2 {
-            color: #367f9d;
+        .star-two {
+            bottom: 15px;
+            left: -10px;
 
-            font-size: 25px;
+            color: #8ed8ed;
 
-            margin-bottom: 7px;
+            animation-delay: 1.4s;
         }
 
-        .student {
-            color: #78919b;
+        .profile-card h2 {
+            color: #40536b;
 
-            font-size: 15px;
-
-            margin-bottom: 15px;
-        }
-
-        .intro-text {
-            max-width: 650px;
-
-            margin: auto;
-
-            color: #647b84;
-
-            line-height: 1.8;
-
-            font-size: 15px;
-        }
-
-        /* =========================
-           CONTENT
-        ========================= */
-
-        .section {
-            background: rgba(255, 255, 255, 0.84);
-
-            border: 1px solid #c7e9f3;
-
-            border-radius: 24px;
-
-            padding: 28px;
-
-            margin-bottom: 20px;
-
-            box-shadow:
-                0 10px 25px rgba(100, 180, 210, 0.08);
-
-            animation: fadeUp 0.9s ease;
-        }
-
-        .section h3 {
-            color: #367f9d;
-
-            font-size: 21px;
-
-            margin-bottom: 13px;
-        }
-
-        .section p {
-            color: #647b84;
-
-            font-size: 15px;
-
-            line-height: 1.8;
-        }
-
-        /* =========================
-           HIGHLIGHTS
-        ========================= */
-
-        .highlight-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 14px;
-
-            margin-top: 18px;
-        }
-
-        .highlight {
-            background: #f2fbfe;
-
-            border: 1px solid #cceaf3;
-
-            border-radius: 18px;
-
-            padding: 18px;
-
-            text-align: center;
-        }
-
-        .highlight-icon {
             font-size: 27px;
-
-            margin-bottom: 8px;
-        }
-
-        .highlight strong {
-            display: block;
-
-            color: #43849e;
 
             margin-bottom: 5px;
         }
 
-        .highlight span {
-            color: #78919a;
+        .profile-card .student {
+            color: #55aeca;
 
-            font-size: 13px;
+            font-weight: bold;
 
-            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
-        /* =========================
-           GOAL
-        ========================= */
+        .profile-card p {
+            color: #718096;
+        }
+
+        /* ===== Info Section ===== */
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(117, 190, 220, 0.10);
+        }
+
+        .info-box h2 {
+            color: #55aeca;
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            color: #718096;
+        }
+
+        /* ===== Interest Cards ===== */
+
+        .interest-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .interest-card {
+            background: rgba(255, 255, 255, 0.9);
+
+            border: 1.5px solid #c5eaf5;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            transition: 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(117, 190, 220, 0.15);
+        }
+
+        .interest-card h3 {
+            color: #4b8fb3;
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .interest-card p {
+            font-size: 14px;
+        }
+
+        /* ===== Goal ===== */
 
         .goal {
             text-align: center;
@@ -355,99 +359,113 @@
             background:
                 linear-gradient(
                     135deg,
-                    rgba(235, 250, 255, 0.95),
-                    rgba(255, 250, 225, 0.9)
+                    rgba(174, 228, 244, 0.35),
+                    rgba(240, 207, 103, 0.18)
                 );
+
+            border: 2px solid #b9e7f5;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            margin-bottom: 35px;
         }
+
+        .goal h2 {
+            color: #55aeca;
+
+            margin-bottom: 10px;
+        }
+
+        .goal p {
+            color: #718096;
+        }
+
+        /* ===== Quote ===== */
 
         .quote {
-            display: inline-block;
+            text-align: center;
 
-            margin-top: 15px;
+            color: #55aeca;
 
-            color: #43849e;
+            font-size: 18px;
 
-            font-weight: 600;
+            font-weight: bold;
 
-            font-size: 15px;
+            margin-top: 25px;
         }
 
-        /* =========================
-           NAVIGATION
-        ========================= */
+        /* ===== Page Navigation ===== */
 
         .page-navigation {
+            width: 100%;
+
             display: flex;
-
             justify-content: space-between;
+            align-items: center;
 
-            gap: 15px;
+            gap: 20px;
 
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         .page-navigation a {
             flex: 1;
 
-            text-align: center;
+            max-width: 300px;
 
-            text-decoration: none;
+            padding: 16px 24px;
 
-            color: #397f9c;
+            background: rgba(255, 255, 255, 0.88);
 
-            background: rgba(255, 255, 255, 0.85);
-
-            border: 1px solid #bfe4ef;
-
-            padding: 13px 18px;
+            border: 2px solid #b9e7f5;
 
             border-radius: 20px;
 
-            font-weight: 600;
+            color: #4b8fb3;
 
-            transition: 0.3s;
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 20px
+                rgba(100, 180, 220, 0.12);
+
+            transition: all 0.3s ease;
         }
 
         .page-navigation a:hover {
-            background: #e9f9fe;
+            transform: translateY(-4px);
 
-            transform: translateY(-3px);
+            background: #ffffff;
+
+            border-color: #8ed5ed;
 
             box-shadow:
-                0 8px 18px rgba(100, 180, 210, 0.15);
+                0 12px 25px
+                rgba(100, 180, 220, 0.20);
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        /* ===== Footer ===== */
 
         footer {
             text-align: center;
 
-            padding: 20px;
+            padding: 40px 20px;
 
-            color: #8aa1aa;
+            border-top: 1px solid #b9e7f5;
+
+            color: #91a0ae;
 
             font-size: 13px;
         }
 
-        /* =========================
-           ANIMATIONS
-        ========================= */
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
+        /* ===== Animation ===== */
 
         @keyframes profileFloat {
 
@@ -459,7 +477,6 @@
             50% {
                 transform: translateY(-7px);
             }
-
         }
 
         @keyframes spin {
@@ -471,89 +488,80 @@
             to {
                 transform: rotate(360deg);
             }
-
         }
 
         @keyframes glow {
 
             0%,
             100% {
-                transform: scale(0.95);
                 opacity: 0.5;
+                transform: scale(1);
             }
 
             50% {
-                transform: scale(1.05);
                 opacity: 0.9;
+                transform: scale(1.08);
             }
-
-        }
-
-        @keyframes floatHeart {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(-8deg);
-            }
-
-            50% {
-                transform: translateY(-10px) rotate(8deg);
-            }
-
-        }
-
-        @keyframes floatHeart2 {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(8deg);
-            }
-
-            50% {
-                transform: translateY(8px) rotate(-8deg);
-            }
-
         }
 
         @keyframes twinkle {
 
             0%,
             100% {
-                transform: scale(0.8);
-                opacity: 0.45;
+                opacity: 0.4;
+                transform: scale(0.9);
             }
 
             50% {
-                transform: scale(1.25);
                 opacity: 1;
+                transform: scale(1.2);
             }
-
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* ===== Mobile ===== */
 
-        @media (max-width: 650px) {
+        @media (max-width: 600px) {
 
-            header {
-                padding-top: 40px;
+            nav {
+                padding: 15px 20px;
             }
 
-            .profile-section {
-                padding: 30px 18px;
+            nav div:last-child {
+                display: none;
             }
 
-            .highlight-grid {
+            .container {
+                padding: 50px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .profile-card {
+                padding: 25px 20px;
+            }
+
+            .interest-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 23px 20px;
             }
 
             .page-navigation {
                 flex-direction: column;
+
+                gap: 12px;
+
+                margin-top: 35px;
+            }
+
+            .page-navigation a {
+                width: 100%;
+
+                max-width: none;
+
+                padding: 14px 20px;
+
+                font-size: 14px;
             }
 
         }
@@ -562,57 +570,69 @@
 
 </head>
 
-
 <body>
 
+    <!-- Navigation -->
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <nav>
 
-    <header>
+        <div class="logo">
+            Tanitta.
+        </div>
 
-        <h1>👋 About Me</h1>
+        <div>
 
-        <p>
-            มาทำความรู้จักกับฉันกันนะคะ
-        </p>
+            <a href="index.html">
+                Home
+            </a>
 
-    </header>
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+
+        </div>
+
+    </nav>
 
 
+    <!-- Main Content -->
 
     <main class="container">
 
+        <div class="section-title">
 
-        <!-- =========================
-             PROFILE
-        ========================= -->
+            <span class="section-number">
+                02.
+            </span>
 
-        <section class="profile-section">
+            <h1>
+                About Me
+            </h1>
+
+            <div class="section-line"></div>
+
+        </div>
+
+
+        <!-- Profile -->
+
+        <div class="profile-card">
 
             <div class="profile-wrap">
 
                 <img
                     src="profile.jpg"
-                    alt="รูปโปรไฟล์ของ Tanitta"
+                    alt="Tanitta"
                     class="profile"
                 >
 
-                <span class="photo-deco heart-one">♡</span>
+                <span class="deco heart-one">♡</span>
+                <span class="deco heart-two">♥</span>
 
-                <span class="photo-deco heart-two">♥</span>
-
-                <span class="photo-deco star-one">★</span>
-
-                <span class="photo-deco star-two">✦</span>
-
-                <span class="photo-deco sparkle-one">✧</span>
-
-                <span class="photo-deco sparkle-two">✦</span>
+                <span class="deco star-one">★</span>
+                <span class="deco star-two">✦</span>
 
             </div>
-
 
             <h2>
                 สวัสดีค่ะ ฉันชื่อ ธนิษฐา
@@ -623,179 +643,151 @@
                 สายการเรียนเตรียมวิศวกรรมศาสตร์
             </p>
 
-            <p class="intro-text">
-                หนูเป็นคนที่ชอบเรียนรู้สิ่งใหม่ ๆ
-                และสนใจด้านวิทยาศาสตร์
-                โดยเฉพาะคณิตศาสตร์ เคมี และการทดลอง
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             ABOUT
-        ========================= -->
-
-        <section class="section">
-
-            <h3>
-                🙋‍♀️ เกี่ยวกับฉัน
-            </h3>
-
             <p>
-                หนูสนใจการนำความรู้ทางวิทยาศาสตร์
-                มาประยุกต์ใช้ในการแก้ปัญหา
-                และชอบเรียนรู้จากการลงมือทำ
-                เพราะเชื่อว่าประสบการณ์จะช่วยให้พัฒนาตัวเองได้มากขึ้น
+                เป็นคนที่ชอบเรียนรู้สิ่งใหม่ ๆ
+                สนใจวิทยาศาสตร์ โดยเฉพาะเคมี
+                และชอบการเรียนรู้จากการทดลองและการลงมือทำจริง
             </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             INTEREST & STRENGTH
-        ========================= -->
-
-        <section class="section">
-
-            <h3>
-                💙 ความสนใจและจุดเด่น
-            </h3>
-
-            <div class="highlight-grid">
-
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        🧪
-                    </div>
-
-                    <strong>
-                        วิทยาศาสตร์
-                    </strong>
-
-                    <span>
-                        สนใจเคมีและการทดลอง
-                    </span>
-
-                </div>
-
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        🧠
-                    </div>
-
-                    <strong>
-                        คิดวิเคราะห์
-                    </strong>
-
-                    <span>
-                        ชอบคิดและแก้ปัญหาอย่างเป็นขั้นตอน
-                    </span>
-
-                </div>
-
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        📚
-                    </div>
-
-                    <strong>
-                        เรียนรู้
-                    </strong>
-
-                    <span>
-                        พร้อมเรียนรู้และพัฒนาตัวเอง
-                    </span>
-
-                </div>
-
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        ✨
-                    </div>
-
-                    <strong>
-                        ลงมือทำ
-                    </strong>
-
-                    <span>
-                        ชอบเรียนรู้จากประสบการณ์จริง
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             GOAL
-        ========================= -->
-
-        <section class="section goal">
-
-            <h3>
-                🎯 เป้าหมาย
-            </h3>
-
-            <p>
-                หนูต้องการศึกษาต่อด้านวิศวกรรมเคมี
-                และพัฒนาความรู้กับทักษะของตัวเอง
-                เพื่อเตรียมพร้อมสำหรับอนาคต
-            </p>
-
-            <span class="quote">
-                “เรียนรู้วันนี้ เพื่อสร้างอนาคตที่อยากเป็น” ✨
-            </span>
-
-        </section>
-
-
-
-        <!-- =========================
-             PAGE NAVIGATION
-        ========================= -->
-
-        <div class="page-navigation">
-
-            <a href="university.html">
-                ← มหาวิทยาลัยในฝัน
-            </a>
-
-            <a href="projects.html">
-                Projects →
-            </a>
 
         </div>
 
 
+        <!-- About Me -->
+
+        <div class="info-box">
+
+            <h2>
+                🙋‍♀️ เกี่ยวกับฉัน
+            </h2>
+
+            <p>
+                ฉันเป็นคนที่ตั้งใจเรียน ชอบค้นคว้าหาความรู้
+                และพยายามพัฒนาตัวเองอยู่เสมอ
+                โดยเฉพาะด้านวิทยาศาสตร์และการคิดวิเคราะห์
+            </p>
+
+        </div>
+
+
+        <!-- Interests -->
+
+        <div class="info-box">
+
+            <h2>
+                💙 ความสนใจและจุดเด่น
+            </h2>
+
+            <div class="interest-grid">
+
+                <div class="interest-card">
+
+                    <h3>
+                        🧪 วิทยาศาสตร์
+                    </h3>
+
+                    <p>
+                        สนใจเคมีและการทดลอง
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>
+                        🧠 คิดวิเคราะห์
+                    </h3>
+
+                    <p>
+                        ชอบคิดและแก้ปัญหาอย่างเป็นขั้นตอน
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>
+                        📚 เรียนรู้
+                    </h3>
+
+                    <p>
+                        พร้อมเรียนรู้และพัฒนาตัวเอง
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <h3>
+                        ✨ ลงมือทำ
+                    </h3>
+
+                    <p>
+                        ชอบเรียนรู้จากประสบการณ์จริง
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Goal -->
+
+        <div class="goal">
+
+            <h2>
+                🎯 เป้าหมาย
+            </h2>
+
+            <p>
+                ตั้งใจพัฒนาความรู้และทักษะ
+                เพื่อศึกษาต่อด้านวิศวกรรมเคมี
+                และนำความรู้ไปใช้สร้างประโยชน์ในอนาคต
+            </p>
+
+        </div>
+
+
+        <div class="quote">
+            “เรียนรู้วันนี้ เพื่อสร้างอนาคตที่อยากเป็น” ✨
+        </div>
+
+
+        <!-- Page Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="introduction.html">
+                ← คำนำ
+            </a>
+
+            <a href="university.html">
+                มหาวิทยาลัยในฝัน →
+            </a>
+
+        </div>
+
     </main>
 
 
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- Footer -->
 
     <footer>
 
-        ✨ Portfolio ของ Tanitta ✨
+        <p>
+            Designed & Built by
+            <strong>Tanitta</strong>
+        </p>
+
+        <p>
+            © 2026 Tanitta
+        </p>
 
     </footer>
-
 
 </body>
 
