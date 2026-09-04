@@ -150,8 +150,9 @@
         /* ===== Page Navigation ===== */
 
         .page-navigation {
-            display: flex;
+            width: 100%;
 
+            display: flex;
             justify-content: space-between;
             align-items: center;
 
@@ -161,36 +162,46 @@
         }
 
         .page-navigation a {
-            display: inline-block;
+            flex: 1;
 
-            padding: 12px 22px;
+            max-width: 300px;
 
-            background: #8ed8ed;
-            color: white;
+            padding: 16px 24px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            border-radius: 20px;
+
+            color: #4b8fb3;
 
             text-decoration: none;
 
-            border-radius: 10px;
-
+            font-size: 16px;
             font-weight: bold;
 
-            box-shadow:
-                0 8px 25px
-                rgba(117, 190, 220, 0.20);
+            text-align: center;
 
-            transition: 0.3s;
+            box-shadow:
+                0 8px 20px
+                rgba(100, 180, 220, 0.12);
+
+            transition: all 0.3s ease;
         }
 
         .page-navigation a:hover {
-            background: #f0cf67;
+            transform: translateY(-4px);
 
-            color: #40536b;
+            background: #ffffff;
 
-            transform: translateY(-3px);
+            border-color: #8ed5ed;
+
+            color: #4b8fb3;
 
             box-shadow:
-                0 12px 30px
-                rgba(220, 190, 90, 0.25);
+                0 12px 25px
+                rgba(100, 180, 220, 0.20);
         }
 
         /* ===== Footer ===== */
@@ -224,11 +235,20 @@
             }
 
             .page-navigation {
-                gap: 10px;
+                flex-direction: column;
+
+                gap: 12px;
+
+                margin-top: 35px;
             }
 
             .page-navigation a {
-                padding: 10px 15px;
+                width: 100%;
+
+                max-width: none;
+
+                padding: 14px 20px;
+
                 font-size: 14px;
             }
 
@@ -315,8 +335,8 @@
                     ← Home
                 </a>
 
-                <a href="university.html">
-                    มหาวิทยาลัยในฝัน →
+                <a href="about.html">
+                    About Me →
                 </a>
 
             </div>
