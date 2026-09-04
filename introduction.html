@@ -50,6 +50,8 @@
             min-height: 100vh;
         }
 
+        /* ===== Navigation ===== */
+
         nav {
             position: sticky;
             top: 0;
@@ -83,6 +85,8 @@
         nav a:hover {
             color: #d3a62a;
         }
+
+        /* ===== Main Content ===== */
 
         .container {
             max-width: 900px;
@@ -122,6 +126,8 @@
             border-radius: 10px;
         }
 
+        /* ===== Content Box ===== */
+
         .about {
             background: rgba(255, 255, 255, 0.88);
 
@@ -141,28 +147,53 @@
             margin-bottom: 18px;
         }
 
-        .back-btn {
+        /* ===== Page Navigation ===== */
+
+        .page-navigation {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
+        .page-navigation a {
             display: inline-block;
 
-            margin-top: 30px;
-
-            padding: 12px 25px;
+            padding: 12px 22px;
 
             background: #8ed8ed;
             color: white;
 
             text-decoration: none;
 
-            border-radius: 8px;
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 25px
+                rgba(117, 190, 220, 0.20);
 
             transition: 0.3s;
         }
 
-        .back-btn:hover {
+        .page-navigation a:hover {
             background: #f0cf67;
+
             color: #40536b;
+
             transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(220, 190, 90, 0.25);
         }
+
+        /* ===== Footer ===== */
 
         footer {
             text-align: center;
@@ -175,6 +206,8 @@
 
             font-size: 13px;
         }
+
+        /* ===== Mobile ===== */
 
         @media (max-width: 600px) {
 
@@ -190,6 +223,15 @@
                 font-size: 28px;
             }
 
+            .page-navigation {
+                gap: 10px;
+            }
+
+            .page-navigation a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
         }
 
     </style>
@@ -197,6 +239,8 @@
 </head>
 
 <body>
+
+    <!-- Navigation -->
 
     <nav>
 
@@ -218,6 +262,8 @@
 
     </nav>
 
+
+    <!-- Main Content -->
 
     <main class="container">
 
@@ -260,17 +306,27 @@
                 และเป้าหมายในการศึกษาต่อของดิฉัน
             </p>
 
-            <a
-                href="portfolio.html"
-                class="back-btn"
-            >
-                ← กลับหน้า Portfolio
-            </a>
+
+            <!-- ปุ่มไปหน้าก่อนหน้า / หน้าถัดไป -->
+
+            <div class="page-navigation">
+
+                <a href="index.html">
+                    ← Home
+                </a>
+
+                <a href="university.html">
+                    มหาวิทยาลัยในฝัน →
+                </a>
+
+            </div>
 
         </div>
 
     </main>
 
+
+    <!-- Footer -->
 
     <footer>
 
