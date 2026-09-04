@@ -5,764 +5,334 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>มหาวิทยาลัยในฝัน | Tanitta</title>
 
-
-<style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-
-    /* =========================
-       BODY
-    ========================= */
-
-    body {
-        font-family: Arial, sans-serif;
-
-        background:
-            radial-gradient(
-                circle at top left,
-                #dff6ff 0%,
-                #fff4c7 42%,
-                #f8fbff 100%
-            );
-
-        color: #40536b;
-
-        min-height: 100vh;
-
-        padding: 35px 20px;
-    }
-
-
-    /* =========================
-       MAIN CONTAINER
-    ========================= */
-
-    .container {
-        width: 100%;
-        max-width: 1000px;
-
-        margin: auto;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-        text-align: center;
-
-        margin-bottom: 40px;
-
-        animation: fadeDown 0.8s ease;
-    }
-
-
-    .header-icon {
-        font-size: 45px;
-
-        display: inline-block;
-
-        animation:
-            floatIcon 3s ease-in-out infinite;
-    }
-
-
-    .header h1 {
-        font-size: 42px;
-
-        margin-top: 10px;
-        margin-bottom: 12px;
-
-        color: #40536b;
-    }
-
-
-    .header h1 span {
-        color: #55aeca;
-
-        text-shadow:
-            0 0 15px
-            rgba(85, 174, 202, 0.25);
-    }
-
-
-    .header p {
-        color: #718096;
-
-        font-size: 17px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =========================
-       UNIVERSITY HERO
-    ========================= */
-
-    .university-card {
-        position: relative;
-
-        background:
-            rgba(255, 255, 255, 0.9);
-
-        border: 2px solid #b9e7f5;
-
-        border-radius: 28px;
-
-        padding: 40px 35px;
-
-        margin-bottom: 25px;
-
-        text-align: center;
-
-        box-shadow:
-            0 20px 60px
-            rgba(117, 190, 220, 0.18);
-
-        overflow: hidden;
-
-        animation: fadeUp 0.9s ease;
-    }
-
-
-    .university-card::before {
-        content: "✦";
-
-        position: absolute;
-
-        top: 18px;
-        left: 25px;
-
-        color: #e4c65d;
-
-        font-size: 22px;
-
-        animation: twinkle 2s ease-in-out infinite;
-    }
-
-
-    .university-card::after {
-        content: "✧";
-
-        position: absolute;
-
-        right: 25px;
-        bottom: 18px;
-
-        color: #7fcfe5;
-
-        font-size: 24px;
-
-        animation:
-            twinkle 2.5s ease-in-out infinite 0.5s;
-    }
-
-
-    .university-name {
-        font-size: 30px;
-
-        color: #55aeca;
-
-        margin-bottom: 12px;
-
-        line-height: 1.5;
-    }
-
-
-    .university-short {
-        display: inline-block;
-
-        background: #fff7d6;
-
-        color: #c29a20;
-
-        padding: 7px 18px;
-
-        border-radius: 30px;
-
-        font-weight: bold;
-
-        margin-bottom: 25px;
-    }
-
-
-    /* =========================
-       UNIVERSITY INFO
-    ========================= */
-
-    .info-grid {
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 18px;
-
-        margin-top: 25px;
-    }
-
-
-    .info-box {
-        background: #f8fcff;
-
-        border: 1.5px solid #d5edf5;
-
-        border-radius: 18px;
-
-        padding: 22px;
-
-        transition: 0.3s;
-
-        text-align: left;
-    }
-
-
-    .info-box:hover {
-        transform: translateY(-5px);
-
-        box-shadow:
-            0 12px 30px
-            rgba(117, 190, 220, 0.15);
-
-        border-color: #aee4f4;
-    }
-
-
-    .info-icon {
-        font-size: 27px;
-
-        margin-bottom: 10px;
-    }
-
-
-    .info-title {
-        color: #55aeca;
-
-        font-weight: bold;
-
-        font-size: 16px;
-
-        margin-bottom: 7px;
-    }
-
-
-    .info-text {
-        color: #718096;
-
-        line-height: 1.7;
-
-        font-size: 15px;
-    }
-
-
-    /* =========================
-       CONTENT SECTIONS
-    ========================= */
-
-    .section {
-        background:
-            rgba(255, 255, 255, 0.9);
-
-        border: 2px solid #b9e7f5;
-
-        border-radius: 24px;
-
-        padding: 32px;
-
-        margin-bottom: 25px;
-
-        box-shadow:
-            0 12px 35px
-            rgba(117, 190, 220, 0.12);
-
-        animation: fadeUp 1s ease;
-    }
-
-
-    .section-title {
-        display: flex;
-
-        align-items: center;
-
-        gap: 10px;
-
-        color: #40536b;
-
-        font-size: 25px;
-
-        margin-bottom: 17px;
-    }
-
-
-    .section-title span {
-        color: #55aeca;
-    }
-
-
-    .section p {
-        color: #718096;
-
-        font-size: 16px;
-
-        line-height: 1.9;
-
-        text-align: left;
-    }
-
-
-    /* =========================
-       INTEREST CARDS
-    ========================= */
-
-    .interest-grid {
-        display: grid;
-
-        grid-template-columns:
-            repeat(4, 1fr);
-
-        gap: 15px;
-
-        margin-top: 22px;
-    }
-
-
-    .interest-card {
-        text-align: center;
-
-        background: #f8fcff;
-
-        border: 1.5px solid #d5edf5;
-
-        border-radius: 18px;
-
-        padding: 22px 12px;
-
-        transition: 0.3s;
-    }
-
-
-    .interest-card:hover {
-        transform: translateY(-6px);
-
-        background: #ffffff;
-
-        box-shadow:
-            0 12px 25px
-            rgba(117, 190, 220, 0.15);
-    }
-
-
-    .interest-card .icon {
-        font-size: 30px;
-
-        display: block;
-
-        margin-bottom: 10px;
-    }
-
-
-    .interest-card h3 {
-        color: #55aeca;
-
-        font-size: 15px;
-
-        margin-bottom: 6px;
-    }
-
-
-    .interest-card p {
-        text-align: center;
-
-        font-size: 13px;
-
-        line-height: 1.6;
-    }
-
-
-    /* =========================
-       GOALS
-    ========================= */
-
-    .goal-list {
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 15px;
-
-        margin-top: 20px;
-    }
-
-
-    .goal-item {
-        display: flex;
-
-        align-items: flex-start;
-
-        gap: 12px;
-
-        background: #f8fcff;
-
-        border-radius: 16px;
-
-        padding: 17px;
-
-        border: 1.5px solid #d5edf5;
-
-        transition: 0.3s;
-    }
-
-
-    .goal-item:hover {
-        transform: translateX(5px);
-
-        border-color: #aee4f4;
-    }
-
-
-    .goal-number {
-        min-width: 32px;
-        height: 32px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        background: #8ed8ed;
-
-        color: white;
-
-        font-weight: bold;
-    }
-
-
-    .goal-item p {
-        font-size: 15px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =========================
-       DREAM BOX
-    ========================= */
-
-    .dream-box {
-        position: relative;
-
-        text-align: center;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(223, 246, 255, 0.9),
-                rgba(255, 247, 214, 0.9)
-            );
-
-        border: 2px solid #b9e7f5;
-
-        border-radius: 24px;
-
-        padding: 35px 30px;
-
-        margin-bottom: 35px;
-
-        overflow: hidden;
-    }
-
-
-    .dream-box .big-icon {
-        font-size: 45px;
-
-        display: inline-block;
-
-        margin-bottom: 12px;
-
-        animation:
-            floatIcon 3s ease-in-out infinite;
-    }
-
-
-    .dream-box h2 {
-        color: #40536b;
-
-        font-size: 27px;
-
-        margin-bottom: 15px;
-    }
-
-
-    .dream-box p {
-        color: #718096;
-
-        max-width: 750px;
-
-        margin: auto;
-
-        line-height: 1.9;
-
-        font-size: 16px;
-    }
-
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    .page-navigation {
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        gap: 15px;
-
-        margin-top: 30px;
-    }
-
-
-    .nav-button {
-        display: inline-block;
-
-        padding: 13px 24px;
-
-        background: #ffffff;
-
-        border: 2px solid #b9e7f5;
-
-        border-radius: 14px;
-
-        color: #55aeca;
-
-        text-decoration: none;
-
-        font-weight: bold;
-
-        transition: 0.3s;
-
-        box-shadow:
-            0 7px 20px
-            rgba(117, 190, 220, 0.12);
-    }
-
-
-    .nav-button:hover {
-        background: #8ed8ed;
-
-        color: white;
-
-        border-color: #8ed8ed;
-
-        transform: translateY(-4px);
-
-        box-shadow:
-            0 10px 25px
-            rgba(117, 190, 220, 0.25);
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer {
-        text-align: center;
-
-        margin-top: 35px;
-
-        color: #91a0ae;
-
-        font-size: 13px;
-    }
-
-
-    /* =========================
-       ANIMATIONS
-    ========================= */
-
-    @keyframes fadeDown {
-
-        from {
-            opacity: 0;
-
-            transform:
-                translateY(-20px);
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        to {
-            opacity: 1;
-
-            transform:
-                translateY(0);
+        html {
+            scroll-behavior: smooth;
         }
-
-    }
-
-
-    @keyframes fadeUp {
-
-        from {
-            opacity: 0;
-
-            transform:
-                translateY(25px);
-        }
-
-        to {
-            opacity: 1;
-
-            transform:
-                translateY(0);
-        }
-
-    }
-
-
-    @keyframes floatIcon {
-
-        0%,
-        100% {
-            transform:
-                translateY(0)
-                rotate(-3deg);
-        }
-
-        50% {
-            transform:
-                translateY(-8px)
-                rotate(3deg);
-        }
-
-    }
-
-
-    @keyframes twinkle {
-
-        0%,
-        100% {
-            opacity: 0.4;
-
-            transform:
-                scale(0.8)
-                rotate(0deg);
-        }
-
-        50% {
-            opacity: 1;
-
-            transform:
-                scale(1.25)
-                rotate(15deg);
-        }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 700px) {
 
         body {
-            padding: 22px 15px;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(180, 230, 255, 0.8), transparent 35%),
+                radial-gradient(circle at 85% 15%, rgba(255, 240, 170, 0.75), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(200, 240, 255, 0.7), transparent 40%),
+                #f8fcff;
+
+            color: #345;
+
+            overflow-x: hidden;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
 
-        .header h1 {
-            font-size: 32px;
+        header {
+            text-align: center;
+
+            padding: 55px 20px 30px;
         }
 
+        header h1 {
+            font-size: clamp(30px, 5vw, 48px);
 
-        .header p {
+            color: #277c9f;
+
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #6c838c;
+
+            font-size: 16px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding-bottom: 40px;
+        }
+
+        /* =========================
+           UNIVERSITY HERO
+        ========================= */
+
+        .university-card {
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            border-radius: 28px;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 35px rgba(100, 180, 210, 0.13);
+
+            margin-bottom: 25px;
+
+            animation: fadeUp 0.8s ease;
+        }
+
+        .university-icon {
+            font-size: 55px;
+
+            margin-bottom: 12px;
+        }
+
+        .university-card h2 {
+            color: #347f9e;
+
+            font-size: clamp(23px, 4vw, 32px);
+
+            margin-bottom: 8px;
+        }
+
+        .nickname {
+            color: #79a7b8;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           INFO BOX
+        ========================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background: #f2fbfe;
+
+            border: 1px solid #c9eaf4;
+
+            border-radius: 18px;
+
+            padding: 20px 12px;
+        }
+
+        .info-box span {
+            display: block;
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+        .info-box small {
+            display: block;
+
+            color: #8aa0a8;
+
+            margin-bottom: 5px;
+        }
+
+        .info-box strong {
+            color: #43849e;
+
+            font-size: 16px;
+        }
+
+        /* =========================
+           CONTENT SECTION
+        ========================= */
+
+        .section {
+            background: rgba(255, 255, 255, 0.82);
+
+            border: 1px solid #c9eaf4;
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            margin-bottom: 22px;
+
+            box-shadow:
+                0 10px 25px rgba(100, 180, 210, 0.08);
+
+            animation: fadeUp 0.9s ease;
+        }
+
+        .section h3 {
+            color: #367f9d;
+
+            font-size: 22px;
+
+            margin-bottom: 13px;
+        }
+
+        .section p {
+            color: #647b84;
+
+            line-height: 1.8;
+
             font-size: 15px;
         }
 
+        /* =========================
+           GOAL
+        ========================= */
 
-        .university-card {
-            padding: 32px 20px;
+        .goal {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(235, 250, 255, 0.95),
+                    rgba(255, 250, 225, 0.9)
+                );
         }
 
-
-        .university-name {
-            font-size: 23px;
+        .goal h3 {
+            margin-bottom: 12px;
         }
 
-
-        .info-grid {
-            grid-template-columns:
-                1fr;
-        }
-
-
-        .section {
-            padding: 25px 20px;
-        }
-
-
-        .section-title {
-            font-size: 21px;
-        }
-
-
-        .interest-grid {
-            grid-template-columns:
-                repeat(2, 1fr);
-        }
-
-
-        .goal-list {
-            grid-template-columns:
-                1fr;
-        }
-
-
-        .dream-box {
-            padding: 30px 20px;
-        }
-
-
-        .dream-box h2 {
-            font-size: 23px;
-        }
-
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         .page-navigation {
-            flex-direction: column;
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 35px;
         }
 
-
-        .nav-button {
-            width: 100%;
+        .page-navigation a {
+            flex: 1;
 
             text-align: center;
+
+            text-decoration: none;
+
+            color: #397f9c;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            border: 1px solid #bfe4ef;
+
+            padding: 13px 18px;
+
+            border-radius: 20px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
         }
 
-    }
+        .page-navigation a:hover {
+            background: #e9f9fe;
 
-</style>
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(100, 180, 210, 0.15);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 20px 35px;
+
+            color: #8aa1aa;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            header {
+                padding-top: 40px;
+            }
+
+            .university-card {
+                padding: 30px 18px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 23px 20px;
+            }
+
+            .page-navigation {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -770,384 +340,152 @@
 <body>
 
 
-<div class="container">
-
-
     <!-- =========================
          HEADER
     ========================= -->
 
-    <header class="header">
+    <header>
 
-        <div class="header-icon">
-            🎓
-        </div>
-
-        <h1>
-            มหาวิทยาลัย<span>ในฝัน</span>
-        </h1>
+        <h1>🎓 มหาวิทยาลัยในฝัน</h1>
 
         <p>
-            สถานที่ที่อยากก้าวไปเรียนรู้
-            และพัฒนาตัวเองในอนาคต
+            เป้าหมายการศึกษาต่อของฉัน
         </p>
 
     </header>
 
 
 
-    <!-- =========================
-         UNIVERSITY
-    ========================= -->
+    <main class="container">
 
-    <section class="university-card">
 
-        <h2 class="university-name">
-            สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-        </h2>
+        <!-- =========================
+             UNIVERSITY
+        ========================= -->
 
-        <div class="university-short">
-            สจล. • KMITL
+        <section class="university-card">
+
+            <div class="university-icon">
+                🎓
+            </div>
+
+            <h2>
+                สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+            </h2>
+
+            <div class="nickname">
+                สจล. • KMITL
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-box">
+
+                    <span>🏫</span>
+
+                    <small>มหาวิทยาลัย</small>
+
+                    <strong>
+                        สจล. (KMITL)
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>⚙️</span>
+
+                    <small>คณะ</small>
+
+                    <strong>
+                        วิศวกรรมศาสตร์
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>🧪</span>
+
+                    <small>สาขา</small>
+
+                    <strong>
+                        วิศวกรรมเคมี
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             REASON
+        ========================= -->
+
+        <section class="section">
+
+            <h3>
+                💭 ทำไมถึงอยากเรียนที่นี่
+            </h3>
+
+            <p>
+                หนูสนใจวิชาเคมีและการทดลอง
+                จึงอยากนำความรู้ด้านวิทยาศาสตร์
+                มาต่อยอดกับงานวิศวกรรม
+                โดยเฉพาะด้านวิศวกรรมเคมี
+                ซึ่งตรงกับความสนใจและเป้าหมายในอนาคตของหนู
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             GOAL
+        ========================= -->
+
+        <section class="section goal">
+
+            <h3>
+                🎯 เป้าหมาย
+            </h3>
+
+            <p>
+                หนูตั้งใจพัฒนาความรู้และทักษะ
+                เพื่อศึกษาต่อด้านวิศวกรรมเคมี
+                และนำความรู้ไปใช้สร้างประโยชน์ในอนาคต
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             PAGE NAVIGATION
+        ========================= -->
+
+        <div class="page-navigation">
+
+            <a href="introduction.html">
+                ← คำนำ
+            </a>
+
+            <a href="about.html">
+                About Me →
+            </a>
+
         </div>
 
 
-        <div class="info-grid">
-
-
-            <div class="info-box">
-
-                <div class="info-icon">
-                    🏫
-                </div>
-
-                <div class="info-title">
-                    มหาวิทยาลัย
-                </div>
-
-                <div class="info-text">
-                    สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-icon">
-                    ⚙️
-                </div>
-
-                <div class="info-title">
-                    คณะที่ใฝ่ฝัน
-                </div>
-
-                <div class="info-text">
-                    คณะวิศวกรรมศาสตร์
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-icon">
-                    🧪
-                </div>
-
-                <div class="info-title">
-                    สาขาที่สนใจ
-                </div>
-
-                <div class="info-text">
-                    วิศวกรรมเคมี
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-icon">
-                    🎯
-                </div>
-
-                <div class="info-title">
-                    เป้าหมาย
-                </div>
-
-                <div class="info-text">
-                    พัฒนาความรู้ด้านวิศวกรรมเคมี
-                    และนำไปต่อยอดในอนาคต
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         WHY KMITL
-    ========================= -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-
-            <span>💭</span>
-
-            ทำไมถึงอยากเรียนที่นี่
-
-        </h2>
-
-
-        <p>
-
-            สนใจด้านวิทยาศาสตร์และการทดลอง
-            โดยเฉพาะเคมี และอยากนำความรู้ทางเคมี
-            มาประยุกต์ใช้ร่วมกับวิศวกรรม
-            จึงมีความสนใจที่จะศึกษาต่อในสาขาวิศวกรรมเคมี
-            ที่สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-            เพราะเป็นสาขาที่ตรงกับความสนใจ
-            และเป้าหมายในอนาคต
-
-        </p>
-
-    </section>
-
-
-
-    <!-- =========================
-         WHAT I WANT TO LEARN
-    ========================= -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-
-            <span>🧪</span>
-
-            สิ่งที่อยากเรียนรู้
-
-        </h2>
-
-
-        <div class="interest-grid">
-
-
-            <div class="interest-card">
-
-                <span class="icon">
-                    ⚗️
-                </span>
-
-                <h3>
-                    วิศวกรรมเคมี
-                </h3>
-
-                <p>
-                    เรียนรู้หลักการ
-                    และกระบวนการทางวิศวกรรมเคมี
-                </p>
-
-            </div>
-
-
-            <div class="interest-card">
-
-                <span class="icon">
-                    🏭
-                </span>
-
-                <h3>
-                    กระบวนการผลิต
-                </h3>
-
-                <p>
-                    ทำความเข้าใจการนำความรู้
-                    ไปใช้ในอุตสาหกรรม
-                </p>
-
-            </div>
-
-
-            <div class="interest-card">
-
-                <span class="icon">
-                    📐
-                </span>
-
-                <h3>
-                    การออกแบบ
-                </h3>
-
-                <p>
-                    ฝึกคิดและออกแบบ
-                    กระบวนการอย่างเป็นระบบ
-                </p>
-
-            </div>
-
-
-            <div class="interest-card">
-
-                <span class="icon">
-                    🔬
-                </span>
-
-                <h3>
-                    การทดลอง
-                </h3>
-
-                <p>
-                    พัฒนาทักษะการทดลอง
-                    และการวิเคราะห์ผล
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         GOALS
-    ========================= -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-
-            <span>🎯</span>
-
-            เป้าหมายในมหาวิทยาลัย
-
-        </h2>
-
-
-        <div class="goal-list">
-
-
-            <div class="goal-item">
-
-                <div class="goal-number">
-                    1
-                </div>
-
-                <p>
-                    ตั้งใจพัฒนาความรู้
-                    ด้านวิศวกรรมเคมีให้มากขึ้น
-                </p>
-
-            </div>
-
-
-            <div class="goal-item">
-
-                <div class="goal-number">
-                    2
-                </div>
-
-                <p>
-                    ฝึกทักษะการคิดวิเคราะห์
-                    และการแก้ปัญหาอย่างเป็นระบบ
-                </p>
-
-            </div>
-
-
-            <div class="goal-item">
-
-                <div class="goal-number">
-                    3
-                </div>
-
-                <p>
-                    พัฒนาทักษะการทดลอง
-                    และการทำโครงงาน
-                </p>
-
-            </div>
-
-
-            <div class="goal-item">
-
-                <div class="goal-number">
-                    4
-                </div>
-
-                <p>
-                    ฝึกการทำงานร่วมกับผู้อื่น
-                    และพัฒนาตัวเองอย่างต่อเนื่อง
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         FUTURE DREAM
-    ========================= -->
-
-    <section class="dream-box">
-
-        <div class="big-icon">
-            ✨
-        </div>
-
-
-        <h2>
-            ความฝันในอนาคต
-        </h2>
-
-
-        <p>
-
-            อยากนำความรู้ด้านวิศวกรรมเคมี
-            ไปใช้ในการทำงานจริง
-            และพัฒนาตัวเองให้เป็นวิศวกร
-            ที่สามารถนำความรู้ทางวิทยาศาสตร์
-            และวิศวกรรมมาสร้างประโยชน์ได้
-
-        </p>
-
-    </section>
-
-
-
-    <!-- =========================
-         PAGE NAVIGATION
-    ========================= -->
-
-    <div class="page-navigation">
-
-        <a
-            href="introduction.html"
-            class="nav-button"
-        >
-            ← คำนำ
-        </a>
-
-
-        <a
-            href="about.html"
-            class="nav-button"
-        >
-            About Me →
-        </a>
-
-    </div>
+    </main>
 
 
 
@@ -1155,14 +493,11 @@
          FOOTER
     ========================= -->
 
-    <footer class="footer">
+    <footer>
 
-        Portfolio ของ Tanitta 💙
+        ✨ Portfolio ของ Tanitta ✨
 
     </footer>
-
-
-</div>
 
 
 </body>
