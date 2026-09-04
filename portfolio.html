@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tanitta | Portfolio</title>
+    <title>Portfolio | Tanitta</title>
 
     <style>
 
@@ -22,282 +22,415 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            min-height: 100vh;
 
             background:
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(174, 228, 244, 0.45),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 80%,
-                    rgba(240, 207, 103, 0.28),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f8fbff,
-                    #fffdf2
-                );
+                radial-gradient(circle at 15% 20%, rgba(180, 230, 255, 0.8), transparent 35%),
+                radial-gradient(circle at 85% 15%, rgba(255, 240, 170, 0.75), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(200, 240, 255, 0.7), transparent 40%),
+                #f8fcff;
 
-            color: #40536b;
-            line-height: 1.7;
-            min-height: 100vh;
+            color: #345;
+            overflow-x: hidden;
         }
 
+        /* =========================
+           TOP NAVIGATION
+        ========================= */
 
-        /* ===== Navigation ===== */
-
-        nav {
+        .top-nav {
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+
+            width: 100%;
+
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(160, 220, 240, 0.45);
+
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
 
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
 
-            padding: 18px 8%;
-
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid #b9e7f5;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #55aeca;
-        }
-
-        nav a {
-            color: #5fa8c0;
+        .top-nav a {
             text-decoration: none;
-            margin-left: 22px;
+            color: #507080;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+            font-weight: 600;
+
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #d3a62a;
+        .top-nav a:hover {
+            background: #e5f7ff;
+            color: #1987b5;
+            transform: translateY(-2px);
         }
 
-
-        /* ===== Main ===== */
+        /* =========================
+           MAIN
+        ========================= */
 
         .container {
+            width: 92%;
             max-width: 1000px;
-            margin: auto;
-            padding: 70px 25px 90px;
+
+            margin: 0 auto;
+
+            padding: 60px 0 30px;
         }
 
-
-        /* ===== Intro ===== */
+        /* =========================
+           INTRO
+        ========================= */
 
         .intro {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            align-items: center;
-            gap: 45px;
-
-            max-width: 850px;
-            margin: 0 auto 70px;
+            text-align: center;
+            margin-bottom: 45px;
         }
 
-
-        /* ===== Profile Photo ===== */
-
-        .profile {
+        .profile-wrap {
             position: relative;
 
             width: 180px;
             height: 180px;
 
-            padding: 5px;
+            margin: 0 auto 25px;
 
-            border-radius: 50%;
-
-            background: linear-gradient(
-                135deg,
-                #8ed8ed,
-                #f0cf67
-            );
-
-            box-shadow:
-                0 15px 40px
-                rgba(117, 190, 220, 0.18);
-
-            animation: profileFloat 4s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-
-        /* วงเส้นประรอบรูป */
-
-        .profile::before {
-            content: '';
+        .profile-wrap::before {
+            content: "";
 
             position: absolute;
 
-            inset: -9px;
+            width: 202px;
+            height: 202px;
 
-            border: 2px dashed rgba(85, 174, 202, 0.35);
+            border: 2px dashed #8fd9ee;
 
             border-radius: 50%;
 
             animation: spin 18s linear infinite;
+
+            opacity: 0.75;
         }
 
-
-        /* ดาวด้านบนรูป */
-
-        .profile::after {
-            content: '✦';
+        .profile-wrap::after {
+            content: "";
 
             position: absolute;
 
-            top: -22px;
-            left: 18px;
+            width: 220px;
+            height: 220px;
 
-            color: #f0cf67;
+            border-radius: 50%;
 
-            font-size: 23px;
+            background: radial-gradient(
+                circle,
+                rgba(154, 225, 245, 0.35),
+                transparent 65%
+            );
 
-            animation: twinkle 2s ease-in-out infinite;
+            animation: glow 3s ease-in-out infinite;
         }
 
+        .profile {
+            position: relative;
+            z-index: 3;
 
-        .profile img {
-            width: 100%;
-            height: 100%;
+            width: 180px;
+            height: 180px;
 
             object-fit: cover;
 
             border-radius: 50%;
 
-            display: block;
+            border: 5px solid white;
 
-            border: 4px solid white;
+            box-shadow:
+                0 12px 30px rgba(100, 180, 210, 0.25);
+
+            animation: profileFloat 4s ease-in-out infinite;
         }
 
-
-        /* ===== Decorations ===== */
+        /* =========================
+           DECORATIONS
+        ========================= */
 
         .photo-deco {
             position: absolute;
 
             z-index: 5;
 
-            user-select: none;
+            font-size: 25px;
+
             pointer-events: none;
+
+            user-select: none;
         }
-
-
-        /* หัวใจ */
-
-        .photo-heart {
-            color: #e99aaa;
-
-            font-size: 28px;
-
-            text-shadow:
-                0 4px 10px
-                rgba(233, 154, 170, 0.22);
-        }
-
-
-        /* ดาว */
-
-        .photo-star {
-            color: #e8c95f;
-
-            font-size: 23px;
-
-            text-shadow:
-                0 4px 10px
-                rgba(232, 201, 95, 0.22);
-        }
-
-
-        /* หัวใจขวาบน */
 
         .heart-one {
-            top: 18px;
-            right: -25px;
+            top: 5px;
+            left: -5px;
 
-            animation:
-                floatOne 3.2s ease-in-out infinite;
+            color: #8fd8ef;
+
+            animation: floatHeart 3.5s ease-in-out infinite;
         }
 
-
-        /* หัวใจซ้ายล่าง */
-
         .heart-two {
-            bottom: 18px;
-            left: -25px;
+            right: -8px;
+            bottom: 22px;
+
+            color: #f2b9d2;
+
+            font-size: 20px;
+
+            animation: floatHeart2 4s ease-in-out infinite;
+        }
+
+        .star-one {
+            top: 28px;
+            right: -12px;
+
+            color: #f1c85b;
 
             font-size: 21px;
 
-            animation:
-                floatTwo 3.8s ease-in-out infinite;
+            animation: twinkle 2s ease-in-out infinite;
         }
-
-
-        /* ดาวซ้ายบน */
-
-        .star-one {
-            top: 48px;
-            left: -28px;
-
-            animation:
-                twinkle 2.4s ease-in-out infinite;
-        }
-
-
-        /* ดาวขวาล่าง */
 
         .star-two {
-            bottom: -10px;
-            right: 8px;
+            left: -15px;
+            bottom: 38px;
+
+            color: #75cbe5;
 
             font-size: 18px;
 
-            animation:
-                twinkle 1.8s ease-in-out infinite 0.5s;
+            animation: twinkle 2.5s ease-in-out infinite;
         }
-
-
-        /* ประกายขวาบน */
 
         .sparkle-one {
             top: -5px;
-            right: 30px;
+            left: 52px;
 
-            color: #8ed8ed;
+            color: #f2c85b;
 
             font-size: 16px;
 
-            animation:
-                twinkle 2s ease-in-out infinite 0.2s;
+            animation: twinkle 2.2s ease-in-out infinite;
         }
-
-
-        /* จุดประกายขวาล่าง */
 
         .sparkle-two {
-            bottom: 42px;
-            right: -34px;
+            right: 42px;
+            bottom: -5px;
 
-            color: #8ed8ed;
+            color: #9bdcec;
 
-            font-size: 13px;
+            font-size: 16px;
 
-            animation:
-                twinkle 2.6s ease-in-out infinite 0.8s;
+            animation: twinkle 1.8s ease-in-out infinite;
         }
 
+        .intro h1 {
+            font-size: clamp(32px, 5vw, 52px);
 
-        /* ===== Animations ===== */
+            color: #277c9f;
+
+            margin-bottom: 10px;
+        }
+
+        .intro h2 {
+            font-size: clamp(20px, 3vw, 28px);
+
+            color: #536f7c;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 650px;
+
+            margin: 0 auto 8px;
+
+            line-height: 1.8;
+
+            color: #607985;
+
+            font-size: 16px;
+        }
+
+        .dream {
+            display: inline-block;
+
+            margin-top: 14px;
+
+            padding: 9px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.75);
+
+            border: 1px solid #c4eaf5;
+
+            color: #3988a7;
+
+            font-size: 14px;
+
+            box-shadow: 0 6px 18px rgba(120, 190, 210, 0.12);
+        }
+
+        /* =========================
+           PORTFOLIO MENU
+        ========================= */
+
+        .portfolio-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: 16px;
+
+            max-width: 850px;
+
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: 65px 65px 1fr 45px;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 22px 25px;
+
+            text-decoration: none;
+
+            background: rgba(255, 255, 255, 0.84);
+
+            border: 1px solid #c8eaf4;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 25px rgba(100, 180, 210, 0.10);
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s,
+                border-color 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateX(7px);
+
+            border-color: #8bd4ea;
+
+            box-shadow:
+                0 15px 30px rgba(80, 170, 205, 0.18);
+        }
+
+        .number {
+            font-size: 18px;
+
+            color: #91b6c3;
+
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #eefaff;
+
+            font-size: 27px;
+        }
+
+        .item-content h3 {
+            color: #367f9d;
+
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .item-content p {
+            color: #71858d;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .arrow {
+            font-size: 25px;
+
+            color: #78bfd7;
+
+            transition: 0.3s;
+        }
+
+        .portfolio-item:hover .arrow {
+            transform: translateX(5px);
+            color: #2992b9;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 45px 20px 30px;
+
+            color: #8aa1aa;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
         @keyframes profileFloat {
 
@@ -307,72 +440,11 @@
             }
 
             50% {
-                transform: translateY(-6px);
+                transform: translateY(-7px);
             }
-
         }
-
-
-        @keyframes floatOne {
-
-            0%,
-            100% {
-                transform:
-                    translate(0, 0)
-                    rotate(-8deg);
-            }
-
-            50% {
-                transform:
-                    translate(5px, -10px)
-                    rotate(8deg);
-            }
-
-        }
-
-
-        @keyframes floatTwo {
-
-            0%,
-            100% {
-                transform:
-                    translate(0, 0)
-                    rotate(8deg);
-            }
-
-            50% {
-                transform:
-                    translate(-4px, -8px)
-                    rotate(-8deg);
-            }
-
-        }
-
-
-        @keyframes twinkle {
-
-            0%,
-            100% {
-                opacity: 0.45;
-
-                transform:
-                    scale(0.9)
-                    rotate(0deg);
-            }
-
-            50% {
-                opacity: 1;
-
-                transform:
-                    scale(1.2)
-                    rotate(12deg);
-            }
-
-        }
-
 
         @keyframes spin {
-
             from {
                 transform: rotate(0deg);
             }
@@ -380,670 +452,414 @@
             to {
                 transform: rotate(360deg);
             }
-
         }
 
+        @keyframes glow {
 
-        /* ===== Intro Text ===== */
+            0%,
+            100% {
+                transform: scale(0.95);
+                opacity: 0.5;
+            }
 
-        .intro-text small {
-            color: #55aeca;
-
-            font-size: 15px;
-
-            font-weight: bold;
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
         }
 
-        .intro-text h1 {
-            font-size: clamp(42px, 7vw, 68px);
+        @keyframes floatHeart {
 
-            line-height: 1.15;
+            0%,
+            100% {
+                transform: translateY(0) rotate(-8deg);
+            }
 
-            margin: 8px 0 15px;
-
-            color: #40536b;
+            50% {
+                transform: translateY(-10px) rotate(8deg);
+            }
         }
 
-        .intro-text h1 span {
-            color: #55aeca;
+        @keyframes floatHeart2 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(8deg);
+            }
+
+            50% {
+                transform: translateY(8px) rotate(-8deg);
+            }
         }
 
-        .intro-text p {
-            color: #718096;
+        @keyframes twinkle {
 
-            font-size: 17px;
+            0%,
+            100% {
+                transform: scale(0.8);
+                opacity: 0.45;
+            }
 
-            max-width: 600px;
+            50% {
+                transform: scale(1.25);
+                opacity: 1;
+            }
         }
 
-
-        /* ===== Menu Header ===== */
-
-        .menu-header {
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 18px;
-        }
-
-        .menu-number {
-            color: #55aeca;
-
-            font-family: monospace;
-
-            font-weight: bold;
-
-            font-size: 15px;
-        }
-
-        .menu-header h2 {
-            font-size: 28px;
-
-            color: #40536b;
-        }
-
-        .menu-line {
-            height: 2px;
-
-            flex: 1;
-
-            background: linear-gradient(
-                90deg,
-                #aee4f4,
-                #f0cf67
-            );
-
-            border-radius: 10px;
-        }
-
-        .menu-subtitle {
-            color: #91a0ae;
-
-            margin-bottom: 30px;
-
-            font-size: 14px;
-        }
-
-
-        /* ===== Portfolio Links ===== */
-
-        .portfolio-list {
-            background: rgba(255, 255, 255, 0.72);
-
-            border: 1px solid #b9e7f5;
-
-            border-radius: 18px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 15px 40px
-                rgba(117, 190, 220, 0.08);
-        }
-
-        .portfolio-item {
-            display: flex;
-
-            align-items: center;
-
-            gap: 22px;
-
-            padding: 22px 28px;
-
-            color: #40536b;
-
-            text-decoration: none;
-
-            border-bottom: 1px solid #e5f3f8;
-
-            transition: 0.3s;
-        }
-
-        .portfolio-item:last-child {
-            border-bottom: none;
-        }
-
-        .portfolio-item:hover {
-            background: rgba(255, 253, 243, 0.95);
-
-            padding-left: 36px;
-        }
-
-        .item-number {
-            min-width: 38px;
-
-            color: #8ecfe3;
-
-            font-family: monospace;
-
-            font-size: 14px;
-
-            font-weight: bold;
-        }
-
-        .item-icon {
-            width: 42px;
-            height: 42px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            background: #f3fbfd;
-
-            border: 1px solid #ccecf5;
-
-            border-radius: 12px;
-
-            font-size: 21px;
-        }
-
-        .item-content {
-            flex: 1;
-        }
-
-        .item-content h3 {
-            font-size: 18px;
-
-            margin-bottom: 2px;
-
-            color: #40536b;
-        }
-
-        .item-content p {
-            color: #91a0ae;
-
-            font-size: 13px;
-        }
-
-        .arrow {
-            color: #55aeca;
-
-            font-size: 22px;
-
-            transition: 0.3s;
-        }
-
-        .portfolio-item:hover .arrow {
-            transform: translateX(5px);
-
-            color: #d3a62a;
-        }
-
-
-        /* ===== Footer ===== */
-
-        footer {
-            text-align: center;
-
-            padding: 35px 20px;
-
-            border-top: 1px solid #b9e7f5;
-
-            color: #91a0ae;
-
-            font-size: 13px;
-        }
-
-
-        /* ===== Mobile ===== */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 700px) {
 
-            nav {
-                padding: 15px 20px;
+            .top-nav {
+                padding: 10px;
             }
 
-            nav div:last-child {
-                display: none;
+            .nav-container {
+                gap: 4px;
+            }
+
+            .top-nav a {
+                font-size: 12px;
+                padding: 7px 9px;
             }
 
             .container {
-                padding: 55px 20px 70px;
+                padding-top: 45px;
             }
 
-            .intro {
-                grid-template-columns: 1fr;
-
-                text-align: center;
-
-                gap: 25px;
-
-                margin-bottom: 55px;
+            .profile-wrap {
+                width: 150px;
+                height: 150px;
             }
 
             .profile {
-                width: 145px;
-                height: 145px;
-
-                margin: auto;
+                width: 150px;
+                height: 150px;
             }
 
-            .photo-heart {
-                font-size: 23px;
+            .profile-wrap::before {
+                width: 170px;
+                height: 170px;
             }
 
-            .photo-star {
-                font-size: 19px;
-            }
-
-            .heart-one {
-                right: -20px;
-            }
-
-            .heart-two {
-                left: -20px;
-            }
-
-            .star-one {
-                left: -22px;
-            }
-
-            .sparkle-two {
-                right: -25px;
-            }
-
-            .intro-text p {
-                margin: auto;
-
-                font-size: 16px;
-            }
-
-            .menu-header h2 {
-                font-size: 24px;
+            .profile-wrap::after {
+                width: 185px;
+                height: 185px;
             }
 
             .portfolio-item {
-                gap: 13px;
+                grid-template-columns: 35px 55px 1fr 25px;
 
-                padding: 18px 16px;
+                gap: 10px;
+
+                padding: 17px 14px;
+
+                border-radius: 18px;
             }
 
-            .portfolio-item:hover {
-                padding-left: 20px;
-            }
+            .icon {
+                width: 50px;
+                height: 50px;
 
-            .item-number {
-                min-width: 25px;
-            }
-
-            .item-icon {
-                width: 38px;
-                height: 38px;
-
-                font-size: 18px;
+                font-size: 23px;
             }
 
             .item-content h3 {
-                font-size: 16px;
+                font-size: 17px;
             }
 
             .item-content p {
                 font-size: 12px;
             }
 
+            .number {
+                font-size: 14px;
+            }
+
+            .arrow {
+                font-size: 20px;
+            }
+
+            .photo-deco {
+                font-size: 20px;
+            }
         }
 
     </style>
 
 </head>
 
-
 <body>
 
 
-    <!-- Navigation -->
+    <!-- =========================
+         TOP NAVIGATION
+    ========================= -->
 
-    <nav>
+    <nav class="top-nav">
 
-        <div class="logo">
-            Tanitta.
-        </div>
+        <div class="nav-container">
 
-        <div>
+            <a href="index.html">🏠 Home</a>
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="introduction.html">📖 คำนำ</a>
 
-            <a href="introduction.html">
-                คำนำ
-            </a>
+            <a href="university.html">🎓 มหาวิทยาลัย</a>
 
-            <a href="university.html">
-                มหาวิทยาลัยในฝัน
-            </a>
+            <a href="about.html">👋 About Me</a>
 
-            <a href="about.html">
-                About
-            </a>
+            <a href="projects.html">🧪 Projects</a>
 
-            <a href="projects.html">
-                Projects
-            </a>
+            <a href="skills.html">💡 Skills</a>
 
-            <a href="skills.html">
-                Skills
-            </a>
-
-            <a href="contact.html">
-                ติดต่อ
-            </a>
+            <a href="contact.html">📩 ติดต่อ</a>
 
         </div>
 
     </nav>
 
 
-    <!-- Main -->
-
     <main class="container">
 
 
-        <!-- Intro -->
+        <!-- =========================
+             INTRO
+        ========================= -->
 
         <section class="intro">
 
-
-            <!-- Profile -->
-
-            <div class="profile">
+            <div class="profile-wrap">
 
                 <img
                     src="profile.jpg"
-                    alt="Tanitta"
+                    alt="รูปโปรไฟล์ของ Tanitta"
+                    class="profile"
                 >
 
+                <span class="photo-deco heart-one">♡</span>
 
-                <!-- Decorations -->
+                <span class="photo-deco heart-two">♥</span>
 
-                <span class="photo-deco photo-heart heart-one">
-                    ♡
-                </span>
+                <span class="photo-deco star-one">★</span>
 
-                <span class="photo-deco photo-heart heart-two">
-                    ♥
-                </span>
+                <span class="photo-deco star-two">✦</span>
 
-                <span class="photo-deco photo-star star-one">
-                    ★
-                </span>
+                <span class="photo-deco sparkle-one">✧</span>
 
-                <span class="photo-deco photo-star star-two">
-                    ✦
-                </span>
-
-                <span class="photo-deco sparkle-one">
-                    ✧
-                </span>
-
-                <span class="photo-deco sparkle-two">
-                    •
-                </span>
+                <span class="photo-deco sparkle-two">✦</span>
 
             </div>
 
 
-            <!-- Intro Text -->
+            <h1>Portfolio</h1>
 
-            <div class="intro-text">
+            <h2>Hello, I'm Tanitta 👋</h2>
 
-                <small>
-                    👋 Welcome to my portfolio
-                </small>
+            <p>
+                แฟ้มสะสมผลงานที่รวบรวมตัวตน ความสนใจ
+                ผลงาน และเป้าหมายในการเรียนรู้ของฉัน
+            </p>
 
-                <h1>
-                    Hello, I'm
-                    <span>Tanitta</span>
-                </h1>
-
-                <p>
-                    นักเรียนชั้นมัธยมศึกษาปีที่ 6
-                    สายการเรียนเตรียมวิศวกรรมศาสตร์
-                    ที่สนใจด้านเคมีและคณิตศาสตร์
-                </p>
-
-            </div>
+            <span class="dream">
+                🎓 KMITL • วิศวกรรมเคมี
+            </span>
 
         </section>
 
 
-        <!-- Menu -->
 
-        <section>
+        <!-- =========================
+             PORTFOLIO MENU
+        ========================= -->
 
-            <div class="menu-header">
+        <section class="portfolio-list">
 
-                <span class="menu-number">
-                    MENU.
-                </span>
 
-                <h2>
-                    My Portfolio
-                </h2>
+            <!-- INTRODUCTION -->
 
-                <div class="menu-line"></div>
+            <a href="introduction.html" class="portfolio-item">
 
-            </div>
+                <div class="number">
+                    01
+                </div>
 
+                <div class="icon">
+                    📖
+                </div>
 
-            <p class="menu-subtitle">
-                เลือกหัวข้อที่ต้องการดู
-            </p>
+                <div class="item-content">
 
+                    <h3>คำนำ</h3>
 
-            <div class="portfolio-list">
+                    <p>
+                        ทำความรู้จักกับ Portfolio
+                        และแนวคิดในการจัดทำแฟ้มสะสมงาน
+                    </p>
 
+                </div>
 
-                <!-- 01 -->
+                <div class="arrow">
+                    →
+                </div>
 
-                <a
-                    href="introduction.html"
-                    class="portfolio-item"
-                >
+            </a>
 
-                    <span class="item-number">
-                        01
-                    </span>
 
-                    <span class="item-icon">
-                        📖
-                    </span>
 
-                    <span class="item-content">
+            <!-- UNIVERSITY -->
 
-                        <h3>
-                            คำนำ
-                        </h3>
+            <a href="university.html" class="portfolio-item">
 
-                        <p>
-                            ที่มาและจุดประสงค์ของแฟ้มสะสมผลงาน
-                        </p>
+                <div class="number">
+                    02
+                </div>
 
-                    </span>
+                <div class="icon">
+                    🎓
+                </div>
 
-                    <span class="arrow">
-                        →
-                    </span>
+                <div class="item-content">
 
-                </a>
+                    <h3>มหาวิทยาลัยในฝัน</h3>
 
+                    <p>
+                        เป้าหมายการศึกษาต่อที่ สจล.
+                        และความสนใจด้านวิศวกรรมเคมี
+                    </p>
 
-                <!-- 02 -->
+                </div>
 
-                <a
-                    href="university.html"
-                    class="portfolio-item"
-                >
+                <div class="arrow">
+                    →
+                </div>
 
-                    <span class="item-number">
-                        02
-                    </span>
+            </a>
 
-                    <span class="item-icon">
-                        🎓
-                    </span>
 
-                    <span class="item-content">
 
-                        <h3>
-                            มหาวิทยาลัยในฝัน
-                        </h3>
+            <!-- ABOUT -->
 
-                        <p>
-                            เป้าหมายในการศึกษาต่อและสาขาวิศวกรรมเคมี
-                        </p>
+            <a href="about.html" class="portfolio-item">
 
-                    </span>
+                <div class="number">
+                    03
+                </div>
 
-                    <span class="arrow">
-                        →
-                    </span>
+                <div class="icon">
+                    👋
+                </div>
 
-                </a>
+                <div class="item-content">
 
+                    <h3>About Me</h3>
 
-                <!-- 03 -->
+                    <p>
+                        ตัวตน ความสนใจ จุดเด่น
+                        และสิ่งที่กำลังพัฒนาของฉัน
+                    </p>
 
-                <a
-                    href="about.html"
-                    class="portfolio-item"
-                >
+                </div>
 
-                    <span class="item-number">
-                        03
-                    </span>
+                <div class="arrow">
+                    →
+                </div>
 
-                    <span class="item-icon">
-                        👩‍🎓
-                    </span>
+            </a>
 
-                    <span class="item-content">
 
-                        <h3>
-                            About Me
-                        </h3>
 
-                        <p>
-                            ข้อมูลเกี่ยวกับตัวฉัน ความสนใจ และเป้าหมาย
-                        </p>
+            <!-- PROJECTS -->
 
-                    </span>
+            <a href="projects.html" class="portfolio-item">
 
-                    <span class="arrow">
-                        →
-                    </span>
+                <div class="number">
+                    04
+                </div>
 
-                </a>
+                <div class="icon">
+                    🧪
+                </div>
 
+                <div class="item-content">
 
-                <!-- 04 -->
+                    <h3>Projects</h3>
 
-                <a
-                    href="projects.html"
-                    class="portfolio-item"
-                >
+                    <p>
+                        ผลงาน โครงงาน การทดลอง
+                        และสิ่งที่ได้เรียนรู้จากการลงมือทำ
+                    </p>
 
-                    <span class="item-number">
-                        04
-                    </span>
+                </div>
 
-                    <span class="item-icon">
-                        🔬
-                    </span>
+                <div class="arrow">
+                    →
+                </div>
 
-                    <span class="item-content">
+            </a>
 
-                        <h3>
-                            My Projects
-                        </h3>
 
-                        <p>
-                            โครงงาน กิจกรรม และผลงานที่ภาคภูมิใจ
-                        </p>
 
-                    </span>
+            <!-- SKILLS -->
 
-                    <span class="arrow">
-                        →
-                    </span>
+            <a href="skills.html" class="portfolio-item">
 
-                </a>
+                <div class="number">
+                    05
+                </div>
 
+                <div class="icon">
+                    💡
+                </div>
 
-                <!-- 05 -->
+                <div class="item-content">
 
-                <a
-                    href="skills.html"
-                    class="portfolio-item"
-                >
+                    <h3>Skills</h3>
 
-                    <span class="item-number">
-                        05
-                    </span>
+                    <p>
+                        ทักษะด้านการเรียน การคิดวิเคราะห์
+                        เทคโนโลยี และการทำงาน
+                    </p>
 
-                    <span class="item-icon">
-                        🧠
-                    </span>
+                </div>
 
-                    <span class="item-content">
+                <div class="arrow">
+                    →
+                </div>
 
-                        <h3>
-                            Skills & Interests
-                        </h3>
+            </a>
 
-                        <p>
-                            ทักษะ ความสามารถ และสิ่งที่สนใจ
-                        </p>
 
-                    </span>
 
-                    <span class="arrow">
-                        →
-                    </span>
+            <!-- CONTACT -->
 
-                </a>
+            <a href="contact.html" class="portfolio-item">
 
+                <div class="number">
+                    06
+                </div>
 
-                <!-- 06 -->
+                <div class="icon">
+                    📩
+                </div>
 
-                <a
-                    href="contact.html"
-                    class="portfolio-item"
-                >
+                <div class="item-content">
 
-                    <span class="item-number">
-                        06
-                    </span>
+                    <h3>ติดต่อ</h3>
 
-                    <span class="item-icon">
-                        📧
-                    </span>
+                    <p>
+                        ช่องทางสำหรับติดต่อและทำความรู้จักกันเพิ่มเติม
+                    </p>
 
-                    <span class="item-content">
+                </div>
 
-                        <h3>
-                            ติดต่อ
-                        </h3>
+                <div class="arrow">
+                    →
+                </div>
 
-                        <p>
-                            ช่องทางสำหรับติดต่อและพูดคุย
-                        </p>
+            </a>
 
-                    </span>
-
-                    <span class="arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-            </div>
 
         </section>
 
@@ -1051,18 +867,19 @@
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
-        <p>
-            Designed & Built by
-            <strong>Tanitta</strong>
-        </p>
+        ✨ Portfolio ของ Tanitta ✨
+        <br>
 
-        <p>
-            © 2026 Tanitta
-        </p>
+        <span>
+            Dream • Learn • Create
+        </span>
 
     </footer>
 
