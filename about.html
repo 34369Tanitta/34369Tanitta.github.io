@@ -10,394 +10,1634 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Tanitta | About Me</title>
+    <title>About Me | Tanitta</title>
 
-    <style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* =========================
+       RESET
+    ========================= */
 
-        body {
-            font-family: Arial, sans-serif;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(174, 228, 244, 0.55),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 85% 75%,
-                    rgba(240, 207, 103, 0.35),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f8fbff,
-                    #fffdf2
-                );
 
-            color: #40536b;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
+    /* =========================
+       BODY
+    ========================= */
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+    body {
+        font-family: Arial, sans-serif;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 18px 8%;
-
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid #b9e7f5;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #55aeca;
-        }
-
-        nav a {
-            color: #5fa8c0;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #d3a62a;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .section-number {
-            color: #55aeca;
-            font-family: monospace;
-            font-weight: bold;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #40536b;
-        }
-
-        .section-line {
-            height: 3px;
-            flex: 1;
-
-            background: linear-gradient(
-                90deg,
-                #aee4f4,
-                #f0cf67
+        background:
+            radial-gradient(
+                circle at top left,
+                #dff6ff 0%,
+                #fff4c7 42%,
+                #f8fbff 100%
             );
 
-            border-radius: 10px;
+        color: #40536b;
+
+        min-height: 100vh;
+
+        padding: 35px 20px;
+    }
+
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+
+        margin: auto;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+        text-align: center;
+
+        margin-bottom: 40px;
+
+        animation: fadeDown 0.8s ease;
+    }
+
+
+    .header-icon {
+        font-size: 45px;
+
+        display: inline-block;
+
+        animation:
+            floatIcon 3s ease-in-out infinite;
+    }
+
+
+    .header h1 {
+        font-size: 42px;
+
+        margin-top: 10px;
+        margin-bottom: 12px;
+
+        color: #40536b;
+    }
+
+
+    .header h1 span {
+        color: #55aeca;
+
+        text-shadow:
+            0 0 15px
+            rgba(85, 174, 202, 0.25);
+    }
+
+
+    .header p {
+        color: #718096;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       PROFILE CARD
+    ========================= */
+
+    .profile-card {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns:
+            260px 1fr;
+
+        gap: 40px;
+
+        align-items: center;
+
+        background:
+            rgba(255, 255, 255, 0.9);
+
+        border: 2px solid #b9e7f5;
+
+        border-radius: 28px;
+
+        padding: 40px;
+
+        margin-bottom: 25px;
+
+        box-shadow:
+            0 20px 60px
+            rgba(117, 190, 220, 0.18);
+
+        overflow: hidden;
+
+        animation: fadeUp 0.9s ease;
+    }
+
+
+    .profile-card::before {
+        content: "✦";
+
+        position: absolute;
+
+        top: 18px;
+        left: 25px;
+
+        color: #e4c65d;
+
+        font-size: 22px;
+
+        animation:
+            twinkle 2s ease-in-out infinite;
+    }
+
+
+    .profile-card::after {
+        content: "✧";
+
+        position: absolute;
+
+        right: 25px;
+        bottom: 18px;
+
+        color: #7fcfe5;
+
+        font-size: 24px;
+
+        animation:
+            twinkle 2.5s ease-in-out infinite 0.5s;
+    }
+
+
+    /* =========================
+       PROFILE IMAGE
+    ========================= */
+
+    .profile-wrap {
+        position: relative;
+
+        width: 210px;
+        height: 210px;
+
+        margin: auto;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .profile {
+        width: 180px;
+        height: 180px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border: 5px solid #aee4f4;
+
+        box-shadow:
+            0 0 0 7px #fff7d6,
+            0 0 35px
+            rgba(117, 190, 220, 0.3);
+
+        display: block;
+
+        animation:
+            profileFloat 4s ease-in-out infinite;
+
+        transition: 0.3s;
+    }
+
+
+    .profile:hover {
+        transform: scale(1.05);
+    }
+
+
+    /* วงกลมเส้นประ */
+
+    .profile-wrap::before {
+        content: "";
+
+        position: absolute;
+
+        width: 205px;
+        height: 205px;
+
+        border-radius: 50%;
+
+        border: 2px dashed
+            rgba(85, 174, 202, 0.45);
+
+        animation:
+            spin 12s linear infinite;
+    }
+
+
+    /* แสงรอบรูป */
+
+    .profile-wrap::after {
+        content: "";
+
+        position: absolute;
+
+        width: 220px;
+        height: 220px;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(174, 228, 244, 0.18),
+                transparent 65%
+            );
+
+        animation:
+            glow 3s ease-in-out infinite;
+
+        z-index: -1;
+    }
+
+
+    /* =========================
+       PROFILE DECORATIONS
+    ========================= */
+
+    .deco {
+        position: absolute;
+
+        z-index: 5;
+
+        pointer-events: none;
+    }
+
+
+    .heart {
+        color: #e89aaa;
+
+        text-shadow:
+            0 4px 12px
+            rgba(232, 154, 170, 0.25);
+    }
+
+
+    .star {
+        color: #e4c65d;
+
+        text-shadow:
+            0 4px 12px
+            rgba(228, 198, 93, 0.25);
+    }
+
+
+    .heart-1 {
+        top: 12px;
+        right: -2px;
+
+        font-size: 27px;
+
+        animation:
+            floatHeart 3s ease-in-out infinite;
+    }
+
+
+    .heart-2 {
+        bottom: 15px;
+        left: -2px;
+
+        font-size: 21px;
+
+        animation:
+            floatHeart2 3.5s ease-in-out infinite;
+    }
+
+
+    .star-1 {
+        top: 55px;
+        left: -3px;
+
+        font-size: 21px;
+
+        animation:
+            twinkle 2s ease-in-out infinite;
+    }
+
+
+    .star-2 {
+        bottom: 20px;
+        right: 5px;
+
+        font-size: 19px;
+
+        animation:
+            twinkle 2.3s ease-in-out infinite 0.5s;
+    }
+
+
+    /* =========================
+       PROFILE TEXT
+    ========================= */
+
+    .profile-text h2 {
+        color: #55aeca;
+
+        font-size: 30px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .profile-text .nickname {
+        color: #d3a62a;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        margin-bottom: 20px;
+    }
+
+
+    .profile-text p {
+        color: #718096;
+
+        font-size: 16px;
+
+        line-height: 1.9;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+        background:
+            rgba(255, 255, 255, 0.9);
+
+        border: 2px solid #b9e7f5;
+
+        border-radius: 24px;
+
+        padding: 32px;
+
+        margin-bottom: 25px;
+
+        box-shadow:
+            0 12px 35px
+            rgba(117, 190, 220, 0.12);
+
+        animation:
+            fadeUp 1s ease;
+    }
+
+
+    .section-title {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        color: #40536b;
+
+        font-size: 25px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .section-title span {
+        color: #55aeca;
+    }
+
+
+    .section > p {
+        color: #718096;
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    /* =========================
+       PERSONAL INFO
+    ========================= */
+
+    .info-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 17px;
+    }
+
+
+    .info-box {
+        background: #f8fcff;
+
+        border: 1.5px solid #d5edf5;
+
+        border-radius: 18px;
+
+        padding: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .info-box:hover {
+        transform: translateY(-5px);
+
+        border-color: #aee4f4;
+
+        box-shadow:
+            0 10px 25px
+            rgba(117, 190, 220, 0.14);
+    }
+
+
+    .info-icon {
+        font-size: 28px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .info-title {
+        color: #55aeca;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        margin-bottom: 7px;
+    }
+
+
+    .info-text {
+        color: #718096;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       INTEREST
+    ========================= */
+
+    .interest-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 17px;
+    }
+
+
+    .interest-card {
+        text-align: center;
+
+        background: #f8fcff;
+
+        border: 1.5px solid #d5edf5;
+
+        border-radius: 18px;
+
+        padding: 25px 15px;
+
+        transition: 0.3s;
+    }
+
+
+    .interest-card:hover {
+        transform: translateY(-7px);
+
+        box-shadow:
+            0 12px 28px
+            rgba(117, 190, 220, 0.15);
+    }
+
+
+    .interest-card .icon {
+        display: block;
+
+        font-size: 35px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .interest-card h3 {
+        color: #55aeca;
+
+        font-size: 17px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .interest-card p {
+        color: #718096;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       STRENGTHS
+    ========================= */
+
+    .strength-list {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .strength {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        background: #f8fcff;
+
+        border: 1.5px solid #d5edf5;
+
+        border-radius: 16px;
+
+        padding: 17px;
+
+        transition: 0.3s;
+    }
+
+
+    .strength:hover {
+        transform: translateX(5px);
+
+        border-color: #aee4f4;
+    }
+
+
+    .strength-icon {
+        min-width: 40px;
+        height: 40px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #fff7d6;
+
+        font-size: 20px;
+    }
+
+
+    .strength p {
+        color: #718096;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       DEVELOPMENT
+    ========================= */
+
+    .development {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .development-box {
+        background:
+            linear-gradient(
+                135deg,
+                #f8fcff,
+                #fffdf3
+            );
+
+        border: 1.5px solid #d5edf5;
+
+        border-radius: 17px;
+
+        padding: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .development-box:hover {
+        transform: translateY(-5px);
+    }
+
+
+    .development-box h3 {
+        color: #d3a62a;
+
+        font-size: 16px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .development-box p {
+        color: #718096;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       GOAL
+    ========================= */
+
+    .goal-box {
+        text-align: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(223, 246, 255, 0.9),
+                rgba(255, 247, 214, 0.9)
+            );
+
+        border: 2px solid #b9e7f5;
+
+        border-radius: 24px;
+
+        padding: 35px 30px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .goal-icon {
+        font-size: 45px;
+
+        display: inline-block;
+
+        margin-bottom: 12px;
+
+        animation:
+            floatIcon 3s ease-in-out infinite;
+    }
+
+
+    .goal-box h2 {
+        color: #40536b;
+
+        font-size: 27px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .goal-box p {
+        color: #718096;
+
+        max-width: 760px;
+
+        margin: auto;
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+        text-align: center;
+
+        color: #55aeca;
+
+        font-size: 18px;
+
+        font-weight: bold;
+
+        margin-top: 20px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .page-navigation {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 15px;
+
+        margin-top: 30px;
+    }
+
+
+    .nav-button {
+        display: inline-block;
+
+        padding: 13px 24px;
+
+        background: #ffffff;
+
+        border: 2px solid #b9e7f5;
+
+        border-radius: 14px;
+
+        color: #55aeca;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+
+        box-shadow:
+            0 7px 20px
+            rgba(117, 190, 220, 0.12);
+    }
+
+
+    .nav-button:hover {
+        background: #8ed8ed;
+
+        color: white;
+
+        border-color: #8ed8ed;
+
+        transform: translateY(-4px);
+
+        box-shadow:
+            0 10px 25px
+            rgba(117, 190, 220, 0.25);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+        text-align: center;
+
+        margin-top: 35px;
+
+        color: #91a0ae;
+
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeDown {
+
+        from {
+            opacity: 0;
+
+            transform:
+                translateY(-20px);
         }
 
-        .about {
-            background: rgba(255, 255, 255, 0.88);
+        to {
+            opacity: 1;
 
-            border: 2px solid #b9e7f5;
-
-            padding: 35px;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 10px 35px
-                rgba(117, 190, 220, 0.12);
-
-            transition: 0.3s;
+            transform:
+                translateY(0);
         }
 
-        .about:hover {
-            transform: translateY(-3px);
+    }
 
-            border-color: #8ed8ed;
 
-            box-shadow:
-                0 15px 40px
-                rgba(117, 190, 220, 0.18);
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+
+            transform:
+                translateY(25px);
         }
 
-        .about p {
-            color: #718096;
-            margin-bottom: 18px;
+        to {
+            opacity: 1;
+
+            transform:
+                translateY(0);
         }
 
-        .about strong {
-            color: #d3a62a;
+    }
+
+
+    @keyframes profileFloat {
+
+        0%,
+        100% {
+            transform:
+                translateY(0);
         }
+
+        50% {
+            transform:
+                translateY(-6px);
+        }
+
+    }
+
+
+    @keyframes floatIcon {
+
+        0%,
+        100% {
+            transform:
+                translateY(0)
+                rotate(-3deg);
+        }
+
+        50% {
+            transform:
+                translateY(-8px)
+                rotate(3deg);
+        }
+
+    }
+
+
+    @keyframes spin {
+
+        from {
+            transform:
+                rotate(0deg);
+        }
+
+        to {
+            transform:
+                rotate(360deg);
+        }
+
+    }
+
+
+    @keyframes glow {
+
+        0%,
+        100% {
+            opacity: 0.5;
+
+            transform:
+                scale(0.95);
+        }
+
+        50% {
+            opacity: 1;
+
+            transform:
+                scale(1.05);
+        }
+
+    }
+
+
+    @keyframes floatHeart {
+
+        0%,
+        100% {
+            transform:
+                translate(0, 0)
+                rotate(-8deg);
+        }
+
+        50% {
+            transform:
+                translate(5px, -10px)
+                rotate(8deg);
+        }
+
+    }
+
+
+    @keyframes floatHeart2 {
+
+        0%,
+        100% {
+            transform:
+                translate(0, 0)
+                rotate(8deg);
+        }
+
+        50% {
+            transform:
+                translate(-5px, -8px)
+                rotate(-8deg);
+        }
+
+    }
+
+
+    @keyframes twinkle {
+
+        0%,
+        100% {
+            opacity: 0.4;
+
+            transform:
+                scale(0.8)
+                rotate(0deg);
+        }
+
+        50% {
+            opacity: 1;
+
+            transform:
+                scale(1.25)
+                rotate(15deg);
+        }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+        body {
+            padding: 22px 15px;
+        }
+
+
+        .header h1 {
+            font-size: 32px;
+        }
+
+
+        .header p {
+            font-size: 15px;
+        }
+
+
+        .profile-card {
+            grid-template-columns: 1fr;
+
+            gap: 25px;
+
+            padding: 32px 22px;
+
+            text-align: center;
+        }
+
+
+        .profile-wrap {
+            width: 190px;
+            height: 190px;
+        }
+
 
         .profile {
-            width: 150px;
-            height: 150px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            display: block;
-            margin: 0 auto 25px;
-
-            border: 5px solid #aee4f4;
-
-            box-shadow:
-                0 0 0 6px #fff7d6,
-                0 0 30px rgba(117, 190, 220, 0.3);
+            width: 165px;
+            height: 165px;
         }
 
-        .info {
-            margin-top: 25px;
-            padding: 20px;
 
-            background: #fffdf3;
-
-            border-radius: 12px;
-
-            border-left: 5px solid #8ed8ed;
+        .profile-wrap::before {
+            width: 185px;
+            height: 185px;
         }
 
-        .info p {
-            margin-bottom: 8px;
+
+        .profile-text h2 {
+            font-size: 26px;
         }
+
+
+        .profile-text p {
+            font-size: 15px;
+        }
+
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+
+        .interest-grid {
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .strength-list {
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .development {
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .section {
+            padding: 25px 20px;
+        }
+
+
+        .section-title {
+            font-size: 21px;
+        }
+
+
+        .goal-box {
+            padding: 30px 20px;
+        }
+
+
+        .goal-box h2 {
+            font-size: 23px;
+        }
+
 
         .page-navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            margin-top: 30px;
-            gap: 20px;
+            flex-direction: column;
         }
 
-        .page-navigation a {
-            display: inline-block;
 
-            padding: 12px 25px;
+        .nav-button {
+            width: 100%;
 
-            background: #8ed8ed;
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            transition: 0.3s;
-        }
-
-        .page-navigation a:hover {
-            background: #f0cf67;
-            color: #40536b;
-            transform: translateY(-3px);
-        }
-
-        footer {
             text-align: center;
-
-            padding: 40px 20px;
-
-            border-top: 1px solid #b9e7f5;
-
-            color: #91a0ae;
-
-            font-size: 13px;
         }
 
-        @media (max-width: 600px) {
+    }
 
-            nav {
-                padding: 15px 20px;
-            }
-
-            nav div:last-child {
-                display: none;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            .page-navigation {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .page-navigation a {
-                text-align: center;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
 
 <body>
 
-    <nav>
 
-        <div class="logo">
-            Tanitta.
+<div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="header-icon">
+            👋
         </div>
 
-        <div>
+        <h1>
+            About <span>Me</span>
+        </h1>
 
-            <a href="index.html">
-                Home
-            </a>
+        <p>
+            ทำความรู้จักตัวตน ความสนใจ
+            และเป้าหมายของฉัน
+        </p>
 
-            <a href="portfolio.html">
-                Portfolio
-            </a>
-
-        </div>
-
-    </nav>
+    </header>
 
 
-    <main class="container">
 
-        <div class="section-title">
+    <!-- =========================
+         PROFILE
+    ========================= -->
 
-            <span class="section-number">
-                03.
-            </span>
-
-            <h1>
-                About Me
-            </h1>
-
-            <div class="section-line"></div>
-
-        </div>
+    <section class="profile-card">
 
 
-        <div class="about">
+        <div class="profile-wrap">
 
             <img
                 src="profile.jpg"
-                alt="Tanitta"
+                alt="รูปโปรไฟล์ของธนิษฐา"
                 class="profile"
             >
 
-            <p>
-                สวัสดีค่ะ! ฉันชื่อ
-                <strong>ธนิษฐา ว่องไว (Tanitta Wongwai)</strong>
-            </p>
 
-            <p>
-                ปัจจุบันกำลังศึกษาอยู่ชั้น
-                <strong>
-                    มัธยมศึกษาปีที่ 6
-                    สายการเรียนเตรียมวิศวกรรมศาสตร์
-                </strong>
-            </p>
+            <span class="deco heart heart-1">
+                ♡
+            </span>
 
-            <p>
-                มีความสนใจในด้าน
-                <strong>เคมีและคณิตศาสตร์</strong>
-                และชอบการเรียนรู้จากการทดลอง
-                และการลงมือทำจริง
-            </p>
+            <span class="deco heart heart-2">
+                ♥
+            </span>
 
-            <p>
-                ในอนาคตมีความตั้งใจที่จะศึกษาต่อใน
-                <strong>
-                    คณะวิศวกรรมศาสตร์
-                    สาขาวิศวกรรมเคมี
-                </strong>
-                และนำความรู้ที่ได้ไปต่อยอด
-                ในการเรียนและการทำงานต่อไป
-            </p>
+            <span class="deco star star-1">
+                ★
+            </span>
 
-
-            <div class="info">
-
-                <p>
-                    🎓 ระดับการศึกษา:
-                    มัธยมศึกษาปีที่ 6
-                </p>
-
-                <p>
-                    📚 สายการเรียน:
-                    เตรียมวิศวกรรมศาสตร์
-                </p>
-
-                <p>
-                    🧪 ความสนใจ:
-                    เคมีและการทดลอง
-                </p>
-
-                <p>
-                    📐 วิชาที่สนใจ:
-                    คณิตศาสตร์
-                </p>
-
-                <p>
-                    🎯 เป้าหมาย:
-                    วิศวกรรมเคมี
-                </p>
-
-            </div>
-
-
-            <div class="page-navigation">
-
-                <a href="university.html">
-                    ← มหาวิทยาลัยในฝัน
-                </a>
-
-                <a href="projects.html">
-                    Projects →
-                </a>
-
-            </div>
+            <span class="deco star star-2">
+                ✦
+            </span>
 
         </div>
 
-    </main>
 
 
-    <footer>
+        <div class="profile-text">
+
+            <h2>
+                สวัสดีค่ะ ฉันชื่อ ธนิษฐา
+            </h2>
+
+            <div class="nickname">
+                นักเรียนชั้นมัธยมศึกษาปีที่ 6
+            </div>
+
+            <p>
+                ฉันเป็นนักเรียนสายการเรียน
+                เตรียมวิศวกรรมศาสตร์
+                ที่มีความสนใจด้านวิทยาศาสตร์
+                โดยเฉพาะเคมีและการทดลอง
+            </p>
+
+            <p>
+                ฉันชอบเรียนรู้สิ่งใหม่ ๆ
+                และสนใจการนำความรู้ทางวิทยาศาสตร์
+                มาประยุกต์ใช้เพื่อแก้ปัญหา
+                และต่อยอดให้เกิดประโยชน์
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         PERSONAL INFORMATION
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+
+            <span>🙋‍♀️</span>
+
+            เกี่ยวกับฉัน
+
+        </h2>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    📚
+                </div>
+
+                <div class="info-title">
+                    การศึกษา
+                </div>
+
+                <div class="info-text">
+                    นักเรียนชั้นมัธยมศึกษาปีที่ 6
+                    สายการเรียนเตรียมวิศวกรรมศาสตร์
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🧪
+                </div>
+
+                <div class="info-title">
+                    ความสนใจ
+                </div>
+
+                <div class="info-text">
+                    สนใจคณิตศาสตร์ เคมี
+                    และการทดลองทางวิทยาศาสตร์
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🔬
+                </div>
+
+                <div class="info-title">
+                    สิ่งที่ชอบ
+                </div>
+
+                <div class="info-text">
+                    การทดลอง การค้นคว้า
+                    และการเรียนรู้สิ่งใหม่ ๆ
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🎓
+                </div>
+
+                <div class="info-title">
+                    เป้าหมายการศึกษา
+                </div>
+
+                <div class="info-text">
+                    ศึกษาต่อด้านวิศวกรรมเคมี
+                    และพัฒนาความรู้ให้มากขึ้น
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTEREST
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+
+            <span>💙</span>
+
+            สิ่งที่ฉันสนใจ
+
+        </h2>
+
+
+        <div class="interest-grid">
+
+
+            <div class="interest-card">
+
+                <span class="icon">
+                    📐
+                </span>
+
+                <h3>
+                    คณิตศาสตร์
+                </h3>
+
+                <p>
+                    สนุกกับการคิดวิเคราะห์
+                    และการแก้โจทย์อย่างเป็นขั้นตอน
+                </p>
+
+            </div>
+
+
+            <div class="interest-card">
+
+                <span class="icon">
+                    🧪
+                </span>
+
+                <h3>
+                    เคมี
+                </h3>
+
+                <p>
+                    สนใจการเปลี่ยนแปลงของสาร
+                    และการนำความรู้ไปประยุกต์ใช้
+                </p>
+
+            </div>
+
+
+            <div class="interest-card">
+
+                <span class="icon">
+                    🔬
+                </span>
+
+                <h3>
+                    การทดลอง
+                </h3>
+
+                <p>
+                    ชอบการเรียนรู้ผ่านการทดลอง
+                    และการสังเกตผลที่เกิดขึ้น
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STRENGTHS
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+
+            <span>✨</span>
+
+            จุดเด่นของฉัน
+
+        </h2>
+
+
+        <div class="strength-list">
+
+
+            <div class="strength">
+
+                <div class="strength-icon">
+                    💡
+                </div>
+
+                <p>
+                    มีความอยากรู้อยากเห็น
+                    และพร้อมเรียนรู้สิ่งใหม่
+                </p>
+
+            </div>
+
+
+            <div class="strength">
+
+                <div class="strength-icon">
+                    🧠
+                </div>
+
+                <p>
+                    ชอบคิดวิเคราะห์
+                    และหาวิธีแก้ปัญหา
+                </p>
+
+            </div>
+
+
+            <div class="strength">
+
+                <div class="strength-icon">
+                    🔍
+                </div>
+
+                <p>
+                    สนใจรายละเอียด
+                    และเรียนรู้จากการทดลอง
+                </p>
+
+            </div>
+
+
+            <div class="strength">
+
+                <div class="strength-icon">
+                    🌱
+                </div>
+
+                <p>
+                    พร้อมพัฒนาตัวเอง
+                    และเรียนรู้จากข้อผิดพลาด
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DEVELOPMENT
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+
+            <span>🌱</span>
+
+            สิ่งที่กำลังพัฒนา
+
+        </h2>
+
+
+        <div class="development">
+
+
+            <div class="development-box">
+
+                <h3>
+                    📖 ความรู้
+                </h3>
+
+                <p>
+                    พัฒนาความรู้ด้านคณิตศาสตร์
+                    วิทยาศาสตร์ และเคมี
+                    เพื่อเตรียมพร้อมสำหรับการศึกษาต่อ
+                </p>
+
+            </div>
+
+
+            <div class="development-box">
+
+                <h3>
+                    🗣️ การสื่อสาร
+                </h3>
+
+                <p>
+                    ฝึกการสื่อสารและการนำเสนอ
+                    เพื่อสามารถถ่ายทอดความคิด
+                    ให้ผู้อื่นเข้าใจได้ง่ายขึ้น
+                </p>
+
+            </div>
+
+
+            <div class="development-box">
+
+                <h3>
+                    💻 ทักษะดิจิทัล
+                </h3>
+
+                <p>
+                    เรียนรู้การใช้เทคโนโลยี
+                    และเครื่องมือดิจิทัล
+                    เพื่อนำมาประยุกต์ใช้ในการเรียน
+                </p>
+
+            </div>
+
+
+            <div class="development-box">
+
+                <h3>
+                    🤝 การทำงานร่วมกัน
+                </h3>
+
+                <p>
+                    ฝึกการทำงานเป็นทีม
+                    การแบ่งหน้าที่
+                    และการรับฟังความคิดเห็นของผู้อื่น
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GOAL
+    ========================= -->
+
+    <section class="goal-box">
+
+        <div class="goal-icon">
+            🎯
+        </div>
+
+
+        <h2>
+            เป้าหมายของฉัน
+        </h2>
+
 
         <p>
-            Designed & Built by
-            <strong>Tanitta</strong>
+
+            ฉันตั้งใจศึกษาต่อในสาขาวิศวกรรมเคมี
+            ที่สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+            และอยากพัฒนาความรู้ ความสามารถ
+            รวมถึงประสบการณ์ต่าง ๆ
+            เพื่อเตรียมตัวสำหรับการเรียนและการทำงานในอนาคต
+
         </p>
 
-        <p>
-            © 2026 Tanitta
-        </p>
+
+        <div class="quote">
+
+            “เรียนรู้วันนี้ เพื่อสร้างอนาคตที่อยากเป็น” ✨
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <div class="page-navigation">
+
+        <a
+            href="university.html"
+            class="nav-button"
+        >
+            ← มหาวิทยาลัยในฝัน
+        </a>
+
+
+        <a
+            href="projects.html"
+            class="nav-button"
+        >
+            Projects →
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        Portfolio ของ Tanitta 💙
 
     </footer>
+
+
+</div>
+
 
 </body>
 
