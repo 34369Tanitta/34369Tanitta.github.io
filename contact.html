@@ -17,196 +17,317 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(174, 228, 244, 0.55),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 85% 75%,
-                    rgba(240, 207, 103, 0.35),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f8fbff,
-                    #fffdf2
-                );
-
-            color: #40536b;
-            line-height: 1.7;
-            min-height: 100vh;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at top left, #dff7ff, transparent 45%),
+                radial-gradient(circle at bottom right, #fff5b8, transparent 45%),
+                linear-gradient(135deg, #bfeeff, #fffbdc);
+
+            color: #24506b;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            padding: 18px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.82);
 
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid #b9e7f5;
+            border-bottom: 1px solid rgba(130, 210, 235, 0.5);
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 25px;
             font-weight: bold;
-            color: #55aeca;
+            color: #2588b5;
         }
 
-        nav a {
-            color: #5fa8c0;
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            margin-left: 20px;
+
+            color: #39728d;
+
+            font-weight: bold;
+
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #d3a62a;
+        .nav-links a:hover {
+            color: #1684b5;
+
+            transform: translateY(-2px);
         }
+
+
+        /* ================= CONTAINER ================= */
 
         .container {
+            width: 90%;
             max-width: 900px;
-            margin: auto;
-            padding: 80px 20px;
+
+            margin: 55px auto;
         }
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 35px;
-        }
 
-        .section-number {
-            color: #55aeca;
-            font-family: monospace;
-            font-weight: bold;
-        }
+        /* ================= CARD ================= */
 
-        h1 {
-            font-size: 36px;
-            color: #40536b;
-        }
-
-        .section-line {
-            height: 3px;
-            flex: 1;
-
-            background: linear-gradient(
-                90deg,
-                #aee4f4,
-                #f0cf67
-            );
-
-            border-radius: 10px;
-        }
-
-        .contact-box {
+        .card {
             background: rgba(255, 255, 255, 0.88);
 
             border: 2px solid #b9e7f5;
 
-            padding: 35px;
+            border-radius: 28px;
 
-            border-radius: 18px;
+            padding: 45px 35px;
 
             box-shadow:
-                0 10px 35px
-                rgba(117, 190, 220, 0.12);
+                0 20px 50px rgba(65, 170, 205, 0.18);
         }
 
-        .contact-box p {
-            color: #718096;
-            margin-bottom: 20px;
+
+        /* ================= TITLE ================= */
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 35px;
         }
 
-        .contact-box a {
-            color: #55aeca;
-            text-decoration: none;
+        .section-title .number {
+            display: block;
+
+            font-size: 18px;
+
             font-weight: bold;
+
+            color: #64bad7;
+
+            margin-bottom: 8px;
         }
 
-        .contact-box a:hover {
-            color: #d3a62a;
-            text-decoration: underline;
+        .section-title h1 {
+            font-size: 40px;
+
+            color: #267fa5;
+
+            margin-bottom: 10px;
         }
 
-        .contact-item {
-            padding: 18px;
+        .section-title p {
+            color: #6c9bad;
 
-            margin-top: 15px;
-
-            background: #fffdf3;
-
-            border-radius: 12px;
-
-            border-left: 5px solid #8ed8ed;
+            font-size: 17px;
         }
 
-        /* ปุ่มนำทางด้านล่าง */
 
-        .page-navigation {
+        /* ================= CONTACT ================= */
+
+        .contact-list {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
 
-            margin-top: 35px;
+            flex-direction: column;
 
             gap: 20px;
         }
 
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 22px;
+
+            background: rgba(239, 251, 255, 0.9);
+
+            border: 2px solid #c5ebf6;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 25px rgba(60, 160, 195, 0.15);
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-shrink: 0;
+
+            background: white;
+
+            border-radius: 16px;
+
+            font-size: 27px;
+
+            box-shadow:
+                0 5px 15px rgba(60, 160, 195, 0.12);
+        }
+
+        .contact-text h2 {
+            font-size: 19px;
+
+            color: #287fa2;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: #648b9a;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= PAGE NAVIGATION ================= */
+
+        .page-navigation {
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
         .page-navigation a {
-            display: inline-block;
+            flex: 1;
 
-            padding: 12px 25px;
+            display: flex;
 
-            background: #8ed8ed;
+            justify-content: center;
 
-            color: white !important;
+            align-items: center;
 
-            text-decoration: none !important;
+            min-height: 58px;
 
-            border-radius: 8px;
+            padding: 15px 25px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 2px solid #b9e7f5;
+
+            border-radius: 20px;
+
+            color: #2584aa;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 17px;
+
+            box-shadow:
+                0 8px 20px rgba(70, 160, 195, 0.15);
 
             transition: 0.3s;
         }
 
         .page-navigation a:hover {
-            background: #f0cf67;
+            transform: translateY(-4px);
 
-            color: #40536b !important;
+            background: rgba(255, 255, 255, 0.98);
 
-            transform: translateY(-3px);
+            box-shadow:
+                0 14px 28px rgba(70, 160, 195, 0.23);
         }
+
+
+        /* ================= FOOTER ================= */
 
         footer {
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 30px 20px;
 
-            border-top: 1px solid #b9e7f5;
+            color: #6494a5;
 
-            color: #91a0ae;
-
-            font-size: 13px;
+            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .container {
+                width: 92%;
+
+                margin: 35px auto;
+            }
+
+            .card {
+                padding: 35px 20px;
+            }
+
+            .section-title h1 {
+                font-size: 32px;
+            }
+
+            .contact-item {
+                padding: 18px;
+            }
 
             .page-navigation {
                 flex-direction: column;
-                align-items: stretch;
             }
 
             .page-navigation a {
-                text-align: center;
+                width: 100%;
             }
 
         }
@@ -218,13 +339,16 @@
 
 <body>
 
+
+    <!-- ================= NAVBAR ================= -->
+
     <nav>
 
         <div class="logo">
             Tanitta.
         </div>
 
-        <div>
+        <div class="nav-links">
 
             <a href="index.html">
                 Home
@@ -239,91 +363,133 @@
     </nav>
 
 
+    <!-- ================= CONTENT ================= -->
+
     <main class="container">
 
-        <div class="section-title">
 
-            <span class="section-number">
-                06.
-            </span>
+        <section class="card">
 
-            <h1>
-                ติดต่อ
-            </h1>
 
-            <div class="section-line"></div>
+            <div class="section-title">
+
+                <span class="number">
+                    06.
+                </span>
+
+                <h1>
+                    ติดต่อ
+                </h1>
+
+                <p>
+                    Contact Me
+                </p>
+
+            </div>
+
+
+            <div class="contact-list">
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <div class="contact-text">
+
+                        <h2>
+                            Email
+                        </h2>
+
+                        <p>
+                            ช่องทางสำหรับติดต่อและพูดคุย
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📱
+                    </div>
+
+                    <div class="contact-text">
+
+                        <h2>
+                            Phone
+                        </h2>
+
+                        <p>
+                            สามารถติดต่อสอบถามเพิ่มเติมได้
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        💻
+                    </div>
+
+                    <div class="contact-text">
+
+                        <h2>
+                            Portfolio
+                        </h2>
+
+                        <p>
+                            ดูผลงานและข้อมูลเพิ่มเติมของฉันได้ที่ Portfolio
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= PAGE NAVIGATION ================= -->
+
+        <div class="page-navigation">
+
+            <a href="skills.html">
+                ← Skills
+            </a>
+
+            <a href="index.html">
+                🏠 กลับหน้า Home
+            </a>
 
         </div>
 
-
-        <div class="contact-box">
-
-            <p>
-                หากต้องการติดต่อหรือพูดคุยเกี่ยวกับ Portfolio
-                และผลงานต่าง ๆ สามารถติดต่อได้ทางช่องทางด้านล่างค่ะ
-            </p>
-
-
-            <div class="contact-item">
-
-                <p>
-                    📧 อีเมล
-                </p>
-
-                <a href="mailto:tanitta231251@email.com">
-                    tanitta231251@email.com
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <p>
-                    📷 Instagram
-                </p>
-
-                <a
-                    href="https://www.instagram.com/tanittttttttttt"
-                    target="_blank"
-                >
-                    @tanittttttttttt
-                </a>
-
-            </div>
-
-
-            <!-- ปุ่มไปหน้าก่อนหน้าและกลับ Home -->
-
-            <div class="page-navigation">
-
-                <a href="skills.html">
-                    ← Skills
-                </a>
-
-                <a href="index.html">
-                    🏠 กลับหน้า Home
-                </a>
-
-            </div>
-
-        </div>
 
     </main>
 
 
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
-        <p>
-            Designed & Built by
-            <strong>Tanitta</strong>
-        </p>
+        Designed & Built by Tanitta
 
-        <p>
-            © 2026 Tanitta
-        </p>
+        <br>
+
+        © 2026 Tanitta
 
     </footer>
+
 
 </body>
 
