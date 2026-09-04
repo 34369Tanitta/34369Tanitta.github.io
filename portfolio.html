@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tanitta | Portfolio</title>
 
@@ -28,14 +26,14 @@
 
             background:
                 radial-gradient(
-                    circle at 15% 20%,
-                    rgba(174, 228, 244, 0.55),
-                    transparent 35%
+                    circle at 15% 15%,
+                    rgba(174, 228, 244, 0.45),
+                    transparent 30%
                 ),
                 radial-gradient(
-                    circle at 85% 75%,
-                    rgba(240, 207, 103, 0.35),
-                    transparent 35%
+                    circle at 85% 80%,
+                    rgba(240, 207, 103, 0.28),
+                    transparent 30%
                 ),
                 linear-gradient(
                     135deg,
@@ -45,7 +43,6 @@
 
             color: #40536b;
             line-height: 1.7;
-
             min-height: 100vh;
         }
 
@@ -78,9 +75,7 @@
         nav a {
             color: #5fa8c0;
             text-decoration: none;
-
-            margin-left: 20px;
-
+            margin-left: 22px;
             transition: 0.3s;
         }
 
@@ -89,27 +84,31 @@
         }
 
 
-        /* ===== Hero ===== */
+        /* ===== Main ===== */
 
-        .hero {
-            min-height: 75vh;
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 25px 90px;
+        }
 
-            display: flex;
-            flex-direction: column;
 
-            justify-content: center;
+        /* ===== Intro ===== */
+
+        .intro {
+            display: grid;
+            grid-template-columns: 180px 1fr;
             align-items: center;
+            gap: 45px;
 
-            text-align: center;
-
-            padding: 80px 20px;
+            max-width: 850px;
+            margin: 0 auto 70px;
         }
 
         .profile {
             width: 180px;
             height: 180px;
 
-            margin-bottom: 30px;
             padding: 5px;
 
             border-radius: 50%;
@@ -121,8 +120,8 @@
             );
 
             box-shadow:
-                0 0 40px
-                rgba(117, 190, 220, 0.3);
+                0 15px 40px
+                rgba(117, 190, 220, 0.18);
         }
 
         .profile img {
@@ -138,74 +137,54 @@
             border: 4px solid white;
         }
 
-        .hero-small {
-            color: #5fa8c0;
-
-            font-size: 16px;
-
-            margin-bottom: 10px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 80px);
-
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
+        .intro-text small {
             color: #55aeca;
-        }
-
-        .hero p {
-            max-width: 650px;
-
-            color: #718096;
-
-            font-size: 18px;
-        }
-
-
-        /* ===== Menu ===== */
-
-        .menu {
-            max-width: 1000px;
-
-            margin: auto;
-
-            padding: 40px 20px 80px;
-        }
-
-        .section-title {
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 30px;
-        }
-
-        .section-number {
-            color: #55aeca;
-
-            font-family: monospace;
-
+            font-size: 15px;
             font-weight: bold;
         }
 
-        .section-title h2 {
-            font-size: 30px;
-
+        .intro-text h1 {
+            font-size: clamp(42px, 7vw, 68px);
+            line-height: 1.15;
+            margin: 8px 0 15px;
             color: #40536b;
-
-            text-shadow:
-                0 0 12px
-                rgba(142, 216, 237, 0.35);
         }
 
-        .section-line {
-            height: 3px;
+        .intro-text h1 span {
+            color: #55aeca;
+        }
 
+        .intro-text p {
+            color: #718096;
+            font-size: 17px;
+            max-width: 600px;
+        }
+
+
+        /* ===== Menu Header ===== */
+
+        .menu-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 18px;
+        }
+
+        .menu-number {
+            color: #55aeca;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .menu-header h2 {
+            font-size: 28px;
+            color: #40536b;
+        }
+
+        .menu-line {
+            height: 2px;
             flex: 1;
 
             background: linear-gradient(
@@ -217,90 +196,105 @@
             border-radius: 10px;
         }
 
-
-        /* ===== Cards ===== */
-
-        .cards {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 20px;
+        .menu-subtitle {
+            color: #91a0ae;
+            margin-bottom: 30px;
+            font-size: 14px;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.88);
 
-            border: 2px solid #b9e7f5;
+        /* ===== Portfolio Links ===== */
 
-            padding: 30px;
+        .portfolio-list {
+            background: rgba(255, 255, 255, 0.72);
+
+            border: 1px solid #b9e7f5;
 
             border-radius: 18px;
 
-            text-align: center;
-
-            box-shadow:
-                0 10px 35px
-                rgba(117, 190, 220, 0.1);
-
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-
-            border-color: #8ed8ed;
+            overflow: hidden;
 
             box-shadow:
                 0 15px 40px
-                rgba(117, 190, 220, 0.2);
+                rgba(117, 190, 220, 0.08);
         }
 
-        .card-icon {
-            font-size: 40px;
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            gap: 22px;
 
-            margin-bottom: 15px;
-        }
+            padding: 22px 28px;
 
-        .card h3 {
             color: #40536b;
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-        .card p {
-            color: #718096;
-
-            font-size: 14px;
-
-            margin-bottom: 20px;
-        }
-
-        .card a {
-            display: inline-block;
-
-            padding: 9px 18px;
-
-            background: #8ed8ed;
-
-            color: white;
-
             text-decoration: none;
 
-            border-radius: 8px;
+            border-bottom: 1px solid #e5f3f8;
 
             transition: 0.3s;
         }
 
-        .card a:hover {
-            background: #f0cf67;
+        .portfolio-item:last-child {
+            border-bottom: none;
+        }
 
+        .portfolio-item:hover {
+            background: rgba(255, 253, 243, 0.95);
+            padding-left: 36px;
+        }
+
+        .item-number {
+            min-width: 38px;
+
+            color: #8ecfe3;
+
+            font-family: monospace;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .item-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f3fbfd;
+
+            border: 1px solid #ccecf5;
+
+            border-radius: 12px;
+
+            font-size: 21px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            font-size: 18px;
+            margin-bottom: 2px;
             color: #40536b;
+        }
 
-            transform: translateY(-2px);
+        .item-content p {
+            color: #91a0ae;
+            font-size: 13px;
+        }
+
+        .arrow {
+            color: #55aeca;
+            font-size: 22px;
+
+            transition: 0.3s;
+        }
+
+        .portfolio-item:hover .arrow {
+            transform: translateX(5px);
+            color: #d3a62a;
         }
 
 
@@ -309,7 +303,7 @@
         footer {
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 35px 20px;
 
             border-top: 1px solid #b9e7f5;
 
@@ -321,7 +315,7 @@
 
         /* ===== Mobile ===== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             nav {
                 padding: 15px 20px;
@@ -331,16 +325,57 @@
                 display: none;
             }
 
-            .hero {
-                min-height: 65vh;
+            .container {
+                padding: 55px 20px 70px;
             }
 
-            .hero h1 {
-                font-size: 50px;
+            .intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 25px;
+                margin-bottom: 55px;
             }
 
-            .section-title h2 {
-                font-size: 25px;
+            .profile {
+                width: 145px;
+                height: 145px;
+                margin: auto;
+            }
+
+            .intro-text p {
+                margin: auto;
+                font-size: 16px;
+            }
+
+            .menu-header h2 {
+                font-size: 24px;
+            }
+
+            .portfolio-item {
+                gap: 13px;
+                padding: 18px 16px;
+            }
+
+            .portfolio-item:hover {
+                padding-left: 20px;
+            }
+
+            .item-number {
+                min-width: 25px;
+            }
+
+            .item-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 18px;
+            }
+
+            .item-content h3 {
+                font-size: 16px;
+            }
+
+            .item-content p {
+                font-size: 12px;
             }
 
         }
@@ -396,215 +431,282 @@
     </nav>
 
 
-    <!-- Hero -->
+    <!-- Main -->
 
-    <section class="hero">
-
-        <div class="profile">
-
-            <img
-                src="profile.jpg"
-                alt="Tanitta"
-            >
-
-        </div>
+    <main class="container">
 
 
-        <p class="hero-small">
-            👋 Welcome to my portfolio
-        </p>
+        <!-- Intro -->
 
+        <section class="intro">
 
-        <h1>
+            <div class="profile">
 
-            Hello, I'm
-
-            <span>
-                Tanitta
-            </span>
-
-        </h1>
-
-
-        <p>
-
-            นักเรียนชั้นมัธยมศึกษาปีที่ 6
-            สายการเรียนเตรียมวิศวกรรมศาสตร์
-            ที่สนใจด้านเคมีและคณิตศาสตร์
-
-        </p>
-
-    </section>
-
-
-    <!-- Portfolio Menu -->
-
-    <main class="menu">
-
-
-        <div class="section-title">
-
-            <span class="section-number">
-                MENU.
-            </span>
-
-            <h2>
-                My Portfolio
-            </h2>
-
-            <div class="section-line"></div>
-
-        </div>
-
-
-        <div class="cards">
-
-
-            <!-- คำนำ -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    📖
-                </div>
-
-                <h3>
-                    คำนำ
-                </h3>
-
-                <p>
-                    ที่มาและจุดประสงค์
-                    ของแฟ้มสะสมผลงาน
-                </p>
-
-                <a href="introduction.html">
-                    ดูคำนำ →
-                </a>
+                <img
+                    src="profile.jpg"
+                    alt="Tanitta"
+                >
 
             </div>
 
 
-            <!-- มหาวิทยาลัย -->
+            <div class="intro-text">
 
-            <div class="card">
+                <small>
+                    👋 Welcome to my portfolio
+                </small>
 
-                <div class="card-icon">
-                    🎓
-                </div>
-
-                <h3>
-                    มหาวิทยาลัยในฝัน
-                </h3>
+                <h1>
+                    Hello, I'm
+                    <span>Tanitta</span>
+                </h1>
 
                 <p>
-                    เป้าหมายในการศึกษาต่อ
-                    และสาขาวิศวกรรมเคมี
+                    นักเรียนชั้นมัธยมศึกษาปีที่ 6
+                    สายการเรียนเตรียมวิศวกรรมศาสตร์
+                    ที่สนใจด้านเคมีและคณิตศาสตร์
                 </p>
 
-                <a href="university.html">
-                    ดูเพิ่มเติม →
-                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Menu -->
+
+        <section>
+
+            <div class="menu-header">
+
+                <span class="menu-number">
+                    MENU.
+                </span>
+
+                <h2>
+                    My Portfolio
+                </h2>
+
+                <div class="menu-line"></div>
 
             </div>
 
 
-            <!-- About -->
+            <p class="menu-subtitle">
+                เลือกหัวข้อที่ต้องการดู
+            </p>
 
-            <div class="card">
 
-                <div class="card-icon">
-                    👩‍🎓
-                </div>
+            <div class="portfolio-list">
 
-                <h3>
-                    About Me
-                </h3>
 
-                <p>
-                    ข้อมูลเกี่ยวกับตัวฉัน
-                    ความสนใจ และเป้าหมาย
-                </p>
+                <!-- 01 -->
 
-                <a href="about.html">
-                    รู้จักฉัน →
+                <a
+                    href="introduction.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        01
+                    </span>
+
+                    <span class="item-icon">
+                        📖
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            คำนำ
+                        </h3>
+
+                        <p>
+                            ที่มาและจุดประสงค์ของแฟ้มสะสมผลงาน
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
                 </a>
+
+
+                <!-- 02 -->
+
+                <a
+                    href="university.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        02
+                    </span>
+
+                    <span class="item-icon">
+                        🎓
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            มหาวิทยาลัยในฝัน
+                        </h3>
+
+                        <p>
+                            เป้าหมายในการศึกษาต่อและสาขาวิศวกรรมเคมี
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- 03 -->
+
+                <a
+                    href="about.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        03
+                    </span>
+
+                    <span class="item-icon">
+                        👩‍🎓
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            About Me
+                        </h3>
+
+                        <p>
+                            ข้อมูลเกี่ยวกับตัวฉัน ความสนใจ และเป้าหมาย
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- 04 -->
+
+                <a
+                    href="projects.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        04
+                    </span>
+
+                    <span class="item-icon">
+                        🔬
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            My Projects
+                        </h3>
+
+                        <p>
+                            โครงงาน กิจกรรม และผลงานที่ภาคภูมิใจ
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- 05 -->
+
+                <a
+                    href="skills.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        05
+                    </span>
+
+                    <span class="item-icon">
+                        🧠
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            Skills & Interests
+                        </h3>
+
+                        <p>
+                            ทักษะ ความสามารถ และสิ่งที่สนใจ
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- 06 -->
+
+                <a
+                    href="contact.html"
+                    class="portfolio-item"
+                >
+
+                    <span class="item-number">
+                        06
+                    </span>
+
+                    <span class="item-icon">
+                        📧
+                    </span>
+
+                    <span class="item-content">
+
+                        <h3>
+                            ติดต่อ
+                        </h3>
+
+                        <p>
+                            ช่องทางสำหรับติดต่อและพูดคุย
+                        </p>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
 
             </div>
 
+        </section>
 
-            <!-- Projects -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🔬
-                </div>
-
-                <h3>
-                    My Projects
-                </h3>
-
-                <p>
-                    โครงงาน กิจกรรม
-                    และผลงานที่ภาคภูมิใจ
-                </p>
-
-                <a href="projects.html">
-                    ดูผลงาน →
-                </a>
-
-            </div>
-
-
-            <!-- Skills -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    Skills & Interests
-                </h3>
-
-                <p>
-                    ทักษะ ความสามารถ
-                    และสิ่งที่สนใจ
-                </p>
-
-                <a href="skills.html">
-                    ดูทักษะ →
-                </a>
-
-            </div>
-
-
-            <!-- Contact -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    📧
-                </div>
-
-                <h3>
-                    ติดต่อ
-                </h3>
-
-                <p>
-                    ช่องทางสำหรับติดต่อ
-                    และพูดคุย
-                </p>
-
-                <a href="contact.html">
-                    ติดต่อ →
-                </a>
-
-            </div>
-
-
-        </div>
 
     </main>
 
@@ -628,5 +730,3 @@
 </body>
 
 </html>
-
-
