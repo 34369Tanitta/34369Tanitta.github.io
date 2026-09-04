@@ -23,6 +23,7 @@
 
         body {
             font-family: "Segoe UI", Tahoma, sans-serif;
+
             min-height: 100vh;
 
             background:
@@ -32,6 +33,7 @@
                 #f8fcff;
 
             color: #345;
+
             overflow-x: hidden;
         }
 
@@ -47,6 +49,7 @@
             width: 100%;
 
             background: rgba(255, 255, 255, 0.82);
+
             backdrop-filter: blur(14px);
 
             border-bottom: 1px solid rgba(160, 220, 240, 0.45);
@@ -56,18 +59,23 @@
 
         .nav-container {
             max-width: 1100px;
+
             margin: auto;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             gap: 10px;
+
             flex-wrap: wrap;
         }
 
         .top-nav a {
             text-decoration: none;
+
             color: #507080;
 
             padding: 8px 14px;
@@ -75,6 +83,7 @@
             border-radius: 20px;
 
             font-size: 14px;
+
             font-weight: 600;
 
             transition: 0.3s;
@@ -82,7 +91,9 @@
 
         .top-nav a:hover {
             background: #e5f7ff;
+
             color: #1987b5;
+
             transform: translateY(-2px);
         }
 
@@ -92,11 +103,12 @@
 
         .container {
             width: 92%;
+
             max-width: 1000px;
 
             margin: 0 auto;
 
-            padding: 60px 0 30px;
+            padding: 55px 0 30px;
         }
 
         /* =========================
@@ -105,6 +117,7 @@
 
         .intro {
             text-align: center;
+
             margin-bottom: 45px;
         }
 
@@ -117,7 +130,9 @@
             margin: 0 auto 25px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
         }
 
@@ -159,6 +174,7 @@
 
         .profile {
             position: relative;
+
             z-index: 3;
 
             width: 180px;
@@ -256,12 +272,16 @@
             animation: twinkle 1.8s ease-in-out infinite;
         }
 
+        /* =========================
+           INTRO TEXT
+        ========================= */
+
         .intro h1 {
             font-size: clamp(32px, 5vw, 52px);
 
             color: #277c9f;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .intro h2 {
@@ -271,25 +291,25 @@
 
             font-weight: 600;
 
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .intro p {
             max-width: 650px;
 
-            margin: 0 auto 8px;
+            margin: 0 auto 10px;
 
             line-height: 1.8;
 
             color: #607985;
 
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .dream {
             display: inline-block;
 
-            margin-top: 14px;
+            margin-top: 10px;
 
             padding: 9px 18px;
 
@@ -303,15 +323,17 @@
 
             font-size: 14px;
 
-            box-shadow: 0 6px 18px rgba(120, 190, 210, 0.12);
+            box-shadow:
+                0 6px 18px rgba(120, 190, 210, 0.12);
         }
 
         /* =========================
-           PORTFOLIO MENU
+           PORTFOLIO LIST
         ========================= */
 
         .portfolio-list {
             display: flex;
+
             flex-direction: column;
 
             gap: 16px;
@@ -375,7 +397,9 @@
             height: 55px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 18px;
@@ -411,6 +435,7 @@
 
         .portfolio-item:hover .arrow {
             transform: translateX(5px);
+
             color: #2992b9;
         }
 
@@ -445,6 +470,7 @@
         }
 
         @keyframes spin {
+
             from {
                 transform: rotate(0deg);
             }
@@ -459,11 +485,13 @@
             0%,
             100% {
                 transform: scale(0.95);
+
                 opacity: 0.5;
             }
 
             50% {
                 transform: scale(1.05);
+
                 opacity: 0.9;
             }
         }
@@ -497,11 +525,13 @@
             0%,
             100% {
                 transform: scale(0.8);
+
                 opacity: 0.45;
             }
 
             50% {
                 transform: scale(1.25);
+
                 opacity: 1;
             }
         }
@@ -522,6 +552,7 @@
 
             .top-nav a {
                 font-size: 12px;
+
                 padding: 7px 9px;
             }
 
@@ -591,6 +622,7 @@
 
 </head>
 
+
 <body>
 
 
@@ -606,9 +638,9 @@
 
             <a href="introduction.html">📖 คำนำ</a>
 
-            <a href="university.html">🎓 มหาวิทยาลัย</a>
-
             <a href="about.html">👋 About Me</a>
+
+            <a href="university.html">🎓 มหาวิทยาลัย</a>
 
             <a href="projects.html">🧪 Projects</a>
 
@@ -619,6 +651,7 @@
         </div>
 
     </nav>
+
 
 
     <main class="container">
@@ -658,8 +691,8 @@
             <h2>Hello, I'm Tanitta 👋</h2>
 
             <p>
-                แฟ้มสะสมผลงานที่รวบรวมตัวตน ความสนใจ
-                ผลงาน และเป้าหมายในการเรียนรู้ของฉัน
+                แฟ้มสะสมผลงานที่รวบรวมตัวตน
+                ความสนใจ ผลงาน และเป้าหมายของฉัน
             </p>
 
             <span class="dream">
@@ -677,7 +710,7 @@
         <section class="portfolio-list">
 
 
-            <!-- INTRODUCTION -->
+            <!-- 01 INTRODUCTION -->
 
             <a href="introduction.html" class="portfolio-item">
 
@@ -694,8 +727,7 @@
                     <h3>คำนำ</h3>
 
                     <p>
-                        ทำความรู้จักกับ Portfolio
-                        และแนวคิดในการจัดทำแฟ้มสะสมงาน
+                        แนวคิดและจุดประสงค์ในการจัดทำ Portfolio
                     </p>
 
                 </div>
@@ -708,43 +740,12 @@
 
 
 
-            <!-- UNIVERSITY -->
-
-            <a href="university.html" class="portfolio-item">
-
-                <div class="number">
-                    02
-                </div>
-
-                <div class="icon">
-                    🎓
-                </div>
-
-                <div class="item-content">
-
-                    <h3>มหาวิทยาลัยในฝัน</h3>
-
-                    <p>
-                        เป้าหมายการศึกษาต่อที่ สจล.
-                        และความสนใจด้านวิศวกรรมเคมี
-                    </p>
-
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-            </a>
-
-
-
-            <!-- ABOUT -->
+            <!-- 02 ABOUT -->
 
             <a href="about.html" class="portfolio-item">
 
                 <div class="number">
-                    03
+                    02
                 </div>
 
                 <div class="icon">
@@ -756,8 +757,7 @@
                     <h3>About Me</h3>
 
                     <p>
-                        ตัวตน ความสนใจ จุดเด่น
-                        และสิ่งที่กำลังพัฒนาของฉัน
+                        ตัวตน ความสนใจ และเป้าหมายของฉัน
                     </p>
 
                 </div>
@@ -770,7 +770,37 @@
 
 
 
-            <!-- PROJECTS -->
+            <!-- 03 UNIVERSITY -->
+
+            <a href="university.html" class="portfolio-item">
+
+                <div class="number">
+                    03
+                </div>
+
+                <div class="icon">
+                    🎓
+                </div>
+
+                <div class="item-content">
+
+                    <h3>มหาวิทยาลัยในฝัน</h3>
+
+                    <p>
+                        สจล. และเป้าหมายด้านวิศวกรรมเคมี
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- 04 PROJECTS -->
 
             <a href="projects.html" class="portfolio-item">
 
@@ -787,8 +817,7 @@
                     <h3>Projects</h3>
 
                     <p>
-                        ผลงาน โครงงาน การทดลอง
-                        และสิ่งที่ได้เรียนรู้จากการลงมือทำ
+                        ผลงาน โครงงาน และประสบการณ์จากการลงมือทำ
                     </p>
 
                 </div>
@@ -801,7 +830,7 @@
 
 
 
-            <!-- SKILLS -->
+            <!-- 05 SKILLS -->
 
             <a href="skills.html" class="portfolio-item">
 
@@ -818,8 +847,7 @@
                     <h3>Skills</h3>
 
                     <p>
-                        ทักษะด้านการเรียน การคิดวิเคราะห์
-                        เทคโนโลยี และการทำงาน
+                        ทักษะและความสามารถที่ฉันพัฒนา
                     </p>
 
                 </div>
@@ -832,7 +860,7 @@
 
 
 
-            <!-- CONTACT -->
+            <!-- 06 CONTACT -->
 
             <a href="contact.html" class="portfolio-item">
 
@@ -849,7 +877,7 @@
                     <h3>ติดต่อ</h3>
 
                     <p>
-                        ช่องทางสำหรับติดต่อและทำความรู้จักกันเพิ่มเติม
+                        ช่องทางสำหรับติดต่อและทำความรู้จักเพิ่มเติม
                     </p>
 
                 </div>
@@ -875,6 +903,7 @@
     <footer>
 
         ✨ Portfolio ของ Tanitta ✨
+
         <br>
 
         <span>
