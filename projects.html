@@ -96,34 +96,33 @@
         /* ================= TITLE ================= */
 
         .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 35px;
+            text-align: center;
+            margin-bottom: 45px;
         }
 
         .section-number {
+            display: block;
+
             color: #55aeca;
+
             font-family: monospace;
             font-weight: bold;
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
         }
 
         h1 {
-            font-size: 36px;
-            color: #40536b;
+            font-size: 40px;
+            color: #2584aa;
+
+            margin-bottom: 5px;
         }
 
-        .section-line {
-            height: 3px;
-            flex: 1;
-
-            background: linear-gradient(
-                90deg,
-                #aee4f4,
-                #f0cf67
-            );
-
-            border-radius: 10px;
+        .section-subtitle {
+            font-size: 21px;
+            color: #7199a9;
         }
 
 
@@ -132,7 +131,6 @@
         .projects {
             display: grid;
 
-            /* บังคับให้เป็น 2 × 2 */
             grid-template-columns: repeat(2, 1fr);
 
             gap: 25px;
@@ -171,13 +169,17 @@
 
         .project-card h2 {
             color: #40536b;
+
             font-size: 21px;
+
             margin-bottom: 15px;
         }
 
         .project-card p {
             color: #718096;
+
             font-size: 15px;
+
             margin-bottom: 15px;
         }
 
@@ -190,7 +192,9 @@
 
         .image-button {
             border: none;
+
             background: none;
+
             padding: 0;
 
             cursor: pointer;
@@ -299,11 +303,13 @@
             color: white;
 
             font-size: 30px;
+
             line-height: 1;
 
             cursor: pointer;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
@@ -312,6 +318,7 @@
 
         .lightbox-close:hover {
             background: white;
+
             color: #40536b;
 
             transform: scale(1.08);
@@ -322,7 +329,9 @@
 
         .tags {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
 
             margin-top: 20px;
@@ -363,6 +372,7 @@
 
         .project-link:hover {
             background: #f0cf67;
+
             color: #40536b;
 
             transform: translateY(-2px);
@@ -375,7 +385,9 @@
             width: 100%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
@@ -387,7 +399,9 @@
             flex: 1;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             min-height: 58px;
@@ -458,19 +472,13 @@
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
-            .section-title {
-                flex-wrap: wrap;
+            .section-subtitle {
+                font-size: 18px;
             }
 
-            .section-line {
-                width: 100%;
-                flex-basis: 100%;
-            }
-
-            /* มือถือให้เหลือ 1 คอลัมน์ */
             .projects {
                 grid-template-columns: 1fr;
             }
@@ -526,6 +534,8 @@
     <main class="container">
 
 
+        <!-- ================= TITLE ================= -->
+
         <div class="section-title">
 
             <span class="section-number">
@@ -536,10 +546,14 @@
                 กิจกรรมที่ทำ
             </h1>
 
-            <div class="section-line"></div>
+            <div class="section-subtitle">
+                Activities
+            </div>
 
         </div>
 
+
+        <!-- ================= PROJECTS ================= -->
 
         <div class="projects">
 
