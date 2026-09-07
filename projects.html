@@ -46,6 +46,7 @@
             min-height: 100vh;
         }
 
+
         /* ================= NAVBAR ================= */
 
         nav {
@@ -82,6 +83,7 @@
             color: #d3a62a;
         }
 
+
         /* ================= CONTAINER ================= */
 
         .container {
@@ -89,6 +91,7 @@
             margin: auto;
             padding: 80px 20px;
         }
+
 
         /* ================= TITLE ================= */
 
@@ -123,13 +126,14 @@
             border-radius: 10px;
         }
 
+
         /* ================= PROJECTS ================= */
 
         .projects {
             display: grid;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
+            /* บังคับให้เป็น 2 × 2 */
+            grid-template-columns: repeat(2, 1fr);
 
             gap: 25px;
         }
@@ -181,6 +185,7 @@
             color: #d3a62a;
         }
 
+
         /* ================= CLICKABLE IMAGES ================= */
 
         .image-button {
@@ -229,6 +234,7 @@
                 0 12px 30px
                 rgba(117, 190, 220, 0.25);
         }
+
 
         /* ================= IMAGE LIGHTBOX ================= */
 
@@ -311,6 +317,7 @@
             transform: scale(1.08);
         }
 
+
         /* ================= TAGS ================= */
 
         .tags {
@@ -332,6 +339,7 @@
 
             font-size: 12px;
         }
+
 
         /* ================= PROJECT LINK ================= */
 
@@ -359,6 +367,7 @@
 
             transform: translateY(-2px);
         }
+
 
         /* ================= PAGE NAVIGATION ================= */
 
@@ -416,6 +425,7 @@
                 rgba(70, 160, 195, 0.23);
         }
 
+
         /* ================= FOOTER ================= */
 
         footer {
@@ -429,6 +439,7 @@
 
             font-size: 13px;
         }
+
 
         /* ================= MOBILE ================= */
 
@@ -457,6 +468,11 @@
             .section-line {
                 width: 100%;
                 flex-basis: 100%;
+            }
+
+            /* มือถือให้เหลือ 1 คอลัมน์ */
+            .projects {
+                grid-template-columns: 1fr;
             }
 
             .project-card img {
@@ -818,28 +834,43 @@
 
     <script>
 
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const lightboxClose = document.getElementById("lightboxClose");
-        const imageButtons = document.querySelectorAll(".image-button");
+        const lightbox =
+            document.getElementById("lightbox");
 
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const lightboxClose =
+            document.getElementById("lightboxClose");
+
+        const imageButtons =
+            document.querySelectorAll(".image-button");
+
+
+        /* ================= OPEN IMAGE ================= */
 
         imageButtons.forEach(function(button) {
 
-            button.addEventListener("click", function() {
+            button.addEventListener(
+                "click",
+                function() {
 
-                const imageSource = button.getAttribute("data-image");
+                    const imageSource =
+                        button.getAttribute("data-image");
 
-                lightboxImage.src = imageSource;
+                    lightboxImage.src = imageSource;
 
-                lightbox.classList.add("active");
+                    lightbox.classList.add("active");
 
-                document.body.style.overflow = "hidden";
+                    document.body.style.overflow = "hidden";
 
-            });
+                }
+            );
 
         });
 
+
+        /* ================= CLOSE IMAGE ================= */
 
         function closeLightbox() {
 
@@ -858,24 +889,32 @@
         );
 
 
+        /* ================= CLICK OUTSIDE ================= */
+
         lightbox.addEventListener(
             "click",
             function(event) {
 
                 if (event.target === lightbox) {
+
                     closeLightbox();
+
                 }
 
             }
         );
 
 
+        /* ================= ESC KEY ================= */
+
         document.addEventListener(
             "keydown",
             function(event) {
 
                 if (event.key === "Escape") {
+
                     closeLightbox();
+
                 }
 
             }
