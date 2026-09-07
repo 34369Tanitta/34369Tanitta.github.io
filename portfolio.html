@@ -43,8 +43,11 @@
         ========================= */
 
         .top-nav {
-            position: sticky;
+            position: fixed;
+
             top: 0;
+            left: 0;
+
             z-index: 1000;
 
             width: 100%;
@@ -110,7 +113,11 @@
 
             margin: 0 auto;
 
-            padding: 55px 0 30px;
+            /*
+               เว้นพื้นที่ด้านบน
+               เพราะ Navigation เป็น fixed
+            */
+            padding: 110px 0 30px;
         }
 
 
@@ -567,7 +574,7 @@
             }
 
             .container {
-                padding-top: 45px;
+                padding-top: 125px;
             }
 
             .profile-wrap {
