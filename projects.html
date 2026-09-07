@@ -2,7 +2,9 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tanitta | กิจกรรมที่ทำ</title>
@@ -15,479 +17,922 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #e8f8ff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #fff8d9 0%, transparent 35%),
-                linear-gradient(135deg, #f5fcff, #fffdf3);
 
-            color: #333;
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(174, 228, 244, 0.35),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(240, 207, 103, 0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fbff,
+                    #fffdf5
+                );
+
+            color: #40536b;
+
+            line-height: 1.7;
+
             min-height: 100vh;
         }
 
-        /* ================= NAVBAR ================= */
+
+        /* =========================================
+           TOP NAVIGATION
+        ========================================= */
 
         nav {
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            width: 100%;
 
-            padding: 18px 7%;
+            background:
+                rgba(255, 255, 255, 0.94);
 
-            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid rgba(150, 210, 235, 0.4);
+            border-bottom:
+                2px solid #b9e7f5;
+
+            box-shadow:
+                0 4px 20px
+                rgba(117, 190, 220, 0.12);
+
+            padding: 12px 20px;
         }
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #54a9d8;
+
+        .nav-menu {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            overflow-x: auto;
+
+            scrollbar-width: none;
         }
 
-        nav a {
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .nav-menu a {
+
+            flex-shrink: 0;
+
+            padding: 10px 15px;
+
+            color: #5fa8c0;
+
             text-decoration: none;
-            color: #4c9bc8;
-            font-weight: bold;
-            margin-left: 25px;
-            transition: 0.3s;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            border-radius: 12px;
+
+            transition: 0.3s ease;
+
+            white-space: nowrap;
         }
 
-        nav a:hover {
-            color: #277aa9;
+
+        .nav-menu a:hover {
+
+            background: #eaf9fd;
+
+            color: #3e9abd;
+
+            transform: translateY(-2px);
         }
 
-        /* ================= MAIN ================= */
+
+        .nav-menu a.active {
+
+            background: #8ed8ed;
+
+            color: white;
+
+            box-shadow:
+                0 5px 15px
+                rgba(117, 190, 220, 0.25);
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
 
         main {
-            width: 90%;
-            max-width: 1100px;
+
+            width: 92%;
+
+            max-width: 1150px;
+
             margin: auto;
-            padding: 70px 0 50px;
+
+            padding: 70px 0 60px;
         }
 
-        /* ================= PAGE HEADING ================= */
 
-        .section-title {
+        /* =========================================
+           PAGE TITLE
+        ========================================= */
+
+        .page-title {
+
             text-align: center;
+
             margin-bottom: 55px;
         }
 
+
         .section-number {
+
+            display: block;
+
+            color: #79bfd6;
+
             font-size: 18px;
-            font-weight: bold;
-            color: #69afd6;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+
+            font-weight: 700;
+
+            margin-bottom: 5px;
         }
 
-        .section-title h1 {
-            font-size: 48px;
-            color: #333;
-            margin-bottom: 8px;
+
+        .page-title h1 {
+
+            font-size:
+                clamp(38px, 6vw, 58px);
+
+            color: #40536b;
+
+            font-weight: 800;
+
+            margin-bottom: 4px;
         }
 
-        .section-title p {
-            font-size: 20px;
-            color: #7ba8bc;
-            letter-spacing: 2px;
+
+        .page-title .subtitle {
+
+            color: #8ab8c8;
+
+            font-size: 18px;
+
+            font-weight: 600;
         }
 
-        /* ================= CATEGORY ================= */
+
+        .title-line {
+
+            width: 70px;
+
+            height: 3px;
+
+            background: #a7dff0;
+
+            margin: 16px auto 0;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================================
+           CATEGORY
+        ========================================= */
 
         .category {
+
             margin-bottom: 65px;
         }
 
-        .category-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
 
-            margin-bottom: 28px;
+        .category-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin-bottom: 25px;
+
             padding-bottom: 12px;
 
-            border-bottom: 2px solid #bfe7f6;
+            border-bottom:
+                2px solid #d8f0f7;
         }
 
-        .category-title span {
-            font-size: 32px;
+
+        .category-number {
+
+            color: #79bfd6;
+
+            font-size: 17px;
+
+            font-weight: 800;
         }
+
 
         .category-title h2 {
-            font-size: 30px;
-            color: #4c9bc8;
+
+            color: #40536b;
+
+            font-size:
+                clamp(23px, 4vw, 30px);
+
+            font-weight: 800;
         }
 
-        /* ================= PROJECT GRID ================= */
+
+        /* =========================================
+           PROJECT GRID
+        ========================================= */
 
         .projects {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 25px;
         }
 
-        /* ================= CARD ================= */
+
+        /* =========================================
+           PROJECT CARD
+        ========================================= */
 
         .project-card {
-            background: rgba(255, 255, 255, 0.9);
 
-            border: 2px solid #c6eaf7;
-            border-radius: 25px;
+            background:
+                rgba(255, 255, 255, 0.88);
+
+            border:
+                2px solid #b9e7f5;
+
+            border-radius: 24px;
 
             padding: 28px;
 
-            box-shadow: 0 12px 30px rgba(90, 170, 210, 0.12);
+            box-shadow:
+                0 15px 35px
+                rgba(90, 170, 200, 0.10);
 
-            transition: 0.3s;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            overflow: hidden;
         }
+
 
         .project-card:hover {
-            transform: translateY(-6px);
+
+            transform:
+                translateY(-6px);
 
             box-shadow:
-                0 18px 35px rgba(90, 170, 210, 0.2);
+                0 20px 40px
+                rgba(90, 170, 200, 0.18);
         }
+
 
         .project-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
+
+            width: 58px;
+
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                #eaf9fd;
+
+            border:
+                2px solid #b9e7f5;
+
+            border-radius: 18px;
+
+            font-size: 28px;
+
+            margin-bottom: 18px;
         }
+
 
         .project-card h3 {
-            font-size: 23px;
-            color: #378dbd;
+
+            color: #40536b;
+
+            font-size: 22px;
+
             line-height: 1.5;
-            margin-bottom: 15px;
+
+            margin-bottom: 17px;
         }
+
 
         .project-card p {
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 12px;
-        }
 
-        .project-info {
-            margin-top: 15px;
-            padding-top: 15px;
-
-            border-top: 1px solid #dceff6;
+            color: #718096;
 
             font-size: 15px;
-            color: #555;
+
+            margin-bottom: 18px;
         }
 
-        .project-info strong {
-            color: #4c9bc8;
-        }
 
-        /* ================= IMAGES ================= */
+        /* =========================================
+           IMAGE
+        ========================================= */
 
-        .project-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+        .image-button {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
 
             margin-bottom: 20px;
         }
 
-        .image-button {
-            border: none;
-            padding: 0;
-            background: none;
 
-            cursor: pointer;
-            border-radius: 18px;
+        .project-image {
 
-            overflow: hidden;
-            display: block;
-        }
-
-        .image-button img {
             width: 100%;
-            height: 220px;
 
-            object-fit: cover;
+            height: auto;
+
             display: block;
 
-            border-radius: 18px;
+            border-radius: 16px;
 
-            transition: 0.3s;
+            border:
+                2px solid #d6eff6;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
-        .image-button:hover img {
-            transform: scale(1.04);
+
+        .image-button:hover .project-image {
+
+            transform:
+                scale(1.015);
+
+            box-shadow:
+                0 10px 25px
+                rgba(75, 155, 185, 0.18);
         }
 
-        /* ================= TAGS ================= */
+
+        /* =========================================
+           INFO
+        ========================================= */
+
+        .project-info {
+
+            margin-top: 5px;
+
+            padding: 14px 16px;
+
+            background:
+                #f5fbfd;
+
+            border-left:
+                4px solid #8ed8ed;
+
+            border-radius: 12px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .project-info p {
+
+            margin: 4px 0;
+
+            font-size: 14px;
+
+            color: #64748b;
+        }
+
+
+        .project-info strong {
+
+            color: #4f7f91;
+        }
+
+
+        /* =========================================
+           TAGS
+        ========================================= */
 
         .tags {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
 
-            margin-top: 18px;
+            margin-top: 10px;
         }
 
-        .tag {
-            padding: 7px 13px;
 
-            background: #e9f8ff;
-            color: #4c9bc8;
+        .tag {
+
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            background:
+                #f8fbff;
+
+            border:
+                1.5px solid #b9e7f5;
 
             border-radius: 20px;
 
-            font-size: 13px;
-            font-weight: bold;
+            color: #579ab1;
+
+            font-size: 12px;
+
+            font-weight: 700;
         }
 
-        /* ================= LINK ================= */
+
+        /* =========================================
+           GOOGLE DRIVE BUTTON
+        ========================================= */
 
         .drive-link {
+
             display: inline-block;
 
-            margin-top: 10px;
+            margin-top: 5px;
 
-            color: #4c9bc8;
-            font-weight: bold;
+            padding: 9px 15px;
+
+            background:
+                #eaf9fd;
+
+            border:
+                1.5px solid #b9e7f5;
+
+            border-radius: 12px;
+
+            color: #4d9ab4;
+
             text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
         }
+
 
         .drive-link:hover {
-            text-decoration: underline;
+
+            background: #8ed8ed;
+
+            color: white;
+
+            transform:
+                translateY(-2px);
         }
 
-        /* ================= LIGHTBOX ================= */
+
+        /* =========================================
+           LIGHTBOX
+        ========================================= */
 
         .lightbox {
+
             display: none;
 
             position: fixed;
+
             inset: 0;
 
-            z-index: 2000;
+            z-index: 9999;
 
-            background: rgba(0, 0, 0, 0.82);
+            background:
+                rgba(30, 55, 70, 0.82);
+
+            align-items: center;
 
             justify-content: center;
-            align-items: center;
 
             padding: 30px;
         }
 
-        .lightbox.active {
+
+        .lightbox.show {
+
             display: flex;
         }
 
+
         .lightbox img {
+
             max-width: 92vw;
+
             max-height: 88vh;
+
+            width: auto;
+
+            height: auto;
 
             object-fit: contain;
 
-            border-radius: 15px;
+            border-radius: 16px;
 
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, 0.35);
         }
 
-        .close-lightbox {
-            position: absolute;
-            top: 20px;
-            right: 30px;
 
-            width: 45px;
-            height: 45px;
+        .lightbox-close {
+
+            position: absolute;
+
+            top: 18px;
+
+            right: 25px;
+
+            width: 48px;
+
+            height: 48px;
 
             border: none;
+
             border-radius: 50%;
 
-            background: white;
-            color: #4c9bc8;
+            background:
+                rgba(255, 255, 255, 0.95);
+
+            color: #40536b;
 
             font-size: 30px;
+
+            line-height: 1;
+
             cursor: pointer;
 
-            line-height: 45px;
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.2);
         }
 
-        /* ================= PAGE NAVIGATION ================= */
+
+        /* =========================================
+           PAGE NAVIGATION
+        ========================================= */
 
         .page-navigation {
+
             width: 100%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
 
-            margin-top: 50px;
+            margin-top: 65px;
         }
 
+
         .page-navigation a {
+
             flex: 1;
 
             text-align: center;
 
-            text-decoration: none;
+            padding: 15px 22px;
 
-            background: rgba(255, 255, 255, 0.85);
+            background:
+                rgba(255, 255, 255, 0.9);
 
-            border: 2px solid #b9e7f5;
+            border:
+                2px solid #b9e7f5;
+
             border-radius: 20px;
 
-            padding: 16px 20px;
+            color: #579ab1;
 
-            color: #4c9bc8;
+            text-decoration: none;
 
-            font-weight: bold;
-
-            box-shadow: 0 8px 20px rgba(80, 160, 200, 0.12);
-
-            transition: 0.3s;
-        }
-
-        .page-navigation a:hover {
-            transform: translateY(-4px);
+            font-weight: 800;
 
             box-shadow:
-                0 12px 25px rgba(80, 160, 200, 0.2);
+                0 8px 20px
+                rgba(90, 170, 200, 0.12);
+
+            transition: 0.3s ease;
         }
 
-        /* ================= FOOTER ================= */
+
+        .page-navigation a:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 13px 25px
+                rgba(90, 170, 200, 0.2);
+
+            background:
+                #f5fcfe;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
+
             text-align: center;
 
-            padding: 30px 20px;
+            padding: 35px 20px;
 
-            color: #7ba8bc;
+            border-top:
+                1px solid #b9e7f5;
 
-            font-size: 14px;
+            color: #91a0ae;
+
+            font-size: 13px;
         }
 
-        /* ================= MOBILE ================= */
 
-        @media (max-width: 700px) {
+        footer strong {
+
+            color: #5fa8c0;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 750px) {
 
             nav {
-                padding: 15px 5%;
+
+                padding:
+                    10px 8px;
             }
 
-            nav a {
-                margin-left: 12px;
-                font-size: 14px;
+
+            .nav-menu {
+
+                justify-content:
+                    flex-start;
+
+                gap: 2px;
             }
+
+
+            .nav-menu a {
+
+                padding:
+                    9px 12px;
+
+                font-size: 13px;
+            }
+
 
             main {
+
                 width: 92%;
-                padding-top: 50px;
+
+                padding:
+                    50px 0 45px;
             }
 
-            .section-title h1 {
-                font-size: 38px;
-            }
 
             .projects {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .project-images {
-                grid-template-columns: 1fr;
+
+            .project-card {
+
+                padding: 22px;
             }
 
-            .image-button img {
-                height: 240px;
+
+            .project-card h3 {
+
+                font-size: 20px;
             }
 
-            .category-title h2 {
-                font-size: 24px;
+
+            .category-title {
+
+                align-items:
+                    flex-start;
             }
+
 
             .page-navigation {
-                flex-direction: column;
+
+                flex-direction:
+                    column;
+
+                gap: 12px;
             }
 
+
             .page-navigation a {
+
                 width: 100%;
+
+                flex: none;
             }
+
+
+            .lightbox {
+
+                padding: 15px;
+            }
+
+
+            .lightbox img {
+
+                max-width: 96vw;
+
+                max-height: 82vh;
+            }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+
+    <!-- =========================================
+         TOP NAVIGATION
+    ========================================== -->
 
     <nav>
 
-        <div class="logo">
-            Tanitta.
-        </div>
+        <div class="nav-menu">
 
-        <div>
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html">
+                หน้าปก
+            </a>
+
+
+            <a href="introduction.html">
+                คำนำ
+            </a>
+
+
+            <a href="about.html">
+                ประวัติส่วนตัว
+            </a>
+
+
+            <a href="about.html#education">
+                ประวัติการศึกษา
+            </a>
+
+
+            <a href="university.html">
+                ความสนใจในการศึกษาต่อ
+            </a>
+
+
+            <a
+                href="projects.html"
+                class="active"
+            >
+                กิจกรรมที่เข้าร่วม
+            </a>
+
+
+            <a href="skills.html">
+                ความสามารถพิเศษ/ทักษะ
+            </a>
+
         </div>
 
     </nav>
 
 
-    <!-- ================= MAIN ================= -->
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
 
     <main>
 
+
         <!-- PAGE TITLE -->
 
-        <div class="section-title">
+        <div class="page-title">
 
-            <div class="section-number">
+            <span class="section-number">
                 04.
-            </div>
+            </span>
 
             <h1>
                 กิจกรรมที่ทำ
             </h1>
 
-            <p>
+            <div class="subtitle">
                 Activities
-            </p>
+            </div>
+
+            <div class="title-line"></div>
 
         </div>
 
 
-        <!-- ================================================= -->
-        <!-- 01. ด้านวิชาการและวิทยาศาสตร์ -->
-        <!-- ================================================= -->
+
+        <!-- =========================================
+             CATEGORY 01
+        ========================================== -->
 
         <section class="category">
 
+
             <div class="category-title">
 
-                <span>🔬</span>
+                <span class="category-number">
+                    01.
+                </span>
 
                 <h2>
-                    ด้านวิชาการและวิทยาศาสตร์
+                    🔬 ด้านวิชาการและวิทยาศาสตร์
                 </h2>
 
             </div>
 
 
+
             <div class="projects">
 
 
-                <!-- ================= 1. HIGH CALIBER ================= -->
+                <!-- 01 HIGH CALIBER -->
 
                 <article class="project-card">
 
@@ -495,28 +940,40 @@
                         ⚙️
                     </div>
 
-                    <div class="project-images">
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_2446.png"
-                            aria-label="ดูรูปใบประกาศ HIGH CALIBER">
-
-                            <img src="IMG_2446.png"
-                                alt="ใบประกาศ HIGH CALIBER ENGINEERING COMPETENCY TEST 2026">
-
-                        </button>
-
-                    </div>
 
                     <h3>
-                        🏅 เข้าร่วมสอบวัดความรู้ “HIGH CALIBER ENGINEERING COMPETENCY TEST 2026”
+                        ⚙️ เข้าร่วมสอบวัดความรู้
+                        “HIGH CALIBER ENGINEERING
+                        COMPETENCY TEST 2026”
                     </h3>
 
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_2446.png"
+                        aria-label="ดูรูปใบประกาศ HIGH CALIBER"
+                    >
+
+                        <img
+                            src="IMG_2446.png"
+                            alt="ใบประกาศ HIGH CALIBER ENGINEERING COMPETENCY TEST 2026"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
                     <p>
+
                         เข้าร่วมสอบวัดความรู้
-                        “HIGH CALIBER ENGINEERING COMPETENCY TEST 2026”
-                        ในงาน K-ENGINEERING WORLD TOUR AND COMPETENCY CHALLENGE 2026
+                        “HIGH CALIBER ENGINEERING
+                        COMPETENCY TEST 2026”
+                        ในงาน K-ENGINEERING WORLD TOUR
+                        AND COMPETENCY CHALLENGE 2026
+
                     </p>
+
 
                     <div class="project-info">
 
@@ -532,18 +989,19 @@
 
                     </div>
 
+
                     <div class="tags">
 
                         <span class="tag">
-                            Engineering
+                            การคิดวิเคราะห์
                         </span>
 
                         <span class="tag">
-                            Competency Test
+                            การแก้ปัญหา
                         </span>
 
                         <span class="tag">
-                            Certificate
+                            การประยุกต์ใช้ความรู้
                         </span>
 
                     </div>
@@ -551,48 +1009,67 @@
                 </article>
 
 
-                <!-- ================= 2. โครงงาน ================= -->
+
+                <!-- 02 WATER PROJECT -->
 
                 <article class="project-card">
 
                     <div class="project-icon">
-                        🔬
+                        🧪
                     </div>
 
+
                     <h3>
-                        🧪 การบำบัดน้ำด้วยจุลินทรีย์สังเคราะห์ด้วยแสง
+                        🧪 การบำบัดน้ำด้วยจุลินทรีย์
+                        สังเคราะห์ด้วยแสง
                     </h3>
 
+
                     <p>
-                        ศึกษาการนำจุลินทรีย์สังเคราะห์ด้วยแสงมาใช้ในการบำบัดน้ำ
-                        พร้อมเรียนรู้กระบวนการทดลอง การเก็บข้อมูล
-                        และการวิเคราะห์ผลจากการทดลอง
+
+                        ศึกษาการประยุกต์ใช้จุลินทรีย์
+                        สังเคราะห์ด้วยแสงในการบำบัดน้ำ
+                        พร้อมเรียนรู้กระบวนการทดลอง
+                        การเก็บข้อมูล และการวิเคราะห์ผล
+
                     </p>
 
-                    <a class="drive-link"
+
+                    <div class="project-info">
+
+                        <p>
+                            <strong>ประเภท:</strong>
+                            โครงงานวิทยาศาสตร์
+                        </p>
+
+                    </div>
+
+
+                    <a
                         href="https://drive.google.com/drive/folders/1fOiGWgohM7MxmOBeAk4RG1s9ZPmqVpd_"
-                        target="_blank">
-
-                        📁 ดูผลงานโครงงาน
-
+                        target="_blank"
+                        class="drive-link"
+                    >
+                        📁 ดูโครงงานเพิ่มเติม
                     </a>
+
 
                     <div class="tags">
 
                         <span class="tag">
-                            Chemistry
+                            การวางแผน
                         </span>
 
                         <span class="tag">
-                            Experiment
+                            การคิดวิเคราะห์
                         </span>
 
                         <span class="tag">
-                            Environmental Science
+                            การทดลอง
                         </span>
 
                         <span class="tag">
-                            Data Analysis
+                            การเก็บข้อมูล
                         </span>
 
                     </div>
@@ -600,7 +1077,8 @@
                 </article>
 
 
-                <!-- ================= 3. การแข่งขัน ================= -->
+
+                <!-- 03 NATURAL PHENOMENA -->
 
                 <article class="project-card">
 
@@ -608,207 +1086,583 @@
                         🏆
                     </div>
 
-                    <div class="project-images">
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_2395.jpeg"
-                            aria-label="ดูรูปการแข่งขัน">
-
-                            <img src="IMG_2395.jpeg"
-                                alt="การแข่งขันแฟนพันธุ์แท้">
-
-                        </button>
-
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_4388.jpeg"
-                            aria-label="ดูรูปการแข่งขันเพิ่มเติม">
-
-                            <img src="IMG_4388.jpeg"
-                                alt="ภาพกิจกรรมการแข่งขัน">
-
-                        </button>
-
-                    </div>
 
                     <h3>
                         🏆 การแข่งขันแฟนพันธุ์แท้
                         “ศึกวัดเซียนปรากฏการณ์ธรรมชาติ”
                     </h3>
 
-                    <p>
-                        เข้าร่วมการแข่งขันแฟนพันธุ์แท้
-                        “ศึกวัดเซียนปรากฏการณ์ธรรมชาติ”
-                        เพื่อทดสอบความรู้และความสามารถด้านวิทยาศาสตร์
-                        และปรากฏการณ์ทางธรรมชาติ
-                    </p>
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_2395.jpeg"
+                        aria-label="ดูรูปการแข่งขัน"
+                    >
+
+                        <img
+                            src="IMG_2395.jpeg"
+                            alt="การแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_4388.jpeg"
+                        aria-label="ดูรูปการแข่งขันเพิ่มเติม"
+                    >
+
+                        <img
+                            src="IMG_4388.jpeg"
+                            alt="ภาพการแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ"
+                            class="project-image"
+                        >
+
+                    </button>
+
 
                     <div class="project-info">
 
                         <p>
-                            <strong>รางวัล:</strong>
+                            <strong>ผลการแข่งขัน:</strong>
                             รองชนะเลิศอันดับที่ 1
                         </p>
 
                     </div>
 
+
                     <div class="tags">
 
                         <span class="tag">
-                            Activity
+                            การคิดวิเคราะห์
                         </span>
 
                         <span class="tag">
-                            Award
+                            การคิดอย่างเป็นระบบ
                         </span>
 
                         <span class="tag">
-                            Science
+                            การแก้ปัญหา
+                        </span>
+
+                        <span class="tag">
+                            ความรู้ด้านวิทยาศาสตร์
                         </span>
 
                     </div>
 
                 </article>
 
+
+
+                <!-- 04 SCIENCE QUIZ -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        🥇
+                    </div>
+
+
+                    <h3>
+                        🥇 การแข่งขันตอบปัญหาวิทยาศาสตร์
+                        ระดับชั้นมัธยมศึกษาปีที่ 5
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__12083204.jpg"
+                        aria-label="ดูใบประกาศการแข่งขันตอบปัญหาวิทยาศาสตร์"
+                    >
+
+                        <img
+                            src="S__12083204.jpg"
+                            alt="ใบประกาศการแข่งขันตอบปัญหาวิทยาศาสตร์"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <p>
+
+                        เข้าร่วมการแข่งขันตอบปัญหา
+                        วิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 5
+                        เนื่องในกิจกรรมวันวิทยาศาสตร์
+                        ประจำปีการศึกษา 2568
+
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <p>
+                            <strong>รางวัล:</strong>
+                            ชนะเลิศ
+                        </p>
+
+                        <p>
+                            <strong>วันที่:</strong>
+                            18 สิงหาคม 2568
+                        </p>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            การคิดวิเคราะห์
+                        </span>
+
+                        <span class="tag">
+                            การแก้ปัญหา
+                        </span>
+
+                        <span class="tag">
+                            การคิดอย่างเป็นระบบ
+                        </span>
+
+                        <span class="tag">
+                            ความรู้ด้านวิทยาศาสตร์
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 05 THAI WORD GAME -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        🏅
+                    </div>
+
+
+                    <h3>
+                        🏅 การแข่งขันคำคม
+                        เกมต่ออักษรภาษาไทย
+                        รุ่นมัธยมศึกษาตอนปลาย
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__58523653.jpg"
+                        aria-label="ดูภาพการแข่งขันคำคม"
+                    >
+
+                        <img
+                            src="S__58523653.jpg"
+                            alt="ภาพการแข่งขันคำคม"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__58523651.jpg"
+                        aria-label="ดูใบประกาศการแข่งขันคำคม"
+                    >
+
+                        <img
+                            src="S__58523651.jpg"
+                            alt="ใบประกาศการแข่งขันคำคม เกมต่ออักษรภาษาไทย"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <p>
+
+                        เข้าร่วมการแข่งขันคำคม
+                        เกมต่ออักษรภาษาไทย
+                        รุ่นมัธยมศึกษาตอนปลาย
+                        ในรายการแข่งขันประจำปี 2568
+
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <p>
+                            <strong>รางวัล:</strong>
+                            อันดับที่ 6
+                        </p>
+
+                        <p>
+                            <strong>วันที่:</strong>
+                            4–5 มกราคม 2568
+                        </p>
+
+                        <p>
+                            <strong>สถานที่:</strong>
+                            ศูนย์การค้าเดอะมอลล์ไลฟ์สโตร์
+                            บางกะปิ
+                        </p>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            การคิดวางแผน
+                        </span>
+
+                        <span class="tag">
+                            การคิดวิเคราะห์
+                        </span>
+
+                        <span class="tag">
+                            การใช้ภาษา
+                        </span>
+
+                        <span class="tag">
+                            การแก้ปัญหา
+                        </span>
+
+                    </div>
+
+                </article>
+
+
             </div>
 
         </section>
 
 
-        <!-- ================================================= -->
-        <!-- 02. ด้านคุณธรรม -->
-        <!-- ================================================= -->
+
+        <!-- =========================================
+             CATEGORY 02
+        ========================================== -->
 
         <section class="category">
 
+
             <div class="category-title">
 
-                <span>🌟</span>
+                <span class="category-number">
+                    02.
+                </span>
 
                 <h2>
-                    ด้านคุณธรรม
+                    🌟 ด้านคุณธรรม
                 </h2>
 
             </div>
 
 
+
             <div class="projects">
 
 
-                <!-- ================= นักเรียนประพฤติดี ================= -->
+                <!-- 06 GOOD STUDENT -->
 
                 <article class="project-card">
 
                     <div class="project-icon">
-                        🌟
+                        📜
                     </div>
 
-                    <div class="project-images">
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_4394.jpeg"
-                            aria-label="ดูรูปเกียรติบัตรนักเรียนประพฤติดี">
-
-                            <img src="IMG_4394.jpeg"
-                                alt="เกียรติบัตรนักเรียนประพฤติดี">
-
-                        </button>
-
-                    </div>
 
                     <h3>
                         📜 รางวัล “นักเรียนประพฤติดี”
                         ประจำปีการศึกษา 2568
                     </h3>
 
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_4394.jpeg"
+                        aria-label="ดูใบประกาศนักเรียนประพฤติดี"
+                    >
+
+                        <img
+                            src="IMG_4394.jpeg"
+                            alt="รางวัลนักเรียนประพฤติดี"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
                     <p>
-                        ได้รับรางวัล “นักเรียนประพฤติดี”
+
+                        ได้รับรางวัลนักเรียนประพฤติดี
                         ประจำปีการศึกษา 2568
-                        เพื่อแสดงถึงความประพฤติที่ดี
-                        และการปฏิบัติตนอย่างเหมาะสมในสถานศึกษา
+                        จากการมีความประพฤติดี
+                        มีความรับผิดชอบ
+                        และปฏิบัติตนอย่างเหมาะสม
+                        ในสถานศึกษา
+
                     </p>
+
 
                     <div class="tags">
 
                         <span class="tag">
-                            Award
+                            ความรับผิดชอบ
                         </span>
 
                         <span class="tag">
-                            Morality
+                            มีวินัย
+                        </span>
+
+                        <span class="tag">
+                            การประพฤติตน
                         </span>
 
                     </div>
 
                 </article>
 
+
+
+                <!-- 07 MORAL CAMP -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        🎖️
+                    </div>
+
+
+                    <h3>
+                        🎖️ ค่ายพัฒนาคุณธรรม
+                        จริยธรรมนักเรียน
+                        ประจำปีการศึกษา 2568
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__58523652.jpg"
+                        aria-label="ดูใบประกาศค่ายพัฒนาคุณธรรม"
+                    >
+
+                        <img
+                            src="S__58523652.jpg"
+                            alt="ใบประกาศค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <p>
+
+                        เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม
+                        จริยธรรมนักเรียน
+                        เพื่อส่งเสริมการพัฒนาคุณธรรม
+                        จริยธรรม และการอยู่ร่วมกับผู้อื่น
+
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <p>
+                            <strong>วันที่:</strong>
+                            10 มิถุนายน 2568
+                        </p>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            คุณธรรมและจริยธรรม
+                        </span>
+
+                        <span class="tag">
+                            ความรับผิดชอบ
+                        </span>
+
+                        <span class="tag">
+                            มีวินัย
+                        </span>
+
+                        <span class="tag">
+                            การอยู่ร่วมกับผู้อื่น
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 08 ANTI-CORRUPTION -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        📚
+                    </div>
+
+
+                    <h3>
+                        📜 ผ่านการเรียนและทดสอบ
+                        หลักสูตรต้านทุจริตศึกษา
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__12083205.jpg"
+                        aria-label="ดูใบประกาศหลักสูตรต้านทุจริตศึกษา"
+                    >
+
+                        <img
+                            src="S__12083205.jpg"
+                            alt="ใบประกาศหลักสูตรการป้องกันการทุจริต"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <p>
+
+                        ผ่านการเรียนและทดสอบตามเกณฑ์
+                        ที่กำหนดของหลักสูตรต้านทุจริตศึกษา
+                        รายวิชาเพิ่มเติม
+                        “การป้องกันการทุจริต”
+                        ระดับมัธยมศึกษาปีที่ 5
+
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <p>
+                            <strong>วันที่:</strong>
+                            4 กรกฎาคม 2568
+                        </p>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ความซื่อสัตย์สุจริต
+                        </span>
+
+                        <span class="tag">
+                            ความรับผิดชอบ
+                        </span>
+
+                        <span class="tag">
+                            จิตสำนึกต่อต้านการทุจริต
+                        </span>
+
+                        <span class="tag">
+                            การเป็นพลเมืองดี
+                        </span>
+
+                    </div>
+
+                </article>
+
+
             </div>
 
         </section>
 
 
-        <!-- ================================================= -->
-        <!-- 03. ด้านภาวะผู้นำ -->
-        <!-- ================================================= -->
+
+        <!-- =========================================
+             CATEGORY 03
+        ========================================== -->
 
         <section class="category">
 
+
             <div class="category-title">
 
-                <span>👑</span>
+                <span class="category-number">
+                    03.
+                </span>
 
                 <h2>
-                    ด้านภาวะผู้นำ
+                    👑 ด้านภาวะผู้นำ
                 </h2>
 
             </div>
 
 
+
             <div class="projects">
 
 
-                <!-- ================= ผู้ช่วยวิทยากร ================= -->
+                <!-- 09 THAI LANGUAGE ACTIVITY -->
 
                 <article class="project-card">
 
                     <div class="project-icon">
-                        👑
+                        🏅
                     </div>
 
-                    <div class="project-images">
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_2451.jpeg"
-                            aria-label="ดูรูปเกียรติบัตรผู้ช่วยวิทยากร">
-
-                            <img src="IMG_2451.jpeg"
-                                alt="เกียรติบัตรผู้ช่วยวิทยากร">
-
-                        </button>
-
-
-                        <button class="image-button" type="button"
-                            data-image="IMG_6683.jpeg"
-                            aria-label="ดูรูปกิจกรรมผู้ช่วยวิทยากร">
-
-                            <img src="IMG_6683.jpeg"
-                                alt="ภาพกิจกรรมผู้ช่วยวิทยากร">
-
-                        </button>
-
-                    </div>
 
                     <h3>
-                        🏅 ผู้ช่วยวิทยากรกิจกรรมสัปดาห์แห่งการเรียนรู้ภาษาและวรรณคดีไทย
+                        🏅 ผู้ช่วยวิทยากรกิจกรรม
+                        สัปดาห์แห่งการเรียนรู้ภาษา
+                        และวรรณคดีไทย
                         “งามสง่าศรีศิลป์อักษรา”
                     </h3>
 
-                    <p>
-                        เป็นผู้ช่วยวิทยากรกิจกรรมสัปดาห์แห่งการเรียนรู้ภาษาและวรรณคดีไทย
-                        “งามสง่าศรีศิลป์อักษรา”
-                        ซึ่งจัดขึ้นโดยโรงเรียนบ้านบึง
-                        “อุตสาหกรรมนุเคราะห์”
-                    </p>
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_2451.jpeg"
+                        aria-label="ดูภาพกิจกรรมผู้ช่วยวิทยากร"
+                    >
+
+                        <img
+                            src="IMG_2451.jpeg"
+                            alt="กิจกรรมผู้ช่วยวิทยากร"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="IMG_6683.jpeg"
+                        aria-label="ดูภาพกิจกรรมเพิ่มเติม"
+                    >
+
+                        <img
+                            src="IMG_6683.jpeg"
+                            alt="ภาพกิจกรรมผู้ช่วยวิทยากรเพิ่มเติม"
+                            class="project-image"
+                        >
+
+                    </button>
+
 
                     <div class="project-info">
 
@@ -824,30 +1678,112 @@
 
                     </div>
 
+
                     <div class="tags">
 
                         <span class="tag">
-                            Leadership
+                            ภาวะผู้นำ
                         </span>
 
                         <span class="tag">
-                            Activity
+                            การสื่อสาร
                         </span>
 
                         <span class="tag">
-                            Certificate
+                            การทำงานเป็นทีม
+                        </span>
+
+                        <span class="tag">
+                            ความรับผิดชอบ
                         </span>
 
                     </div>
 
                 </article>
 
+
+
+                <!-- 10 MIND EDUCATION -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        🧠
+                    </div>
+
+
+                    <h3>
+                        🧠 โครงการสร้างภูมิคุ้มกัน
+                        และความสมดุลทางจิตใจและปัญญา
+                        ผ่านการเรียนการสอนจิตศึกษา
+                        (Mind Education)
+                    </h3>
+
+
+                    <button
+                        type="button"
+                        class="image-button"
+                        data-image="S__12083203.jpg"
+                        aria-label="ดูภาพโครงการ Mind Education"
+                    >
+
+                        <img
+                            src="S__12083203.jpg"
+                            alt="โครงการ Mind Education"
+                            class="project-image"
+                        >
+
+                    </button>
+
+
+                    <p>
+
+                        มีส่วนร่วมในโครงการสร้างภูมิคุ้มกัน
+                        และความสมดุลทางจิตใจและปัญญา
+                        ผ่านการเรียนการสอนจิตศึกษา
+                        (Mind Education)
+                        โดยเน้นการพัฒนากรอบความคิด
+                        การเรียนรู้ และการทำงานร่วมกับผู้อื่น
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            การสื่อสาร
+                        </span>
+
+                        <span class="tag">
+                            การนำเสนอ
+                        </span>
+
+                        <span class="tag">
+                            การคิดอย่างเป็นระบบ
+                        </span>
+
+                        <span class="tag">
+                            การทำงานร่วมกับผู้อื่น
+                        </span>
+
+                        <span class="tag">
+                            การพัฒนาตนเอง
+                        </span>
+
+                    </div>
+
+                </article>
+
+
             </div>
 
         </section>
 
 
-        <!-- ================= PAGE NAVIGATION ================= -->
+
+        <!-- =========================================
+             BOTTOM NAVIGATION
+        ========================================== -->
 
         <div class="page-navigation">
 
@@ -855,107 +1791,165 @@
                 ← มหาวิทยาลัยในฝัน
             </a>
 
+
             <a href="skills.html">
                 Skills →
             </a>
 
         </div>
 
+
     </main>
 
 
-    <!-- ================= LIGHTBOX ================= -->
 
-    <div class="lightbox" id="lightbox">
+    <!-- =========================================
+         LIGHTBOX
+    ========================================== -->
 
-        <button class="close-lightbox"
-            id="closeLightbox"
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="ดูรูปภาพขนาดใหญ่"
+    >
+
+        <button
             type="button"
-            aria-label="ปิดรูป">
-
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="ปิดรูปภาพ"
+        >
             ×
-
         </button>
 
-        <img id="lightboxImage"
+
+        <img
+            id="lightboxImage"
             src=""
-            alt="รูปกิจกรรมขนาดใหญ่">
+            alt="รูปภาพขนาดใหญ่"
+        >
 
     </div>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer>
 
-        Designed & Built by Tanitta
-        <br>
-        © 2026 Tanitta
+        <p>
+            Designed & Built by
+            <strong>Tanitta</strong>
+        </p>
+
+        <p>
+            © 2026 Tanitta
+        </p>
 
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const closeLightbox = document.getElementById("closeLightbox");
+        const lightbox =
+            document.getElementById("lightbox");
 
-        const imageButtons = document.querySelectorAll(".image-button");
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const lightboxClose =
+            document.getElementById("lightboxClose");
+
+
+        const imageButtons =
+            document.querySelectorAll(
+                ".image-button"
+            );
 
 
         imageButtons.forEach(button => {
 
-            button.addEventListener("click", () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-                const image = button.getAttribute("data-image");
+                    const image =
+                        button.dataset.image;
 
-                lightboxImage.src = image;
+                    lightboxImage.src = image;
 
-                lightbox.classList.add("active");
+                    lightbox.classList.add("show");
 
-            });
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
 
         });
 
 
-        closeLightbox.addEventListener("click", () => {
+        function closeLightbox() {
 
-            lightbox.classList.remove("active");
+            lightbox.classList.remove("show");
 
             lightboxImage.src = "";
 
-        });
+            document.body.style.overflow =
+                "";
+
+        }
 
 
-        lightbox.addEventListener("click", (event) => {
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
 
-            if (event.target === lightbox) {
 
-                lightbox.classList.remove("active");
+        lightbox.addEventListener(
+            "click",
+            event => {
 
-                lightboxImage.src = "";
+                if (
+                    event.target === lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
 
             }
+        );
 
-        });
 
+        document.addEventListener(
+            "keydown",
+            event => {
 
-        document.addEventListener("keydown", (event) => {
+                if (
+                    event.key === "Escape" &&
+                    lightbox.classList.contains("show")
+                ) {
 
-            if (event.key === "Escape") {
+                    closeLightbox();
 
-                lightbox.classList.remove("active");
-
-                lightboxImage.src = "";
+                }
 
             }
-
-        });
+        );
 
     </script>
+
 
 </body>
 
