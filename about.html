@@ -2,7 +2,9 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tanitta | About Me</title>
@@ -220,7 +222,7 @@
             color: #607d8b;
         }
 
-        /* ===== PERSONAL INFO ===== */
+        /* ===== PERSONAL INFORMATION ===== */
 
         .personal-info {
             margin: 25px auto 35px;
@@ -242,7 +244,8 @@
 
             padding: 22px 18px;
 
-            box-shadow: 0 8px 20px rgba(80, 160, 190, 0.08);
+            box-shadow:
+                0 8px 20px rgba(80, 160, 190, 0.08);
 
             transition: 0.3s;
         }
@@ -250,7 +253,8 @@
         .info-box:hover {
             transform: translateY(-4px);
 
-            box-shadow: 0 12px 25px rgba(80, 160, 190, 0.15);
+            box-shadow:
+                0 12px 25px rgba(80, 160, 190, 0.15);
         }
 
         .info-title {
@@ -268,6 +272,61 @@
             color: #438fb1;
 
             font-weight: bold;
+        }
+
+        /* ===== EDUCATION ===== */
+
+        .education {
+            margin: 10px auto 35px;
+
+            max-width: 700px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 16px;
+
+            text-align: left;
+        }
+
+        .education-box {
+            background: rgba(245, 252, 255, 0.9);
+
+            border: 2px solid #ccecf6;
+
+            border-radius: 20px;
+
+            padding: 20px 24px;
+
+            box-shadow:
+                0 8px 20px rgba(80, 160, 190, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .education-box:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 25px rgba(80, 160, 190, 0.15);
+        }
+
+        .education-level {
+            color: #438fb1;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .education-school {
+            color: #607d8b;
+
+            font-size: 16px;
+
+            line-height: 1.7;
         }
 
         /* ===== ABOUT ===== */
@@ -449,6 +508,7 @@
         }
 
         @keyframes spin {
+
             from {
                 transform: rotate(0deg);
             }
@@ -538,13 +598,16 @@
             .page-navigation a {
                 width: 100%;
             }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
+
 
     <!-- ===== NAVBAR ===== -->
 
@@ -555,8 +618,15 @@
         </div>
 
         <div>
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+
         </div>
 
     </nav>
@@ -568,20 +638,23 @@
 
         <div class="card">
 
+
             <div class="section-number">
                 02.
             </div>
 
+
             <h1>
                 About Me
             </h1>
+
 
             <div class="subtitle">
                 เกี่ยวกับฉัน
             </div>
 
 
-            <!-- PROFILE -->
+            <!-- ===== PROFILE ===== -->
 
             <div class="profile-wrap">
 
@@ -592,15 +665,18 @@
                 >
 
                 <span class="deco heart">💙</span>
+
                 <span class="deco star">⭐</span>
+
                 <span class="deco sparkle">✨</span>
 
             </div>
 
 
             <h2 style="color:#438fb1; margin-bottom:10px;">
-                สวัสดีค่ะ ฉันชื่อ ธนิษฐา
+                สวัสดีค่ะ ฉันชื่อ ธนิษฐา ว่องไว
             </h2>
+
 
             <p style="color:#91aeba; margin-bottom:20px;">
                 นักเรียนชั้นมัธยมศึกษาปีที่ 6 สายการเรียนเตรียมวิศวกรรมศาสตร์
@@ -608,20 +684,24 @@
 
 
             <p class="intro">
+
                 ฉันเป็นคนที่สนใจด้านวิทยาศาสตร์ โดยเฉพาะวิชาเคมี
                 และชอบการเรียนรู้ผ่านการทดลองและการลงมือทำจริง
                 ฉันชอบคิดวิเคราะห์และค้นหาวิธีแก้ปัญหาอย่างเป็นขั้นตอน
                 พร้อมทั้งพัฒนาตัวเองและเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
+
             </p>
 
 
-            <!-- PERSONAL INFORMATION -->
+            <!-- ===== PERSONAL INFORMATION ===== -->
 
             <h2 class="about-title">
                 👤 ข้อมูลส่วนตัว
             </h2>
 
+
             <div class="personal-info">
+
 
                 <div class="info-box">
 
@@ -648,30 +728,88 @@
 
                 </div>
 
+
             </div>
 
 
-            <!-- ABOUT -->
+            <!-- ===== EDUCATION ===== -->
+
+            <h2 class="about-title">
+                🎓 ประวัติการศึกษา
+            </h2>
+
+
+            <div class="education">
+
+
+                <div class="education-box">
+
+                    <div class="education-level">
+                        📘 ระดับประถมศึกษา
+                    </div>
+
+                    <div class="education-school">
+                        โรงเรียนบ้านมาบคล้า
+                    </div>
+
+                </div>
+
+
+                <div class="education-box">
+
+                    <div class="education-level">
+                        📗 ระดับมัธยมศึกษาตอนต้น
+                    </div>
+
+                    <div class="education-school">
+                        โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์"
+                    </div>
+
+                </div>
+
+
+                <div class="education-box">
+
+                    <div class="education-level">
+                        📕 ระดับมัธยมศึกษาตอนปลาย
+                    </div>
+
+                    <div class="education-school">
+                        โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์"
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ===== ABOUT ===== -->
 
             <h2 class="about-title">
                 🙋‍♀️ เกี่ยวกับฉัน
             </h2>
 
+
             <p class="about-text">
+
                 ฉันมีความสนใจในการเรียนรู้ด้านวิทยาศาสตร์
                 และต้องการนำความรู้ที่ได้ไปต่อยอดกับงานด้านวิศวกรรม
                 โดยเฉพาะวิศวกรรมเคมี ซึ่งเป็นสาขาที่ฉันสนใจ
                 และเป็นเป้าหมายในการศึกษาต่อในอนาคต
+
             </p>
 
 
-            <!-- HIGHLIGHTS -->
+            <!-- ===== HIGHLIGHTS ===== -->
 
             <h2 class="about-title">
                 💙 ความสนใจและจุดเด่น
             </h2>
 
+
             <div class="highlight-grid">
+
 
                 <div class="highlight">
 
@@ -724,10 +862,11 @@
 
                 </div>
 
+
             </div>
 
 
-            <!-- GOAL -->
+            <!-- ===== GOAL ===== -->
 
             <div class="goal">
 
@@ -736,22 +875,26 @@
                 </h2>
 
                 <p>
+
                     ฉันตั้งใจพัฒนาความรู้และทักษะ
                     เพื่อศึกษาต่อด้านวิศวกรรมเคมี
                     และนำความรู้ไปใช้สร้างประโยชน์ในอนาคต
+
                 </p>
 
             </div>
 
 
-            <!-- QUOTE -->
+            <!-- ===== QUOTE ===== -->
 
             <div class="quote">
+
                 “เรียนรู้วันนี้ เพื่อสร้างอนาคตที่อยากเป็น” ✨
+
             </div>
 
 
-            <!-- PAGE NAVIGATION -->
+            <!-- ===== PAGE NAVIGATION ===== -->
 
             <div class="page-navigation">
 
@@ -765,6 +908,7 @@
 
             </div>
 
+
         </div>
 
     </main>
@@ -775,10 +919,13 @@
     <footer>
 
         Designed & Built by Tanitta
+
         <br>
+
         © 2026 Tanitta
 
     </footer>
+
 
 </body>
 
