@@ -9,6 +9,7 @@
 
     <title>Tanitta | Home</title>
 
+
     <style>
 
         * {
@@ -17,130 +18,242 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: "Segoe UI", Tahoma, sans-serif;
+
+            font-family: Arial, sans-serif;
 
             min-height: 100vh;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             padding: 30px;
 
+            color: #40536b;
+
             background:
+
                 radial-gradient(
-                    circle at 15% 20%,
-                    rgba(185, 231, 245, 0.65),
+                    circle at 10% 20%,
+                    rgba(174, 228, 244, 0.45),
                     transparent 35%
                 ),
+
                 radial-gradient(
-                    circle at 85% 80%,
-                    rgba(255, 231, 170, 0.5),
+                    circle at 90% 80%,
+                    rgba(240, 207, 103, 0.30),
                     transparent 35%
                 ),
+
                 linear-gradient(
                     135deg,
-                    #f8fdff,
-                    #eefaff
+                    #f8fbff,
+                    #fffdf5
                 );
 
-            color: #28536b;
+            overflow-x: hidden;
         }
 
 
-        /* ================= CARD ================= */
+
+        /* =========================================
+           MAIN CARD
+        ========================================= */
 
         .card {
+
             width: 100%;
+
             max-width: 650px;
 
-            padding: 50px 35px;
+            background:
+                rgba(255, 255, 255, 0.90);
+
+            border:
+                2px solid #b9e7f5;
+
+            border-radius:
+                30px;
+
+            padding:
+                55px 35px;
 
             text-align: center;
 
-            background: rgba(255, 255, 255, 0.88);
-
-            border: 2px solid #b9e7f5;
-
-            border-radius: 30px;
-
             box-shadow:
-                0 20px 50px rgba(72, 147, 177, 0.15);
-
-            position: relative;
-        }
-
-
-        /* ================= PROFILE ================= */
-
-        .profile-wrap {
-            width: 200px;
-            height: 200px;
-
-            aspect-ratio: 1 / 1;
-
-            margin: 0 auto 30px;
+                0 20px 50px
+                rgba(65, 145, 175, 0.15);
 
             position: relative;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            flex-shrink: 0;
+            overflow: hidden;
         }
 
-        .profile-wrap::before {
+
+
+        /* =========================================
+           DECORATION BACKGROUND
+        ========================================= */
+
+        .card::before {
+
             content: "";
 
             position: absolute;
 
-            width: 194px;
-            height: 194px;
+            width: 220px;
 
-            aspect-ratio: 1 / 1;
-
-            top: 3px;
-            left: 3px;
-
-            border: 3px dashed #a7dff0;
+            height: 220px;
 
             border-radius: 50%;
 
-            box-sizing: border-box;
+            background:
+                rgba(167, 223, 240, 0.15);
 
-            animation: spin 15s linear infinite;
+            top: -110px;
+
+            left: -110px;
+
+            pointer-events: none;
         }
 
-        .profile-wrap::after {
+
+        .card::after {
+
             content: "";
 
             position: absolute;
 
             width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(240, 207, 103, 0.10);
+
+            bottom: -90px;
+
+            right: -90px;
+
+            pointer-events: none;
+        }
+
+
+
+        /* =========================================
+           PROFILE IMAGE WRAPPER
+        ========================================= */
+
+        .profile-wrap {
+
+            width: 200px;
+
+            height: 200px;
+
+            aspect-ratio: 1 / 1;
+
+            margin:
+                0 auto 30px;
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-shrink: 0;
+        }
+
+
+
+        /* =========================================
+           ROTATING DASHED CIRCLE
+        ========================================= */
+
+        .profile-wrap::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 194px;
+
+            height: 194px;
+
+            aspect-ratio: 1 / 1;
+
+            top: 3px;
+
+            left: 3px;
+
+            border:
+                3px dashed #a7dff0;
+
+            border-radius: 50%;
+
+            box-sizing: border-box;
+
+            animation:
+                spin 15s linear infinite;
+        }
+
+
+
+        /* =========================================
+           GLOW AROUND IMAGE
+        ========================================= */
+
+        .profile-wrap::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
             height: 180px;
 
             aspect-ratio: 1 / 1;
 
             top: 10px;
+
             left: 10px;
 
             border-radius: 50%;
 
-            background: rgba(155, 225, 245, 0.25);
+            background:
+                rgba(155, 225, 245, 0.25);
 
-            filter: blur(15px);
+            filter:
+                blur(15px);
 
-            animation: glow 3s ease-in-out infinite;
+            animation:
+                glow 3s ease-in-out infinite;
         }
 
+
+
+        /* =========================================
+           PROFILE IMAGE
+        ========================================= */
+
         .profile {
+
             width: 175px;
+
             height: 175px;
 
             aspect-ratio: 1 / 1;
@@ -149,7 +262,8 @@
 
             border-radius: 50%;
 
-            border: 5px solid white;
+            border:
+                5px solid white;
 
             box-sizing: border-box;
 
@@ -159,284 +273,559 @@
 
             display: block;
 
-            animation: profileFloat 4s ease-in-out infinite;
+            /* รูปอยู่นิ่ง ไม่ขยับ */
+
+            animation: none;
 
             box-shadow:
-                0 10px 30px rgba(65, 145, 175, 0.25);
+                0 10px 30px
+                rgba(65, 145, 175, 0.25);
         }
 
 
-        /* ================= DECORATIONS ================= */
+
+        /* =========================================
+           DECORATIVE HEARTS / STARS
+        ========================================= */
 
         .deco {
+
             position: absolute;
 
-            z-index: 5;
+            z-index: 4;
 
             pointer-events: none;
+
+            user-select: none;
         }
 
-        .heart1 {
-            top: 0;
-            right: -5px;
 
-            font-size: 1.5rem;
+        .heart-1 {
 
-            animation: floatHeart 3s ease-in-out infinite;
+            top: 12px;
+
+            left: 8px;
+
+            font-size: 25px;
+
+            animation:
+                floatHeart 4s ease-in-out infinite;
         }
 
-        .heart2 {
+
+        .heart-2 {
+
             bottom: 10px;
-            left: -8px;
 
-            font-size: 1.35rem;
+            right: 5px;
 
-            animation: floatHeart2 3.5s ease-in-out infinite;
+            font-size: 20px;
+
+            animation:
+                floatHeart2 5s ease-in-out infinite;
         }
 
-        .star1 {
+
+        .star-1 {
+
             top: 35px;
-            left: -15px;
 
-            font-size: 1.3rem;
+            right: 2px;
 
-            animation: twinkle 2s ease-in-out infinite;
-        }
+            font-size: 18px;
 
-        .star2 {
-            bottom: 25px;
-            right: -15px;
-
-            font-size: 1.2rem;
-
-            animation: twinkle 2.5s ease-in-out infinite;
+            animation:
+                twinkle 2s ease-in-out infinite;
         }
 
 
-        /* ================= TEXT ================= */
+        .star-2 {
+
+            bottom: 30px;
+
+            left: 0;
+
+            font-size: 16px;
+
+            animation:
+                twinkle 2.5s ease-in-out infinite;
+        }
+
+
+
+        /* =========================================
+           TEXT
+        ========================================= */
+
+        .welcome {
+
+            color:
+                #79bfd6;
+
+            font-size:
+                17px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                8px;
+
+            letter-spacing:
+                0.5px;
+        }
+
 
         h1 {
-            font-size: 2.6rem;
 
-            color: #326f8c;
+            color:
+                #40536b;
 
-            margin-bottom: 12px;
+            font-size:
+                clamp(30px, 6vw, 46px);
+
+            font-weight:
+                800;
+
+            line-height:
+                1.35;
+
+            margin-bottom:
+                15px;
         }
+
 
         .name {
-            color: #397c9d;
+
+            color:
+                #65b5cf;
         }
+
 
         .description {
-            color: #648391;
 
-            font-size: 1.05rem;
+            color:
+                #718096;
 
-            line-height: 1.8;
+            font-size:
+                16px;
 
-            margin-bottom: 20px;
+            line-height:
+                1.8;
+
+            margin-bottom:
+                22px;
         }
+
+
+
+        /* =========================================
+           INTEREST BOX
+        ========================================= */
+
+        .interest-box {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+
+            margin:
+                20px 0;
+        }
+
 
         .interest {
-            color: #597887;
 
-            line-height: 1.8;
+            padding:
+                8px 14px;
 
-            margin-bottom: 25px;
+            background:
+                #f4fbfd;
+
+            border:
+                1.5px solid #b9e7f5;
+
+            border-radius:
+                20px;
+
+            color:
+                #579ab1;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
         }
+
+
+
+        /* =========================================
+           GOAL
+        ========================================= */
 
         .goal {
-            display: inline-block;
 
-            padding: 12px 20px;
+            margin:
+                25px auto;
 
-            margin-bottom: 25px;
+            padding:
+                14px 20px;
 
-            background: rgba(255, 248, 225, 0.9);
+            max-width:
+                450px;
 
-            border: 2px solid #f4d98b;
+            background:
+                #fffaf0;
 
-            border-radius: 18px;
+            border:
+                2px solid #efd98a;
 
-            color: #8a7137;
+            border-radius:
+                18px;
 
-            font-weight: 700;
+            color:
+                #8b7540;
+
+            font-weight:
+                700;
+
+            line-height:
+                1.6;
         }
 
 
-        /* ================= BUTTON ================= */
 
-        .portfolio-button {
-            display: inline-block;
+        /* =========================================
+           PORTFOLIO BUTTON
+        ========================================= */
 
-            padding: 15px 28px;
+        .portfolio-btn {
 
-            background: rgba(255, 255, 255, 0.9);
+            display:
+                inline-block;
 
-            border: 2px solid #b9e7f5;
+            margin-top:
+                10px;
 
-            border-radius: 18px;
+            padding:
+                14px 30px;
 
-            color: #397c9d;
+            background:
+                #8ed8ed;
 
-            text-decoration: none;
+            border:
+                2px solid #78cce3;
 
-            font-weight: 800;
+            border-radius:
+                18px;
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
+            font-size:
+                16px;
+
+            font-weight:
+                800;
 
             box-shadow:
-                0 10px 25px rgba(75, 155, 185, 0.12);
+                0 8px 20px
+                rgba(90, 170, 200, 0.20);
 
-            transition: 0.3s ease;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
         }
 
-        .portfolio-button:hover {
-            transform: translateY(-4px);
+
+        .portfolio-btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+                #75c9e1;
 
             box-shadow:
-                0 15px 30px rgba(75, 155, 185, 0.2);
-
-            background: white;
+                0 13px 28px
+                rgba(90, 170, 200, 0.28);
         }
 
 
-        /* ================= FOOTER ================= */
+
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
-            margin-top: 25px;
 
-            color: #86aebb;
+            margin-top:
+                30px;
 
-            font-size: 0.9rem;
+            color:
+                #9aa8b5;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.7;
         }
 
 
-        /* ================= ANIMATIONS ================= */
+        footer strong {
 
-        @keyframes profileFloat {
-
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-7px);
-            }
-
+            color:
+                #65abc1;
         }
+
+
+
+        /* =========================================
+           ANIMATIONS
+        ========================================= */
 
         @keyframes spin {
 
             from {
-                transform: rotate(0deg);
+                transform:
+                    rotate(0deg);
             }
 
             to {
-                transform: rotate(360deg);
+                transform:
+                    rotate(360deg);
             }
 
         }
+
 
         @keyframes glow {
 
-            0%, 100% {
-                opacity: 0.5;
-                transform: scale(0.95);
+            0%,
+            100% {
+
+                opacity:
+                    0.45;
+
+                transform:
+                    scale(0.95);
             }
 
             50% {
-                opacity: 1;
-                transform: scale(1.08);
+
+                opacity:
+                    0.85;
+
+                transform:
+                    scale(1.05);
             }
 
         }
+
 
         @keyframes floatHeart {
 
-            0%, 100% {
+            0%,
+            100% {
+
                 transform:
                     translateY(0)
                     rotate(-8deg);
+
+                opacity:
+                    0.8;
             }
 
             50% {
+
                 transform:
                     translateY(-10px)
                     rotate(8deg);
+
+                opacity:
+                    1;
             }
 
         }
+
 
         @keyframes floatHeart2 {
 
-            0%, 100% {
+            0%,
+            100% {
+
                 transform:
                     translateY(0)
                     rotate(8deg);
+
+                opacity:
+                    0.7;
             }
 
             50% {
+
                 transform:
                     translateY(8px)
                     rotate(-8deg);
+
+                opacity:
+                    1;
             }
 
         }
+
 
         @keyframes twinkle {
 
-            0%, 100% {
-                opacity: 0.4;
-                transform: scale(0.85);
+            0%,
+            100% {
+
+                opacity:
+                    0.35;
+
+                transform:
+                    scale(0.8);
             }
 
             50% {
-                opacity: 1;
-                transform: scale(1.15);
+
+                opacity:
+                    1;
+
+                transform:
+                    scale(1.2);
             }
 
         }
 
 
-        /* ================= MOBILE ================= */
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 600px) {
 
             body {
-                padding: 20px;
+
+                padding:
+                    20px;
             }
+
 
             .card {
-                padding: 40px 22px;
+
+                padding:
+                    45px 22px;
+
+                border-radius:
+                    25px;
             }
+
 
             .profile-wrap {
-                width: 190px;
-                height: 190px;
+
+                width:
+                    190px;
+
+                height:
+                    190px;
+
+                margin-bottom:
+                    25px;
             }
+
 
             .profile-wrap::before {
-                width: 184px;
-                height: 184px;
 
-                top: 3px;
-                left: 3px;
+                width:
+                    184px;
+
+                height:
+                    184px;
+
+                top:
+                    3px;
+
+                left:
+                    3px;
             }
+
 
             .profile-wrap::after {
-                width: 170px;
-                height: 170px;
 
-                top: 10px;
-                left: 10px;
+                width:
+                    170px;
+
+                height:
+                    170px;
+
+                top:
+                    10px;
+
+                left:
+                    10px;
             }
+
 
             .profile {
-                width: 165px;
-                height: 165px;
+
+                width:
+                    165px;
+
+                height:
+                    165px;
             }
 
+
             h1 {
-                font-size: 2.2rem;
+
+                font-size:
+                    31px;
+            }
+
+
+            .description {
+
+                font-size:
+                    15px;
+            }
+
+
+            .interest {
+
+                font-size:
+                    12px;
+
+                padding:
+                    7px 11px;
+            }
+
+
+            .portfolio-btn {
+
+                width:
+                    100%;
+
+                max-width:
+                    300px;
             }
 
         }
@@ -446,15 +835,39 @@
 </head>
 
 
+
 <body>
 
 
-    <div class="card">
+    <main class="card">
 
 
-        <!-- PROFILE -->
+        <!-- =========================================
+             PROFILE
+        ========================================== -->
 
         <div class="profile-wrap">
+
+
+            <span class="deco heart-1">
+                💙
+            </span>
+
+
+            <span class="deco heart-2">
+                💛
+            </span>
+
+
+            <span class="deco star-1">
+                ✦
+            </span>
+
+
+            <span class="deco star-2">
+                ✧
+            </span>
+
 
             <img
                 src="profile.jpg"
@@ -462,26 +875,18 @@
                 class="profile"
             >
 
-            <span class="deco heart1">
-                💙
-            </span>
-
-            <span class="deco heart2">
-                💗
-            </span>
-
-            <span class="deco star1">
-                ✨
-            </span>
-
-            <span class="deco star2">
-                ⭐
-            </span>
-
         </div>
 
 
-        <!-- TEXT -->
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================== -->
+
+        <div class="welcome">
+            ยินดีต้อนรับสู่ Portfolio ของฉัน
+        </div>
+
 
         <h1>
             สวัสดีค่ะ ฉันชื่อ
@@ -491,51 +896,82 @@
         </h1>
 
 
-        <div class="description">
+        <p class="description">
 
             นักเรียนชั้นมัธยมศึกษาปีที่ 6
             <br>
+
             สายการเรียนเตรียมวิศวกรรมศาสตร์
 
+        </p>
+
+
+
+        <!-- =========================================
+             INTERESTS
+        ========================================== -->
+
+        <div class="interest-box">
+
+            <span class="interest">
+                🧮 คณิตศาสตร์
+            </span>
+
+            <span class="interest">
+                🧪 เคมี
+            </span>
+
+            <span class="interest">
+                🔬 การทดลอง
+            </span>
+
         </div>
 
 
-        <div class="interest">
 
-            สนใจด้านคณิตศาสตร์ เคมี
-            และการทดลองทางวิทยาศาสตร์
-            <br>
-            ชอบการคิดวิเคราะห์และเรียนรู้จากการลงมือทำ
-
-        </div>
-
+        <!-- =========================================
+             GOAL
+        ========================================== -->
 
         <div class="goal">
 
-            🎓 เป้าหมายในอนาคต: วิศวกรรมเคมี
+            🎓 เป้าหมายในอนาคต:
+            <strong>
+                วิศวกรรมเคมี
+            </strong>
 
         </div>
 
 
-        <br>
 
+        <!-- =========================================
+             PORTFOLIO BUTTON
+        ========================================== -->
 
         <a
             href="portfolio.html"
-            class="portfolio-button"
+            class="portfolio-btn"
         >
             📁 ดูแฟ้มสะสมงาน
         </a>
 
 
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
         <footer>
 
-            Portfolio ของ Tanitta
+            Portfolio ของ
+            <strong>
+                Tanitta
+            </strong>
 
         </footer>
 
 
-    </div>
+    </main>
 
 
 </body>
