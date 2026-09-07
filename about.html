@@ -79,6 +79,7 @@
 
         nav a {
             text-decoration: none;
+
             color: #4b7182;
 
             font-weight: 600;
@@ -98,6 +99,7 @@
             max-width: 900px;
 
             margin: auto;
+
             padding: 70px 0;
         }
 
@@ -133,35 +135,35 @@
 
             letter-spacing: 3px;
 
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
 
         /* ================= ABOUT CARD ================= */
 
         .about-card {
-            background: rgba(255, 255, 255, 0.86);
+            background: rgba(255, 255, 255, 0.82);
 
             border: 2px solid #b9e7f5;
 
             border-radius: 30px;
 
-            padding: 45px 40px;
+            padding: 40px 35px;
 
             box-shadow:
                 0 20px 45px rgba(72, 147, 177, 0.14);
 
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
 
         /* ================= PROFILE ================= */
 
         .profile-wrap {
-            width: 170px;
-            height: 170px;
+            width: 175px;
+            height: 175px;
 
-            margin: 0 auto 35px;
+            margin: 0 auto 30px;
 
             position: relative;
 
@@ -178,7 +180,7 @@
             width: 170px;
             height: 170px;
 
-            border: 3px dashed #9edcf0;
+            border: 3px dashed #a7dff0;
 
             border-radius: 50%;
 
@@ -190,12 +192,12 @@
 
             position: absolute;
 
-            width: 150px;
-            height: 150px;
+            width: 145px;
+            height: 145px;
 
             border-radius: 50%;
 
-            background: rgba(160, 225, 245, 0.25);
+            background: rgba(155, 225, 245, 0.25);
 
             filter: blur(15px);
 
@@ -229,21 +231,23 @@
 
             z-index: 5;
 
-            font-size: 1.4rem;
-
             pointer-events: none;
         }
 
         .heart1 {
-            top: 5px;
+            top: 0;
             right: -5px;
+
+            font-size: 1.5rem;
 
             animation: floatHeart 3s ease-in-out infinite;
         }
 
         .heart2 {
             bottom: 10px;
-            left: -10px;
+            left: -8px;
+
+            font-size: 1.35rem;
 
             animation: floatHeart2 3.5s ease-in-out infinite;
         }
@@ -252,6 +256,8 @@
             top: 35px;
             left: -15px;
 
+            font-size: 1.3rem;
+
             animation: twinkle 2s ease-in-out infinite;
         }
 
@@ -259,49 +265,64 @@
             bottom: 25px;
             right: -15px;
 
+            font-size: 1.2rem;
+
             animation: twinkle 2.5s ease-in-out infinite;
         }
 
 
         /* ================= INTRO ================= */
 
-        .intro-text {
+        .intro {
             text-align: center;
 
-            color: #5c7885;
+            margin-bottom: 30px;
+
+            color: #557583;
 
             font-size: 1.05rem;
 
             line-height: 1.9;
+        }
 
-            margin-bottom: 35px;
+        .intro strong {
+            color: #397c9d;
         }
 
 
-        /* ================= INFO ================= */
+        /* ================= INFORMATION ================= */
 
-        .info-list {
+        .info-grid {
             display: grid;
 
             grid-template-columns: repeat(2, 1fr);
 
             gap: 18px;
 
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
-        .info-item {
+        .info-box {
             padding: 20px;
 
-            background: rgba(244, 251, 255, 0.9);
+            background: rgba(246, 252, 255, 0.9);
 
-            border: 1px solid #d1edf6;
+            border: 1.5px solid #c9eaf5;
 
-            border-radius: 18px;
+            border-radius: 20px;
+
+            transition: 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px rgba(75, 155, 185, 0.12);
         }
 
         .info-label {
-            color: #72abc0;
+            color: #79aec1;
 
             font-size: 0.9rem;
 
@@ -311,7 +332,7 @@
         }
 
         .info-value {
-            color: #3e687a;
+            color: #426b7c;
 
             font-weight: 600;
 
@@ -322,7 +343,7 @@
         /* ================= EDUCATION ================= */
 
         .education {
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .education-title {
@@ -330,64 +351,84 @@
 
             color: #397c9d;
 
-            font-size: 1.5rem;
+            font-size: 1.45rem;
 
             font-weight: 800;
-
-            margin-bottom: 20px;
-        }
-
-        .education-item {
-            padding: 18px 20px;
-
-            margin-bottom: 14px;
-
-            background: rgba(248, 253, 255, 0.95);
-
-            border-left: 5px solid #a9dfee;
-
-            border-radius: 12px;
-
-            color: #587887;
-
-            line-height: 1.7;
-        }
-
-        .education-item strong {
-            color: #397c9d;
-        }
-
-
-        /* ================= PERSONAL SECTION ================= */
-
-        .interest-section {
-            margin-top: 30px;
-
-            padding: 35px 30px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.8);
-
-            border: 2px solid #d2edf6;
-
-            border-radius: 25px;
-        }
-
-        .interest-title {
-            font-size: 1.8rem;
-
-            font-weight: 800;
-
-            color: #397c9d;
 
             margin-bottom: 18px;
         }
 
-        .interest-text {
-            color: #607d89;
+        .education-box {
+            padding: 18px 22px;
 
-            font-size: 1.05rem;
+            margin-bottom: 14px;
+
+            background: rgba(255, 248, 225, 0.88);
+
+            border: 2px solid #f4d98b;
+
+            border-radius: 18px;
+
+            color: #6f6a58;
+
+            line-height: 1.7;
+
+            box-shadow:
+                0 8px 20px rgba(220, 180, 80, 0.12);
+
+            transition: 0.3s ease;
+        }
+
+        .education-box:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(220, 180, 80, 0.18);
+        }
+
+        .education-box strong {
+            color: #b58a32;
+        }
+
+
+        /* ================= INTEREST ================= */
+
+        .interest-box {
+            margin-top: 30px;
+
+            padding: 28px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(232, 249, 255, 0.9),
+                    rgba(255, 250, 235, 0.9)
+                );
+
+            border: 2px solid #c9eaf5;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(75, 155, 185, 0.08);
+        }
+
+        .interest-title {
+            color: #397c9d;
+
+            font-size: 1.5rem;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .interest-text {
+            color: #587887;
+
+            font-size: 1rem;
 
             line-height: 1.9;
         }
@@ -552,15 +593,15 @@
             }
 
             .about-card {
-                padding: 35px 22px;
+                padding: 32px 20px;
             }
 
-            .info-list {
+            .info-grid {
                 grid-template-columns: 1fr;
             }
 
-            .interest-section {
-                padding: 30px 20px;
+            .interest-box {
+                padding: 25px 18px;
             }
 
             .page-navigation {
@@ -573,6 +614,7 @@
         }
 
     </style>
+
 </head>
 
 
@@ -627,7 +669,7 @@
         <div class="about-card">
 
 
-            <!-- PROFILE -->
+            <!-- ================= PROFILE ================= -->
 
             <div class="profile-wrap">
 
@@ -637,21 +679,33 @@
                     class="profile"
                 >
 
-                <span class="deco heart1">💙</span>
-                <span class="deco heart2">💗</span>
+                <span class="deco heart1">
+                    💙
+                </span>
 
-                <span class="deco star1">✨</span>
-                <span class="deco star2">⭐</span>
+                <span class="deco heart2">
+                    💗
+                </span>
+
+                <span class="deco star1">
+                    ✨
+                </span>
+
+                <span class="deco star2">
+                    ⭐
+                </span>
 
             </div>
 
 
-            <!-- INTRO -->
+            <!-- ================= INTRO ================= -->
 
-            <div class="intro-text">
+            <div class="intro">
 
-                สวัสดีค่ะ ฉันชื่อ <strong>ธนิษฐา ว่องไว</strong>
-                ชื่อเล่น <strong>ดรีม</strong>
+                สวัสดีค่ะ ฉันชื่อ
+                <strong>ธนิษฐา ว่องไว</strong>
+                ชื่อเล่น
+                <strong>ดรีม</strong>
 
                 <br>
 
@@ -661,12 +715,12 @@
             </div>
 
 
-            <!-- INFORMATION -->
+            <!-- ================= BASIC INFORMATION ================= -->
 
-            <div class="info-list">
+            <div class="info-grid">
 
 
-                <div class="info-item">
+                <div class="info-box">
 
                     <div class="info-label">
                         👩 ชื่อ - นามสกุล
@@ -679,7 +733,7 @@
                 </div>
 
 
-                <div class="info-item">
+                <div class="info-box">
 
                     <div class="info-label">
                         💕 ชื่อเล่น
@@ -692,7 +746,7 @@
                 </div>
 
 
-                <div class="info-item">
+                <div class="info-box">
 
                     <div class="info-label">
                         🎂 วันเกิด
@@ -705,7 +759,7 @@
                 </div>
 
 
-                <div class="info-item">
+                <div class="info-box">
 
                     <div class="info-label">
                         🎓 ระดับการศึกษา
@@ -723,7 +777,7 @@
             </div>
 
 
-            <!-- EDUCATION -->
+            <!-- ================= EDUCATION ================= -->
 
             <div class="education">
 
@@ -732,7 +786,7 @@
                 </div>
 
 
-                <div class="education-item">
+                <div class="education-box">
 
                     <strong>
                         ระดับประถมศึกษา
@@ -745,7 +799,7 @@
                 </div>
 
 
-                <div class="education-item">
+                <div class="education-box">
 
                     <strong>
                         ระดับมัธยมศึกษาตอนต้น
@@ -757,12 +811,13 @@
 
                     <br>
 
-                    เกรดเฉลี่ย 3.93
+                    เกรดเฉลี่ย
+                    <strong>3.93</strong>
 
                 </div>
 
 
-                <div class="education-item">
+                <div class="education-box">
 
                     <strong>
                         ระดับมัธยมศึกษาตอนปลาย
@@ -774,7 +829,8 @@
 
                     <br>
 
-                    เกรดเฉลี่ยสะสม 4.00
+                    เกรดเฉลี่ยสะสม
+                    <strong>4.00</strong>
                     (4 ภาคเรียน)
 
                 </div>
@@ -782,9 +838,9 @@
             </div>
 
 
-            <!-- ================= NEW SECTION ================= -->
+            <!-- ================= INTEREST ================= -->
 
-            <div class="interest-section">
+            <div class="interest-box">
 
                 <div class="interest-title">
                     👩‍🔬 ตัวตนและความสนใจ
