@@ -181,6 +181,28 @@
             color: #d3a62a;
         }
 
+        /* ================= CLICKABLE IMAGES ================= */
+
+        .image-button {
+            border: none;
+            background: none;
+            padding: 0;
+
+            cursor: pointer;
+
+            display: inline-block;
+
+            margin: 10px 5px;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .image-button:hover {
+            transform: translateY(-4px) scale(1.03);
+        }
+
         .project-card img {
             width: 150px;
             height: 150px;
@@ -191,13 +213,102 @@
 
             border: 2px solid #b9e7f5;
 
-            margin: 10px 5px;
-
-            display: inline-block;
+            display: block;
 
             box-shadow:
                 0 8px 25px
                 rgba(117, 190, 220, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .image-button:hover img {
+            border-color: #8ed8ed;
+
+            box-shadow:
+                0 12px 30px
+                rgba(117, 190, 220, 0.25);
+        }
+
+        /* ================= IMAGE LIGHTBOX ================= */
+
+        .lightbox {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            background: rgba(25, 42, 58, 0.82);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            border: 3px solid white;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, 0.35);
+
+            cursor: default;
+        }
+
+        .lightbox-close {
+            position: absolute;
+
+            top: 18px;
+            right: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            border: 2px solid white;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            color: white;
+
+            font-size: 30px;
+            line-height: 1;
+
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: white;
+            color: #40536b;
+
+            transform: scale(1.08);
         }
 
         /* ================= TAGS ================= */
@@ -481,15 +592,29 @@
                     “ศึกวัดเซียนปรากฏการณ์ธรรมชาติ”
                 </h2>
 
-                <img
-                    src="IMG_2395.jpeg"
-                    alt="รูปขณะแข่งขัน"
+                <button
+                    type="button"
+                    class="image-button"
+                    data-image="IMG_2395.jpeg"
+                    aria-label="เปิดรูปขณะแข่งขัน"
                 >
+                    <img
+                        src="IMG_2395.jpeg"
+                        alt="รูปขณะแข่งขัน"
+                    >
+                </button>
 
-                <img
-                    src="IMG_4388.jpeg"
-                    alt="เกียรติบัตร"
+                <button
+                    type="button"
+                    class="image-button"
+                    data-image="IMG_4388.jpeg"
+                    aria-label="เปิดรูปเกียรติบัตร"
                 >
+                    <img
+                        src="IMG_4388.jpeg"
+                        alt="เกียรติบัตร"
+                    >
+                </button>
 
                 <p>
                     เข้าร่วมการแข่งขันแฟนพันธุ์แท้
@@ -525,7 +650,7 @@
             <div class="project-card">
 
                 <div class="project-icon">
-                    🏆
+                    🌟
                 </div>
 
                 <h2>
@@ -533,10 +658,17 @@
                     ประจำปีการศึกษา 2568
                 </h2>
 
-                <img
-                    src="IMG_4394.jpeg"
-                    alt="รางวัลนักเรียนประพฤติดี"
+                <button
+                    type="button"
+                    class="image-button"
+                    data-image="IMG_4394.jpeg"
+                    aria-label="เปิดรูปเกียรติบัตรนักเรียนประพฤติดี"
                 >
+                    <img
+                        src="IMG_4394.jpeg"
+                        alt="รางวัลนักเรียนประพฤติดี"
+                    >
+                </button>
 
                 <p>
                     ได้รับรางวัลนักเรียนประพฤติดี
@@ -562,7 +694,7 @@
             <div class="project-card">
 
                 <div class="project-icon">
-                    🧪
+                    ⚙️
                 </div>
 
                 <h2>
@@ -570,10 +702,17 @@
                     “HIGH CALIBER ENGINEERING COMPETENCY TEST 2026”
                 </h2>
 
-                <img
-                    src="IMG_2446.png"
-                    alt="เกียรติบัตร High Caliber Engineering Competency Test 2026"
+                <button
+                    type="button"
+                    class="image-button"
+                    data-image="IMG_2446.png"
+                    aria-label="เปิดรูปเกียรติบัตร High Caliber Engineering Competency Test 2026"
                 >
+                    <img
+                        src="IMG_2446.png"
+                        alt="เกียรติบัตร High Caliber Engineering Competency Test 2026"
+                    >
+                </button>
 
                 <p>
                     เข้าร่วมสอบวัดความรู้
@@ -631,6 +770,34 @@
     </main>
 
 
+    <!-- ================= IMAGE LIGHTBOX ================= -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="ดูรูปภาพขนาดใหญ่"
+    >
+
+        <button
+            type="button"
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="ปิดรูปภาพ"
+        >
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="รูปภาพขนาดใหญ่"
+        >
+
+    </div>
+
+
     <!-- ================= FOOTER ================= -->
 
     <footer>
@@ -645,6 +812,76 @@
         </p>
 
     </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const lightboxClose = document.getElementById("lightboxClose");
+        const imageButtons = document.querySelectorAll(".image-button");
+
+
+        imageButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const imageSource = button.getAttribute("data-image");
+
+                lightboxImage.src = imageSource;
+
+                lightbox.classList.add("active");
+
+                document.body.style.overflow = "hidden";
+
+            });
+
+        });
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("active");
+
+            lightboxImage.src = "";
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+                    closeLightbox();
+                }
+
+            }
+        );
+
+    </script>
 
 
 </body>
