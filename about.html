@@ -172,18 +172,19 @@
 
         .profile-wrap {
             width: 200px;
-
             height: 200px;
+
+            aspect-ratio: 1 / 1;
 
             margin: 0 auto 30px;
 
             position: relative;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
+
+            flex-shrink: 0;
         }
 
         .profile-wrap::before {
@@ -191,13 +192,19 @@
 
             position: absolute;
 
-            width: 195px;
+            width: 194px;
+            height: 194px;
 
-            height: 195px;
+            aspect-ratio: 1 / 1;
+
+            top: 3px;
+            left: 3px;
 
             border: 3px dashed #a7dff0;
 
             border-radius: 50%;
+
+            box-sizing: border-box;
 
             animation: spin 15s linear infinite;
         }
@@ -208,8 +215,12 @@
             position: absolute;
 
             width: 180px;
-
             height: 180px;
+
+            aspect-ratio: 1 / 1;
+
+            top: 10px;
+            left: 10px;
 
             border-radius: 50%;
 
@@ -222,8 +233,9 @@
 
         .profile {
             width: 175px;
-
             height: 175px;
+
+            aspect-ratio: 1 / 1;
 
             object-fit: cover;
 
@@ -231,14 +243,18 @@
 
             border: 5px solid white;
 
-            box-shadow:
-                0 10px 30px rgba(65, 145, 175, 0.25);
+            box-sizing: border-box;
 
             position: relative;
 
             z-index: 2;
 
+            display: block;
+
             animation: profileFloat 4s ease-in-out infinite;
+
+            box-shadow:
+                0 10px 30px rgba(65, 145, 175, 0.25);
         }
 
 
@@ -254,7 +270,6 @@
 
         .heart1 {
             top: 0;
-
             right: -5px;
 
             font-size: 1.5rem;
@@ -264,7 +279,6 @@
 
         .heart2 {
             bottom: 10px;
-
             left: -8px;
 
             font-size: 1.35rem;
@@ -274,7 +288,6 @@
 
         .star1 {
             top: 35px;
-
             left: -15px;
 
             font-size: 1.3rem;
@@ -284,7 +297,6 @@
 
         .star2 {
             bottom: 25px;
-
             right: -15px;
 
             font-size: 1.2rem;
@@ -663,13 +675,19 @@
             }
 
             .profile-wrap::before {
-                width: 185px;
-                height: 185px;
+                width: 184px;
+                height: 184px;
+
+                top: 3px;
+                left: 3px;
             }
 
             .profile-wrap::after {
                 width: 170px;
                 height: 170px;
+
+                top: 10px;
+                left: 10px;
             }
 
             .profile {
@@ -893,7 +911,7 @@
 
                     <br>
 
-                    เกรดเฉลี่ยสะสม
+                    เกรดเฉลี่ย
 
                     <span class="grade-box">
                         3.93
