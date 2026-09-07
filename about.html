@@ -2,7 +2,9 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tanitta | About Me</title>
@@ -21,6 +23,7 @@
 
         body {
             font-family: "Segoe UI", Tahoma, sans-serif;
+
             min-height: 100vh;
 
             background:
@@ -48,6 +51,7 @@
 
         nav {
             width: 100%;
+
             padding: 20px 7%;
 
             display: flex;
@@ -55,18 +59,22 @@
             align-items: center;
 
             background: rgba(255, 255, 255, 0.72);
+
             backdrop-filter: blur(10px);
 
             border-bottom: 1px solid rgba(150, 210, 230, 0.35);
 
             position: sticky;
             top: 0;
+
             z-index: 100;
         }
 
         .logo {
             font-size: 1.5rem;
+
             font-weight: 800;
+
             color: #397c9d;
         }
 
@@ -74,6 +82,7 @@
             list-style: none;
 
             display: flex;
+
             gap: 25px;
         }
 
@@ -96,6 +105,7 @@
 
         .container {
             width: 90%;
+
             max-width: 900px;
 
             margin: auto;
@@ -107,6 +117,7 @@
             text-align: center;
 
             font-size: 1rem;
+
             font-weight: 700;
 
             letter-spacing: 3px;
@@ -161,6 +172,7 @@
 
         .profile-wrap {
             width: 175px;
+
             height: 175px;
 
             margin: 0 auto 30px;
@@ -168,7 +180,9 @@
             position: relative;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
         }
 
@@ -178,6 +192,7 @@
             position: absolute;
 
             width: 170px;
+
             height: 170px;
 
             border: 3px dashed #a7dff0;
@@ -193,6 +208,7 @@
             position: absolute;
 
             width: 145px;
+
             height: 145px;
 
             border-radius: 50%;
@@ -206,6 +222,7 @@
 
         .profile {
             width: 145px;
+
             height: 145px;
 
             object-fit: cover;
@@ -218,6 +235,7 @@
                 0 10px 30px rgba(65, 145, 175, 0.25);
 
             position: relative;
+
             z-index: 2;
 
             animation: profileFloat 4s ease-in-out infinite;
@@ -236,6 +254,7 @@
 
         .heart1 {
             top: 0;
+
             right: -5px;
 
             font-size: 1.5rem;
@@ -245,6 +264,7 @@
 
         .heart2 {
             bottom: 10px;
+
             left: -8px;
 
             font-size: 1.35rem;
@@ -254,6 +274,7 @@
 
         .star1 {
             top: 35px;
+
             left: -15px;
 
             font-size: 1.3rem;
@@ -263,6 +284,7 @@
 
         .star2 {
             bottom: 25px;
+
             right: -15px;
 
             font-size: 1.2rem;
@@ -358,23 +380,25 @@
             margin-bottom: 18px;
         }
 
+        /*
+            ประวัติการศึกษาใช้ดีไซน์เดิม
+            ไม่เปลี่ยนพื้นหลังหรือกรอบของกล่อง
+        */
+
         .education-box {
             padding: 18px 22px;
 
             margin-bottom: 14px;
 
-            background: rgba(255, 248, 225, 0.88);
+            background: rgba(255, 255, 255, 0.9);
 
-            border: 2px solid #f4d98b;
+            border: 2px solid #c9eaf5;
 
             border-radius: 18px;
 
-            color: #6f6a58;
+            color: #6f7f86;
 
             line-height: 1.7;
-
-            box-shadow:
-                0 8px 20px rgba(220, 180, 80, 0.12);
 
             transition: 0.3s ease;
         }
@@ -383,11 +407,34 @@
             transform: translateY(-3px);
 
             box-shadow:
-                0 12px 25px rgba(220, 180, 80, 0.18);
+                0 10px 22px rgba(75, 155, 185, 0.12);
         }
 
         .education-box strong {
+            color: #397c9d;
+        }
+
+
+        /* ================= GRADE GOLD BOX ================= */
+
+        .grade-box {
+            display: inline-block;
+
+            padding: 3px 9px;
+
+            margin: 0 3px;
+
+            background: #fff8df;
+
+            border: 2px solid #e7bd55;
+
+            border-radius: 10px;
+
             color: #b58a32;
+
+            font-weight: 800;
+
+            line-height: 1.4;
         }
 
 
@@ -442,6 +489,7 @@
             display: flex;
 
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
@@ -508,6 +556,7 @@
             50% {
                 transform: translateY(-7px);
             }
+
         }
 
         @keyframes spin {
@@ -519,54 +568,71 @@
             to {
                 transform: rotate(360deg);
             }
+
         }
 
         @keyframes glow {
 
             0%, 100% {
                 opacity: 0.5;
+
                 transform: scale(0.95);
             }
 
             50% {
                 opacity: 1;
+
                 transform: scale(1.08);
             }
+
         }
 
         @keyframes floatHeart {
 
             0%, 100% {
-                transform: translateY(0) rotate(-8deg);
+                transform:
+                    translateY(0)
+                    rotate(-8deg);
             }
 
             50% {
-                transform: translateY(-10px) rotate(8deg);
+                transform:
+                    translateY(-10px)
+                    rotate(8deg);
             }
+
         }
 
         @keyframes floatHeart2 {
 
             0%, 100% {
-                transform: translateY(0) rotate(8deg);
+                transform:
+                    translateY(0)
+                    rotate(8deg);
             }
 
             50% {
-                transform: translateY(8px) rotate(-8deg);
+                transform:
+                    translateY(8px)
+                    rotate(-8deg);
             }
+
         }
 
         @keyframes twinkle {
 
             0%, 100% {
                 opacity: 0.4;
+
                 transform: scale(0.85);
             }
 
             50% {
                 opacity: 1;
+
                 transform: scale(1.15);
             }
+
         }
 
 
@@ -611,6 +677,7 @@
             .page-navigation a {
                 width: 100%;
             }
+
         }
 
     </style>
@@ -812,7 +879,10 @@
                     <br>
 
                     เกรดเฉลี่ย
-                    <strong>3.93</strong>
+
+                    <span class="grade-box">
+                        3.93
+                    </span>
 
                 </div>
 
@@ -830,10 +900,15 @@
                     <br>
 
                     เกรดเฉลี่ยสะสม
-                    <strong>4.00</strong>
+
+                    <span class="grade-box">
+                        4.00
+                    </span>
+
                     (4 ภาคเรียน)
 
                 </div>
+
 
             </div>
 
